@@ -1,0 +1,280 @@
+{
+ "format": "japanese-mastery.stickers",
+ "version": 1,
+ "source": "Original artwork drawn in code for Japanese Mastery",
+ "packs": [
+  {
+   "id": "mochi",
+   "name": "もちもち",
+   "price_yen": 0,
+   "stickers": [
+    {
+     "id": "mochi.ok",
+     "caption": "りょうかい！",
+     "meaning": "OK / got it (cheerful)",
+     "face": "wink",
+     "prop": "check"
+    },
+    {
+     "id": "mochi.thanks",
+     "caption": "ありがと",
+     "meaning": "thank you",
+     "face": "smile",
+     "prop": "heart"
+    },
+    {
+     "id": "mochi.lol",
+     "caption": "笑",
+     "meaning": "that's funny",
+     "face": "laugh",
+     "prop": ""
+    },
+    {
+     "id": "mochi.sorry",
+     "caption": "ごめんね",
+     "meaning": "sorry",
+     "face": "sad",
+     "prop": "sweat"
+    },
+    {
+     "id": "mochi.night",
+     "caption": "おやすみ",
+     "meaning": "good night",
+     "face": "sleep",
+     "prop": "moon"
+    },
+    {
+     "id": "mochi.wow",
+     "caption": "まじ？",
+     "meaning": "really?! surprised",
+     "face": "shock",
+     "prop": "spark"
+    },
+    {
+     "id": "mochi.cry",
+     "caption": "ぴえん",
+     "meaning": "sad / touched, pleading",
+     "face": "cry",
+     "prop": "tear"
+    },
+    {
+     "id": "mochi.love",
+     "caption": "すき",
+     "meaning": "love it / I like this",
+     "face": "love",
+     "prop": "heart"
+    },
+    {
+     "id": "mochi.wait",
+     "caption": "まって",
+     "meaning": "wait!",
+     "face": "panic",
+     "prop": "sweat"
+    },
+    {
+     "id": "mochi.cheer",
+     "caption": "ファイト！",
+     "meaning": "you can do it",
+     "face": "determined",
+     "prop": "fist"
+    },
+    {
+     "id": "mochi.tired",
+     "caption": "つかれた",
+     "meaning": "so tired",
+     "face": "tired",
+     "prop": ""
+    },
+    {
+     "id": "mochi.yay",
+     "caption": "やった〜",
+     "meaning": "yay! happy",
+     "face": "joy",
+     "prop": "spark"
+    }
+   ]
+  },
+  {
+   "id": "tora",
+   "name": "とらねこ",
+   "price_yen": 0,
+   "stickers": [
+    {
+     "id": "tora.ok",
+     "caption": "おけ",
+     "meaning": "ok (casual)",
+     "face": "smug",
+     "prop": "check"
+    },
+    {
+     "id": "tora.lol",
+     "caption": "www",
+     "meaning": "lol",
+     "face": "laugh",
+     "prop": ""
+    },
+    {
+     "id": "tora.what",
+     "caption": "は？",
+     "meaning": "huh? / what? (playful)",
+     "face": "blank",
+     "prop": "question"
+    },
+    {
+     "id": "tora.sleepy",
+     "caption": "ねむ",
+     "meaning": "sleepy",
+     "face": "sleep",
+     "prop": "zzz"
+    },
+    {
+     "id": "tora.gg",
+     "caption": "GG",
+     "meaning": "good game",
+     "face": "smug",
+     "prop": "spark"
+    },
+    {
+     "id": "tora.go",
+     "caption": "行こうぜ",
+     "meaning": "let's go!",
+     "face": "determined",
+     "prop": "fist"
+    },
+    {
+     "id": "tora.sorry",
+     "caption": "すまん",
+     "meaning": "my bad",
+     "face": "sad",
+     "prop": "sweat"
+    },
+    {
+     "id": "tora.good",
+     "caption": "いいね",
+     "meaning": "nice",
+     "face": "smile",
+     "prop": "thumb"
+    },
+    {
+     "id": "tora.angry",
+     "caption": "むかっ",
+     "meaning": "annoyed",
+     "face": "angry",
+     "prop": "vein"
+    },
+    {
+     "id": "tora.shock",
+     "caption": "えっ",
+     "meaning": "shocked",
+     "face": "shock",
+     "prop": "spark"
+    },
+    {
+     "id": "tora.bye",
+     "caption": "またな",
+     "meaning": "see ya",
+     "face": "wink",
+     "prop": "wave"
+    },
+    {
+     "id": "tora.hungry",
+     "caption": "腹へった",
+     "meaning": "I'm hungry",
+     "face": "tired",
+     "prop": ""
+    }
+   ]
+  },
+  {
+   "id": "kaeru",
+   "name": "けろけろ",
+   "price_yen": 300,
+   "stickers": [
+    {
+     "id": "kaeru.hi",
+     "caption": "やっほー",
+     "meaning": "hi!",
+     "face": "joy",
+     "prop": "wave"
+    },
+    {
+     "id": "kaeru.ok",
+     "caption": "りょ",
+     "meaning": "ok (very casual)",
+     "face": "smile",
+     "prop": "check"
+    },
+    {
+     "id": "kaeru.lol",
+     "caption": "草",
+     "meaning": "lol (net slang)",
+     "face": "laugh",
+     "prop": ""
+    },
+    {
+     "id": "kaeru.wow",
+     "caption": "すご！",
+     "meaning": "amazing",
+     "face": "shock",
+     "prop": "spark"
+    },
+    {
+     "id": "kaeru.sad",
+     "caption": "しょんぼり",
+     "meaning": "disappointed",
+     "face": "sad",
+     "prop": ""
+    },
+    {
+     "id": "kaeru.dance",
+     "caption": "♪♪",
+     "meaning": "dancing / happy mood",
+     "face": "joy",
+     "prop": "note"
+    },
+    {
+     "id": "kaeru.thanks",
+     "caption": "サンキュー",
+     "meaning": "thanks (casual)",
+     "face": "wink",
+     "prop": "heart"
+    },
+    {
+     "id": "kaeru.please",
+     "caption": "おねがい",
+     "meaning": "please!",
+     "face": "cry",
+     "prop": "pray"
+    },
+    {
+     "id": "kaeru.music",
+     "caption": "ライブ！",
+     "meaning": "live show / music",
+     "face": "determined",
+     "prop": "note"
+    },
+    {
+     "id": "kaeru.cheers",
+     "caption": "かんぱい",
+     "meaning": "cheers!",
+     "face": "joy",
+     "prop": "spark"
+    },
+    {
+     "id": "kaeru.shrug",
+     "caption": "しらんけど",
+     "meaning": "dunno (Kansai joke)",
+     "face": "blank",
+     "prop": "question"
+    },
+    {
+     "id": "kaeru.sleep",
+     "caption": "ぐー",
+     "meaning": "sleeping",
+     "face": "sleep",
+     "prop": "zzz"
+    }
+   ]
+  }
+ ]
+}

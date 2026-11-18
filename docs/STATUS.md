@@ -1,14 +1,14 @@
 # Status
 
-## Verification
+## Verification (v0.3.0)
 
 | Check | Result |
 |---|---|
-| `cargo test -p jm-core` | **35/35 pass**: migrations including the M1→M2 upgrade, seeds and packs, FSRS persistence, anti-farming rewards, quests, backups, recovery, import/export, reading samples |
-| `npm test` (vitest) | **38/38 pass**: conjugation, answer checking, ts-fsrs adapter, session planner, quest engine (all 3 quests, variation, failure paths), reading coverage |
+| `cargo test -p jm-core` | **62/62 pass**. Includes the new social layer: relationship deltas and limits, formality stages, scheduler bounds over simulated days, dedupe/expiry, full reply cycle (receipts → typing → bubbles → reaction → plan → memory), bounded groups, bad AI output → retry, reviews, local time |
+| `npm test` (vitest) | **48/48 pass**. Includes the 生活 navigation state machine (open/close/reopen, Esc layering, 2,000-step random walk never leaves an empty screen) and exploration collisions/doors |
 | `tsc --noEmit`, `vite build` | pass |
-| Tauri shell (`src-tauri/`) | **not compiled here** because it needs the Windows toolchain. It's a thin command layer of 35 commands; compile errors, if any, will be in `src-tauri/src/lib.rs`. |
-| Visual/UI testing | not done by me (you test the UI yourself) |
+| Tauri shell (`src-tauri/`) | **compiles (`cargo check`, Linux, zero warnings)**. Windows-only bits (Credential Manager, toasts, autostart) are compiled for real only by the Windows release build. |
+| Visual QA | Screenshots at 1366×768 and 1920×1080 with mocked data: world, phone chats, conversation, sticker picker, profile, settings, close-phone-returns-to-world, friends panel. **No live AI call was made here** (no key in this environment). |
 
 ## Milestone 1: Desktop foundation ✅
 
@@ -60,17 +60,44 @@ The original website is preserved, and SQLite, migrations, backups, recovery, im
 | Sounds / level-up animation | ⏳ | M3 (with the cosmetics shop) |
 | AI conversations | ⏳ | M5 (provider config, consent, credential storage) |
 
+## v0.3.0: 生活 overhaul + ハナシ messaging ✅ (code complete, needs your testing)
+
+| Area | State | Notes |
+|---|---|---|
+| Blank screen after closing the phone | ✅ fixed | Cause: 生活 swapped whole routes for the phone/quests, and one render error unmounted the entire app. Now the world is a base layer that never unmounts, overlays come from a tested state machine (`lib/game/worldNav.ts`), and error boundaries contain failures to one area. |
+| ハナシ app | ✅ | Original branding (mark, name, teal palette). Splash, ホーム (friends/groups/profile), トーク (search, pin, mute, hide, unread, typing previews, drafts), 通話, スタンプ shop, お知らせ, 設定 |
+| Free-form chat | ✅ | IME-safe composer (Enter never sends while converting), drafts saved, multi-message sends are debounced into one reply. No premade options anywhere in chat. |
+| 8 AI characters | ✅ | Haruto, Mika, Ren, Yui, Sota, Aoi, Natsuki, Chihiro. Each has its own speech profile, schedule, reply speed, emoji/sticker habits and formality path. Formality comes from closeness + trust + shared experiences + days actually talked, not message count. Grammar mistakes never lower a relationship. |
+| Presence | ✅ | 既読 at a simulated read time, typing indicator while composing, unread counts. All derived from stored rows, pushed by events. Some characters sometimes just read and reply later. |
+| Stickers / emoji / kaomoji / reactions | ✅ | 3 original packs (36 stickers, vector-drawn), favorites (right-click), recents, ¥ purchase. Reactions on any message; characters react too. |
+| Groups | ✅ | ゲーム部🎮 and 週末カフェ部☕. Max 4 messages per reply, and NPC messages never trigger more NPC messages (no loops). |
+| Unprompted messages | ✅ | Bounded scheduler: quiet hours, ≤4/day (configurable), 60-min gap, no double-texting, active hours, plan follow-ups, dedupe keys, separate AI budget |
+| Background / tray | ✅ | Close → tray (setting). Tray: Open, Pause character messages, Quit. Single instance. Opt-in "Start with Windows" (starts minimized). Windows notifications when the app isn't focused (outside quiet hours; preview can be hidden). Fully quit = nothing runs, nothing is back-dated. Offline → messages stay queued and retry with back-off. |
+| Memory | ✅ | Per-character memories with importance, confidence and verified flag; relevance retrieval (only a few per reply). View, correct, add, delete, delete all, in each profile. Rolling conversation summaries. |
+| Learning layer | ✅ | On demand only: 💡 hint (never writes the message for you), 調べる word lookup (offline readings + optional AI meaning), ふりかえり review separating errors / unnatural / natural casual / slang / success + vocab |
+| Plans → Calendar | ✅ | When a chat makes a plan, it becomes a card in the chat and an entry in 予定; friends may follow up later |
+| AI providers | ✅ | Anthropic (key in Windows Credential Manager) or any OpenAI-compatible server (Ollama/LM Studio, fully local). Explicit consent screen listing exactly what is and isn't sent; daily request budgets; usage shown. |
+| Calls | ✅ honest | Not available (no voice provider). Tapping call logs an "unavailable" attempt; no call is ever faked. |
+| 2D exploration | ✅ slice | Walkable street (WASD/arrows), wall sliding, doors with E. Apartment and konbini open; café, station and shopping street are visibly closed. Position saved. |
+| Menus | ✅ | 地図, スマホ, 友だち (multi-dimensional, no affection bar), 日誌, 予定, 持ち物 (wallet, sticker packs), 部屋, 実績 (computed from real data), パスポート. Hotkeys M P F J C I. |
+| Quests | ✅ | Typed-first now; example replies are an optional hint |
+| Apartment decorating, shop items, more buildings | ⏳ | Shown as "later update", not faked |
+| Voice chat / calls | ⏳ | Needs STT + TTS provider |
+| Fully animated VN scenes | ⏳ | The konbini scene is still the M2 renderer |
+
 ## Auto-updates ✅ (v0.2.0)
 
 Tauri updater plugin with signed updates from GitHub Releases. CI builds and publishes on version tags and runs tests on every push. In the app: automatic check on launch (can be turned off), manual check, and a backup before install. Setup and release scripts: see `docs/UPDATES.md`. Not testable here; it works after the one-time setup and first release.
 
 ## External APIs
 
-None, except the optional update check (GitHub Releases, no account or data sent). Everything else runs offline. Text-to-speech uses the voices installed in Windows.
+- Update check (GitHub Releases, nothing sent).
+- **Optional AI provider for 生活 chats** (off until you set it up and agree). See ARCHITECTURE → AI layer for what's sent and what it costs.
+- Everything else runs offline. Text-to-speech uses the voices installed in Windows.
 
 ## Data licences
 
 - JMdict / KANJIDIC2: © EDRDG, **CC BY-SA 4.0**. Derived files: `crates/jm-core/seed/core_v1.json` and `kanji_v1.json`. The share-alike terms apply to those data files.
 - kuromoji.js + IPADIC: Apache-2.0 (dictionary copied to `public/kuromoji/` at build time).
 - ts-fsrs, WanaKana: MIT.
-- Everything else (grammar, manga pack, website words, quests, art): original.
+- Everything else (grammar, manga pack, website words, quests, characters, ハナシ branding, sticker art, map art): original. No LINE assets, characters or screenshots content are used.

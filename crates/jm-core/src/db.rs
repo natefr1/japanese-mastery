@@ -3,7 +3,7 @@
 
 use crate::io::{self, ImportMode, ImportReport};
 use crate::vocab::{self, VocabInput, VocabItem, VocabStats};
-use crate::{backup, content, game, migrations, new_id, reading, seed, settings, study, CoreError, Result};
+use crate::{backup, chat, content, game, migrations, new_id, npc, reading, seed, settings, study, CoreError, Result};
 use rusqlite::{params, Connection, OptionalExtension};
 use serde::Serialize;
 use std::fs;
@@ -155,6 +155,8 @@ impl Db {
             content::apply_grammar_seed(c, dev)?;
             content::apply_kanji_seed(c, dev)?;
             game::ensure_characters(c, dev)?;
+            npc::seed(c, dev)?;
+            chat::seed(c, dev)?;
             study::ensure_cards(c, dev)?;
             Ok(n)
         })?;

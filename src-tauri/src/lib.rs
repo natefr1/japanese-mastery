@@ -1,4 +1,11 @@
-//! Tauri shell: thin command layer over `jm-core`. No business logic lives here.
+//! Tauri shell: thin command layer over `jm-core`, plus the desktop runtime
+//! (AI calls, background delivery, tray, notifications). Domain logic lives in jm-core.
+
+mod ai;
+mod engine;
+mod social_cmds;
+
+use social_cmds::*;
 
 use jm_core::backup::{BackupInfo, VerifyResult};
 use jm_core::io::{ImportMode, ImportReport};
@@ -11,9 +18,17 @@ use jm_core::{Db, DbPaths, OpenReport};
 use serde::Serialize;
 use std::path::PathBuf;
 use std::sync::Mutex;
-use tauri::{Manager, State};
+use tauri::menu::{CheckMenuItem, CheckMenuItemBuilder, MenuBuilder, MenuItemBuilder};
+use tauri::tray::{MouseButton, MouseButtonState, TrayIconBuilder, TrayIconEvent};
+use tauri::{AppHandle, Manager, State, WindowEvent, Wry};
+use tauri_plugin_notification::NotificationExt;
 
-struct AppState {
+#[derive(Default)]
+pub(crate) struct TrayState {
+    pub pause: Mutex<Option<CheckMenuItem<Wry>>>,
+}
+
+pub(crate) struct AppState {
     db: Mutex<Option<Db>>,
     open_report: Option<OpenReport>,
     open_error: Option<String>,
@@ -224,8 +239,58 @@ fn passport_add_real(state: State<AppState>, title: String, detail: String) -> C
     with_db(&state, |db| db.passport_add_real(&title, &detail))
 }
 
+fn show_main(app: &AppHandle) {
+    if let Some(w) = app.get_webview_window("main") {
+        let _ = w.show();
+        let _ = w.unminimize();
+        let _ = w.set_focus();
+    }
+}
+
+fn build_tray(app: &AppHandle) -> tauri::Result<()> {
+    let paused = engine::with_db(app, |db| jm_core::social::Config::load(&db.conn)).map(|c| c.paused).unwrap_or(false);
+    let open = MenuItemBuilder::with_id("open", "Open Japanese Mastery").build(app)?;
+    let pause = CheckMenuItemBuilder::with_id("pause", "Pause character messages").checked(paused).build(app)?;
+    let quit = MenuItemBuilder::with_id("quit", "Quit").build(app)?;
+    let menu = MenuBuilder::new(app).item(&open).item(&pause).separator().item(&quit).build()?;
+    *app.state::<TrayState>().pause.lock().unwrap() = Some(pause.clone());
+    let mut tb = TrayIconBuilder::with_id("main")
+        .tooltip("Japanese Mastery")
+        .menu(&menu)
+        .show_menu_on_left_click(false)
+        .on_menu_event(move |app, ev| match ev.id().as_ref() {
+            "open" => show_main(app),
+            "pause" => {
+                let r = engine::with_db(app, |db| {
+                    let mut c = jm_core::social::Config::load(&db.conn)?;
+                    c.paused = !c.paused;
+                    c.save(&db.conn, &db.device_id)
+                });
+                if let (Ok(c), Some(item)) = (r, app.state::<TrayState>().pause.lock().unwrap().as_ref()) {
+                    let _ = item.set_checked(c.paused);
+                }
+            }
+            "quit" => app.exit(0),
+            _ => {}
+        })
+        .on_tray_icon_event(|tray, ev| {
+            if let TrayIconEvent::Click { button: MouseButton::Left, button_state: MouseButtonState::Up, .. } = ev {
+                show_main(tray.app_handle());
+            }
+        });
+    if let Some(icon) = app.default_window_icon() {
+        tb = tb.icon(icon.clone());
+    }
+    tb.build(app)?;
+    Ok(())
+}
+
 pub fn run() {
     tauri::Builder::default()
+        // Must be first: a second launch focuses the running app instead of starting another engine.
+        .plugin(tauri_plugin_single_instance::init(|app, _argv, _cwd| show_main(app)))
+        .plugin(tauri_plugin_notification::init())
+        .plugin(tauri_plugin_autostart::init(tauri_plugin_autostart::MacosLauncher::LaunchAgent, Some(vec!["--minimized"])))
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_updater::Builder::new().build())
         .plugin(tauri_plugin_process::init())
@@ -241,8 +306,48 @@ pub fn run() {
                 }
                 Err(e) => (None, None, Some(e.to_string())),
             };
+            let db_ok = db.is_some();
             app.manage(AppState { db: Mutex::new(db), open_report, open_error, data_dir });
+            app.manage(engine::Engine::default());
+            app.manage(TrayState::default());
+            let handle = app.handle().clone();
+            if let Err(e) = build_tray(&handle) {
+                eprintln!("tray unavailable: {e}");
+            }
+            // Started by Windows at login (opt-in): stay in the tray.
+            if !std::env::args().any(|a| a == "--minimized") {
+                show_main(&handle);
+            }
+            if db_ok {
+                engine::start(handle);
+            }
             Ok(())
+        })
+        .on_window_event(|window, event| {
+            let app = window.app_handle();
+            match event {
+                WindowEvent::Focused(f) => {
+                    app.state::<engine::Engine>().window_focused.store(*f, std::sync::atomic::Ordering::Relaxed);
+                }
+                WindowEvent::CloseRequested { api, .. } => {
+                    let to_tray = engine::with_db(app, |db| jm_core::social::Config::load(&db.conn)).map(|c| c.close_to_tray).unwrap_or(false);
+                    if to_tray && app.tray_by_id("main").is_some() {
+                        api.prevent_close();
+                        let _ = window.hide();
+                        let eng = app.state::<engine::Engine>();
+                        eng.window_focused.store(false, std::sync::atomic::Ordering::Relaxed);
+                        if !eng.tray_hint_shown.swap(true, std::sync::atomic::Ordering::Relaxed) {
+                            let _ = app
+                                .notification()
+                                .builder()
+                                .title("Still running in the tray")
+                                .body("Your friends can still message you. Right-click the tray icon to pause or quit.")
+                                .show();
+                        }
+                    }
+                }
+                _ => {}
+            }
         })
         .invoke_handler(tauri::generate_handler![
             app_status,
@@ -279,7 +384,49 @@ pub fn run() {
             cards_of_type,
             sample_save,
             sample_list,
-            sample_delete
+            sample_delete,
+            social_config_get,
+            social_config_set,
+            social_clock,
+            npc_list,
+            npc_memories,
+            npc_memory_add,
+            npc_memory_correct,
+            npc_memory_delete_all,
+            chat_list,
+            chat_get,
+            chat_messages,
+            chat_send,
+            chat_open,
+            chat_mark_read,
+            chat_flag,
+            chat_draft,
+            chat_react,
+            chat_retry,
+            chat_clear,
+            chat_search,
+            chat_review,
+            chat_observations,
+            chat_hint,
+            chat_gloss,
+            notifications_list,
+            notifications_seen,
+            calls_list,
+            call_attempt,
+            stickers_get,
+            sticker_favorite,
+            sticker_buy,
+            calendar_list,
+            calendar_status,
+            ai_status,
+            ai_configure,
+            ai_save_key,
+            ai_clear_key,
+            ai_consent,
+            ai_test,
+            social_delete,
+            autostart_get,
+            autostart_set
         ])
         .run(tauri::generate_context!())
         .expect("error while running Japanese Mastery");

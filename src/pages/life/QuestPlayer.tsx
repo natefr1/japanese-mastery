@@ -15,7 +15,8 @@ export default function QuestPlayer({ quest, onExit }: { quest: QuestDef; onExit
   const { prefs } = useAppData();
   const [seed] = useState(() => Math.floor(Math.random() * 1e9));
   const [s, setS] = useState<QuestState>(() => startQuest(quest, seed));
-  const [typing, setTyping] = useState(prefs.challenge === "challenging");
+  // Typed-first: you write your own reply; example replies are an optional hint.
+  const [typing, setTyping] = useState(true);
   const [text, setText] = useState("");
   const [showEn, setShowEn] = useState(prefs.showEnglish);
   const [finished, setFinished] = useState<{ reward: QuestReward | null; error?: string } | null>(null);
@@ -106,7 +107,7 @@ export default function QuestPlayer({ quest, onExit }: { quest: QuestDef; onExit
           )}
           {!s.ended && canType && (
             <button className="btn small ghost" onClick={() => setTyping((t) => !t)}>
-              {typing ? "Show choices instead" : "⌨ Type my own reply (IME or romaji)"}
+              {typing ? "💡 Stuck? Show example replies" : "⌨ Back to typing my own reply"}
             </button>
           )}
         </div>

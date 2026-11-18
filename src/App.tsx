@@ -19,6 +19,7 @@ import ListeningLab from "./pages/study/ListeningLab";
 import StatsPage from "./pages/study/StatsPage";
 import ReaderPage from "./pages/study/ReaderPage";
 import Seikatsu from "./pages/life/Seikatsu";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 const NAV: { route: Page; label: string; jp: string; icon: string; key: string }[] = [
   { route: "home", label: "Home", jp: "ホーム", icon: "home", key: "1" },
@@ -127,7 +128,7 @@ export default function App() {
       <AppDataProvider>
       <NavContext.Provider value={{ route, go: setRoute }}>
         <UpdateNotifier onOpen={() => setRoute({ page: "settings" })} />
-        <div className={`shell${route.sub === "session" || route.sub === "quest" ? " focus-mode" : ""}`}>
+        <div className={`shell${route.sub === "session" ? " focus-mode" : ""}`}>
           <nav className="sidebar" aria-label="Main">
             <div className="brand">
               <div className="brand-mark">学</div>
@@ -154,13 +155,15 @@ export default function App() {
               Local-first · offline
             </div>
           </nav>
-          <main className="main" key={route.page === "study" || route.page === "life" ? navKey : route.page}>
+          <main className="main" key={route.page === "study" ? navKey : route.page}>
+            <ErrorBoundary label={route.page} onReset={() => setRoute({ page: route.page })}>
             {route.page === "home" && <Home status={status} go={(p) => setRoute({ page: p })} />}
             {route.page === "study" && <StudyRoot route={route} go={setRoute} />}
             {route.page === "life" && <Seikatsu />}
             {route.page === "vocab" && <Vocabulary />}
             {route.page === "data" && <DataPage status={status} onRestored={refreshStatus} />}
             {route.page === "settings" && <SettingsPage status={status} />}
+            </ErrorBoundary>
           </main>
         </div>
       </NavContext.Provider>

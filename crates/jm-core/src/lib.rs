@@ -8,16 +8,22 @@
 //! reused by a future mobile companion or sync service.
 
 pub mod backup;
+pub mod chat;
 pub mod content;
 pub mod db;
 pub mod error;
 pub mod events;
 pub mod game;
 pub mod io;
+pub mod memory;
 pub mod migrations;
+pub mod npc;
+pub mod prompt;
 pub mod reading;
+pub mod scheduler;
 pub mod seed;
 pub mod settings;
+pub mod social;
 pub mod study;
 pub mod vocab;
 

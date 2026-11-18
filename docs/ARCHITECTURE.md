@@ -77,6 +77,26 @@ jm-core study.rs            one transaction: rev check + range validation + log 
 
 Authored graph of nodes. Each node has lines and either choices or typed input (intent patterns, matched after kana/romaji normalisation). It also supports `random` sequences (seeded PRNG, for replay variation), flags that change later lines, objectives (some only exist if their node was visited), and a success predicate per quest. Results separate **language feedback** (what to say more naturally) from **social effects** (tone → friendship). The engine is pure and unit-tested, and the UI is just a renderer.
 
+## Social layer (v0.3.0)
+
+**jm-core (pure, tested, no network):**
+- `npc.rs` — 8 character profiles (`seed/npc_v1.json`), relationship state (closeness, trust, shared experiences, meaningful days; ≤6 updates/day, clamped deltas), formality stage per character with its own start/max/thresholds and a group offset.
+- `chat.rs` — conversations, messages (`sent | scheduled | delivered`), receipts, typing (a scheduled row whose `typing_from` has passed), reactions, drafts, search, notifications, calls log, stickers, calendar, review observations, AI usage.
+- `prompt.rs` — builds one prompt (system + user) per reply from: character profiles, current formality, a few retrieved memories, rolling summary, the last ~16 messages, local time, player name/status/level note. Parses the model's JSON strictly (caps: 5 bubbles DM, 4 group, 240 chars each; unknown stickers dropped). `plan_timing` turns a reply into read time, typing windows and delivery times.
+- `memory.rs` — dedupe, relevance retrieval (keyword/CJK-bigram overlap + importance + confidence + verified − age).
+- `scheduler.rs` — decides unprompted messages within hard limits (quiet hours, daily cap, gap, budgets, no double-texting, active hours) and records them as deduped events.
+- `social.rs` — `prepare_reply` / `prepare_event` (DB → Job with prompt), `apply` (completion → scheduled rows, receipts, reaction, plan, memories, relationship), review/hint/summary helpers, and `Config` (one settings value, sanitised).
+
+**src-tauri:**
+- `ai.rs` — Anthropic Messages API (`POST /v1/messages`, `anthropic-version: 2023-06-01`) or OpenAI-compatible `/chat/completions`. Keys via `keyring` (Windows Credential Manager), never in settings/backups/logs. Errors are classified: not-ready (nothing sent), offline (retry with back-off), provider (shown to you).
+- `engine.rs` — the runtime loop while the process lives: deliver due rows every second and emit `chat-changed`; every 2 s start replies for chats with pending player messages (debounced 1.8 s, one in flight per chat, DB lock never held across HTTP); every 30 s run due scheduler events; every 5 min a scheduler tick. Windows notifications when unfocused and outside quiet hours.
+- Tray, close-to-tray, single instance, opt-in autostart (`--minimized`).
+
+**Frontend:** `lib/game/worldNav.ts` (state machine + store), `pages/life/Seikatsu.tsx` (world layer, menus, panels), `Explore.tsx` (canvas exploration), `pages/life/phone/*` (ハナシ).
+
+### AI cost and config
+Each friend reply is one request (~2–4k input tokens, ≤800 output). Summaries run every 24 messages; reviews use the review model. With the defaults (Haiku-class chat model, 200 requests/day cap, 20 for unprompted messages) a heavy day of chatting is on the order of cents; check current pricing on Anthropic's site. A local Ollama/LM Studio model costs nothing and keeps everything on your PC, at lower quality. Set it all in Phone → 設定 → AI.
+
 ## Reading coverage (lib/reading)
 
 kuromoji (IPADIC, offline) tokenizes text. Each token's dictionary form or reading is looked up against your vocabulary and its recognition card, giving known (Review state, stability ≥7d), learning, queued (in deck, not started) or unknown. Names are excluded. Particles, auxiliaries and dependent nouns count as grammar (known). Comfort labels follow reading research: 95% coverage is minimal comprehension, 98% comfortable.
@@ -93,9 +113,12 @@ kuromoji (IPADIC, offline) tokenizes text. Each token's dictionary form or readi
 
 ## Privacy
 
-- No network access is needed or used in M1. The CSP allows only the app itself and the IPC channel.
-- `settings` refuses keys that look like secrets. API keys (M5) will go in the OS credential store via the `keyring` crate (Windows Credential Manager).
-- The AI layer (M5) will send only an explicit, minimal context: the current conversation, a few relevant memory facts, and a short list of target vocabulary. It never sends the database.
+- The webview CSP allows only the app itself and IPC; all network calls (updates, AI) are made from Rust.
+- `settings` refuses keys that look like secrets. AI keys live in Windows Credential Manager (`keyring`).
+- Nothing goes to an AI provider until you pick one **and** agree on the consent screen (consent is tied to the provider; switching asks again).
+- Per request it sends only: that one chat's recent messages + summary, a few of that character's memories about you, your display name/status/level note, the fictional profile and the time of day. Never the vocabulary, reviews, other chats or backups.
+- Conversation text is never logged. Error boundaries log the error message only.
+- Delete controls: per-chat history, per-character memories (single/all), all chats, all memories, all review notes.
 
 ## Future: more languages (Korean, Chinese)
 

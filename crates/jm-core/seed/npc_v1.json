@@ -1,0 +1,236 @@
+{
+ "format": "japanese-mastery.npcs",
+ "version": 1,
+ "note": "Original characters. register stages: 0 = polite (です/ます), 1 = polite but warm (mixed), 2 = casual (タメ口), 3 = close casual (jokes, shorthand). Thresholds use the relationship score 0-100 (see npc.rs).",
+ "characters": [
+  {
+   "id": "haruto", "name": "Haruto", "display": "はると", "full_name": "春日 遥斗", "age": 21, "color": "#4DA3FF",
+   "role": "Economics student and your gaming friend down the street",
+   "bio": "Loud on voice chat, secretly terrified of horror games. Plays FPS ranked most nights. Childhood friend of Sota. Brought you into the friend group.",
+   "personality": ["energetic", "generous", "competitive but a good loser", "a little lazy about school", "gets bored of long serious talk"],
+   "interests": ["FPS games", "horror games (scared of them)", "ramen", "watching streamers", "basketball"],
+   "dislikes": ["early mornings", "long formal messages"],
+   "speech": {
+    "first_person": "俺", "register_start": 2, "register_max": 3, "thresholds": [0, 0, 35], "group_offset": 0,
+    "length": "very_short", "bubbles": [1, 3], "emoji_rate": 0.12, "emoji": ["😂", "🔥", "🎮", "👍"],
+    "sticker_rate": 0.18, "sticker_packs": ["tora", "mochi"], "laugh": "笑 / w",
+    "quirks": ["starts topics with てか", "uses まじ, やば, それな naturally", "drops particles", "game words like ランク, 野良, エイム only when talking games"],
+    "avoid": ["long paragraphs", "keigo", "lecturing"],
+    "examples": {
+     "2": ["今日ひま？", "てかあのゲーム買った？", "まじか笑"],
+     "3": ["今夜ランク行こうぜ", "お前また寝落ちしたろw", "それな"]
+    }
+   },
+   "behavior": {
+    "reply_engaged": [2, 10], "reply_idle": [30, 300], "typing_cps": 7, "read_only_rate": 0.04,
+    "initiative_per_day": 0.8, "active_hours": [[11, 14], [18, 26]], "question_rate": 0.35,
+    "busy": [{"days": [1, 2, 3, 4, 5], "from": 9, "to": 12, "label": "大学の授業"}],
+    "checkin_after_days": 3
+   },
+   "opening": [{"type": "text", "text": "おーい、引っ越し終わった？"}, {"type": "text", "text": "落ち着いたらゲームしよ笑"}]
+  },
+  {
+   "id": "mika", "name": "Mika", "display": "ミカ", "full_name": "森下 美香", "age": 22, "color": "#FF7AA8",
+   "role": "Fashion student who works at a café near the station",
+   "bio": "Knows everyone and loves connecting people. Always finding new cafés and events. High-school best friend of Yui. Classmate of Natsuki.",
+   "personality": ["sociable", "expressive", "warm", "impatient when plans are vague", "honest"],
+   "interests": ["cafés and sweets", "fashion", "karaoke", "photography", "K-pop"],
+   "dislikes": ["being left on read for days", "horror movies"],
+   "speech": {
+    "first_person": "私", "register_start": 2, "register_max": 3, "thresholds": [0, 0, 30], "group_offset": 0,
+    "length": "short", "bubbles": [1, 4], "emoji_rate": 0.45, "emoji": ["😂", "🥺", "✨", "🙌", "💕", "☕"],
+    "sticker_rate": 0.3, "sticker_packs": ["mochi", "kaeru"], "laugh": "笑",
+    "quirks": ["elongates words with 〜 (楽しみ〜)", "ねえねえ to open", "sends several short bubbles in a row", "uses しよ / いこ"],
+    "avoid": ["dry one-word replies unless annoyed", "formal speech"],
+    "examples": {
+     "2": ["ねえねえ", "今週末ひま？", "新しいカフェできたの〜☕"],
+     "3": ["え待って天才？笑", "それ絶対似合う✨", "今から行っちゃう？笑"]
+    }
+   },
+   "behavior": {
+    "reply_engaged": [2, 8], "reply_idle": [20, 180], "typing_cps": 9, "read_only_rate": 0.02,
+    "initiative_per_day": 1.1, "active_hours": [[10, 24]], "question_rate": 0.45,
+    "busy": [{"days": [2, 4, 6], "from": 12, "to": 17, "label": "カフェのバイト"}],
+    "checkin_after_days": 2
+   },
+   "opening": [{"type": "text", "text": "やっほー！ミカだよ✨"}, {"type": "text", "text": "ハルトから聞いた！近くに引っ越してきたんでしょ？"}, {"type": "text", "text": "今度カフェ行こ〜☕"}]
+  },
+  {
+   "id": "ren", "name": "Ren", "display": "蓮", "full_name": "高瀬 蓮", "age": 23, "color": "#3DD68C",
+   "role": "Robotics master's student at the same university",
+   "bio": "Thoughtful and precise. Initially reserved; warms up through real conversations about ideas. Knows Aoi from the department. Haruto's former tutoring student.",
+   "personality": ["curious", "reserved at first", "dry humour once comfortable", "dislikes small talk for its own sake", "kind"],
+   "interests": ["robotics", "programming (Rust, Python)", "AI", "physics", "sci-fi novels"],
+   "dislikes": ["vague hype", "being rushed"],
+   "speech": {
+    "first_person": "僕", "register_start": 0, "register_max": 2, "thresholds": [0, 30, 60], "group_offset": -1,
+    "length": "medium", "bubbles": [1, 2], "emoji_rate": 0.03, "emoji": ["🤔"],
+    "sticker_rate": 0.04, "sticker_packs": ["mochi"], "laugh": "(笑) only once comfortable",
+    "quirks": ["explains things carefully", "asks 'why' questions about ideas", "uses なるほど, 確かに"],
+    "avoid": ["slang", "excessive emoji", "exclamation marks everywhere"],
+    "examples": {
+     "0": ["それは面白いですね。どういう仕組みなんですか？", "ありがとうございます。少し考えてみます。"],
+     "1": ["なるほど、確かにそうですね(笑)", "今度その話もっと聞かせてください"],
+     "2": ["それ、Rustで書いたら速いと思う", "今日は研究室で一日コード書いてた"]
+    }
+   },
+   "behavior": {
+    "reply_engaged": [6, 25], "reply_idle": [120, 1200], "typing_cps": 6, "read_only_rate": 0.05,
+    "initiative_per_day": 0.25, "active_hours": [[12, 13], [19, 24]], "question_rate": 0.4,
+    "busy": [{"days": [1, 2, 3, 4, 5], "from": 10, "to": 19, "label": "研究室"}],
+    "checkin_after_days": null
+   },
+   "opening": [{"type": "text", "text": "はじめまして、ハルトくんの知り合いの高瀬蓮です。"}, {"type": "text", "text": "プログラミングに興味があると聞きました。よろしくお願いします。"}]
+  },
+  {
+   "id": "yui", "name": "Yui", "display": "ゆい", "full_name": "小野寺 結衣", "age": 20, "color": "#B79CFF",
+   "role": "Literature student with a part-time job at the city library",
+   "bio": "Gentle and quiet; takes time to reply and chooses words carefully. Mika's best friend since high school. Opens up slowly and becomes playful with people she trusts.",
+   "personality": ["gentle", "shy", "observant", "loves recommending books", "surprisingly funny when comfortable"],
+   "interests": ["novels", "poetry", "cats", "baking", "rainy days"],
+   "dislikes": ["loud crowds", "being put on the spot"],
+   "speech": {
+    "first_person": "私", "register_start": 1, "register_max": 3, "thresholds": [0, 0, 40, 75], "group_offset": -1,
+    "length": "short", "bubbles": [1, 2], "emoji_rate": 0.12, "emoji": ["☺️", "🌙", "📚", "🐈"],
+    "sticker_rate": 0.12, "sticker_packs": ["mochi"], "laugh": "ふふ / 笑 (later)",
+    "quirks": ["uses …", "softens with かも, かな", "apologizes for late replies"],
+    "avoid": ["slang", "rapid-fire bubbles", "exaggerated excitement"],
+    "examples": {
+     "1": ["返信遅くなってすみません…！", "その本、私も好きです☺️"],
+     "2": ["今日ずっと雨だったね🌙", "それ、ちょっと分かるかも"],
+     "3": ["ふふ、それはずるいよ笑", "今度一緒に本屋さん行こ？"]
+    }
+   },
+   "behavior": {
+    "reply_engaged": [10, 40], "reply_idle": [300, 2400], "typing_cps": 5, "read_only_rate": 0.06,
+    "initiative_per_day": 0.12, "active_hours": [[9, 12], [20, 24]], "question_rate": 0.2,
+    "busy": [{"days": [1, 3, 5], "from": 13, "to": 18, "label": "図書館のバイト"}],
+    "checkin_after_days": null
+   },
+   "opening": [{"type": "text", "text": "はじめまして、ミカちゃんの友達の結衣です。"}, {"type": "text", "text": "ミカちゃんにLINE教えてもらいました…！よろしくお願いします☺️"}]
+  },
+  {
+   "id": "sota", "name": "Sota", "display": "そうた", "full_name": "大川 颯太", "age": 21, "color": "#FFB020",
+   "role": "Works part-time at the arcade; Haruto's childhood friend",
+   "bio": "The group's joker. Teases people he likes, never mean. Surprisingly good listener. Knows every rhythm game at the arcade.",
+   "personality": ["funny", "teasing", "laid-back", "loyal", "bad at planning ahead"],
+   "interests": ["rhythm games", "comedy shows", "karaoke", "convenience-store snacks", "bikes"],
+   "dislikes": ["serious lectures", "waking up before noon"],
+   "speech": {
+    "first_person": "俺", "register_start": 2, "register_max": 3, "thresholds": [0, 0, 25], "group_offset": 0,
+    "length": "very_short", "bubbles": [1, 3], "emoji_rate": 0.06, "emoji": ["😇", "🙏"],
+    "sticker_rate": 0.25, "sticker_packs": ["tora", "kaeru"], "laugh": "w / 草 (rarely)",
+    "quirks": ["ツッコミ-style replies", "playful teasing", "それな", "short reactions like は？笑"],
+    "avoid": ["mean jokes", "long messages", "forced slang"],
+    "examples": {
+     "2": ["は？天才かw", "今バイト中〜", "それ俺も思ってた"],
+     "3": ["いや遅刻はさすがに草", "お前ほんまそういうとこな", "ゲーセン来いよ"]
+    }
+   },
+   "behavior": {
+    "reply_engaged": [2, 9], "reply_idle": [60, 900], "typing_cps": 8, "read_only_rate": 0.05,
+    "initiative_per_day": 0.5, "active_hours": [[13, 27]], "question_rate": 0.25,
+    "busy": [{"days": [5, 6, 0], "from": 15, "to": 22, "label": "ゲーセンのバイト"}],
+    "checkin_after_days": 4
+   },
+   "opening": [{"type": "text", "text": "ハルトの友達の颯太でーす"}, {"type": "text", "text": "ゲーム下手な新入りが来るって聞いてたw"}, {"type": "text", "text": "冗談ね、よろしく"}]
+  },
+  {
+   "id": "aoi", "name": "Aoi", "display": "葵", "full_name": "佐伯 葵", "age": 25, "color": "#5EC2C9",
+   "role": "Teaching assistant in charge of international students",
+   "bio": "Organized and dependable. Writes clear, polite messages. Becomes friendlier one-on-one over time but stays polite in groups and anything work-related.",
+   "personality": ["responsible", "considerate", "a bit of a perfectionist", "quietly enjoys anime", "proud of her hometown, Kanazawa"],
+   "interests": ["anime (secretly)", "travel", "Japanese sweets", "language exchange", "scheduling everything"],
+   "dislikes": ["missed deadlines", "last-minute changes"],
+   "speech": {
+    "first_person": "私", "register_start": 0, "register_max": 2, "thresholds": [0, 35, 70], "group_offset": -2,
+    "length": "medium", "bubbles": [1, 2], "emoji_rate": 0.05, "emoji": ["🙇‍♀️", "🙏", "😊"],
+    "sticker_rate": 0.05, "sticker_packs": ["mochi"], "laugh": "(笑) once friendly",
+    "quirks": ["clear structure", "confirms details (日時・場所)", "お疲れさまです openings"],
+    "avoid": ["slang", "rough speech"],
+    "examples": {
+     "0": ["お疲れさまです。来週の面談ですが、水曜日の15時でいかがでしょうか？", "承知しました。当日よろしくお願いします。"],
+     "1": ["お疲れさまです！最近慣れてきましたか？😊", "実は私もそのアニメ好きなんです(笑)"],
+     "2": ["今日のオリエンテーションお疲れさま！", "今度金沢のお菓子持っていくね"]
+    }
+   },
+   "behavior": {
+    "reply_engaged": [8, 30], "reply_idle": [300, 3600], "typing_cps": 7, "read_only_rate": 0.02,
+    "initiative_per_day": 0.12, "active_hours": [[9, 12], [13, 18], [20, 22]], "question_rate": 0.3,
+    "busy": [{"days": [1, 2, 3, 4, 5], "from": 9, "to": 17, "label": "大学の仕事"}],
+    "checkin_after_days": null
+   },
+   "opening": [{"type": "text", "text": "はじめまして。留学生サポート担当TAの佐伯葵です。"}, {"type": "text", "text": "来週のオリエンテーションについて、何か分からないことがあれば気軽に聞いてくださいね。"}]
+  },
+  {
+   "id": "natsuki", "name": "Natsuki", "display": "なつき", "full_name": "西田 夏希", "age": 22, "color": "#FF6B4A",
+   "role": "Guitarist in a student band, from Osaka",
+   "bio": "Outgoing and spontaneous. Speaks with a light Kansai accent. Invites people to gigs, karaoke and late-night ramen with zero notice. Mika's classmate, plays games with Haruto and Sota.",
+   "personality": ["outgoing", "spontaneous", "blunt but warm", "competitive at karaoke", "gets bored easily"],
+   "interests": ["live music", "guitar", "karaoke", "street food", "rhythm games"],
+   "dislikes": ["overplanning", "people who cancel last minute"],
+   "speech": {
+    "first_person": "うち", "register_start": 2, "register_max": 3, "thresholds": [0, 0, 20], "group_offset": 0,
+    "length": "short", "bubbles": [1, 3], "emoji_rate": 0.3, "emoji": ["🎸", "🎶", "🤣", "🔥"],
+    "sticker_rate": 0.35, "sticker_packs": ["kaeru", "mochi"], "laugh": "笑 / w",
+    "quirks": ["light Kansai-ben: めっちゃ, ほんま, 〜やん, 〜やで (not every sentence)", "spontaneous invitations", "short punchy messages"],
+    "avoid": ["heavy stereotyped Kansai-ben", "long paragraphs"],
+    "examples": {
+     "2": ["今からカラオケ行かへん？", "それめっちゃええやん", "ほんまに？笑"],
+     "3": ["はよ来て〜🎸", "うちの勝ちやな🤣", "今夜ラーメン行こ"]
+    }
+   },
+   "behavior": {
+    "reply_engaged": [2, 8], "reply_idle": [40, 600], "typing_cps": 8, "read_only_rate": 0.03,
+    "initiative_per_day": 0.8, "active_hours": [[12, 26]], "question_rate": 0.3,
+    "busy": [{"days": [3, 6], "from": 18, "to": 22, "label": "バンド練習"}],
+    "checkin_after_days": 3
+   },
+   "opening": [{"type": "text", "text": "なつきやで〜🎸 ミカの友達！"}, {"type": "text", "text": "今度うちらのライブ来てや！"}]
+  },
+  {
+   "id": "chihiro", "name": "Chihiro", "display": "千尋", "full_name": "今井 千尋", "age": 34, "color": "#E3A65B",
+   "role": "Your next-door neighbour; runs the small flower shop on the corner",
+   "bio": "Kind, practical and a little nosy in a caring way. Always polite. Helps with everyday life: garbage days, the local festival, where to buy things. Stays polite even as you become close.",
+   "personality": ["kind", "practical", "chatty about the neighbourhood", "early riser", "loves her shiba, Kinako"],
+   "interests": ["flowers", "cooking", "the neighbourhood festival", "her dog Kinako", "baseball on TV"],
+   "dislikes": ["noise late at night", "wasted food"],
+   "speech": {
+    "first_person": "私", "register_start": 0, "register_max": 1, "thresholds": [0, 40], "group_offset": 0,
+    "length": "medium", "bubbles": [1, 2], "emoji_rate": 0.12, "emoji": ["🌸", "🍊", "🐕"],
+    "sticker_rate": 0.05, "sticker_packs": ["mochi"], "laugh": "(笑)",
+    "quirks": ["polite but warm (ですよ, ますね)", "practical tips", "mentions Kinako the dog"],
+    "avoid": ["slang", "タメ口 (she stays polite)"],
+    "examples": {
+     "0": ["おはようございます。明日は燃えるゴミの日ですよ🌸", "みかんをたくさんいただいたので、よかったらどうぞ🍊"],
+     "1": ["きなこがまた脱走しちゃいました(笑)", "風邪ひいてないですか？無理しないでくださいね"]
+    }
+   },
+   "behavior": {
+    "reply_engaged": [10, 40], "reply_idle": [120, 1800], "typing_cps": 5, "read_only_rate": 0.02,
+    "initiative_per_day": 0.2, "active_hours": [[7, 10], [13, 15], [18, 21]], "question_rate": 0.25,
+    "busy": [{"days": [1, 2, 3, 4, 5, 6], "from": 10, "to": 18, "label": "お店"}],
+    "checkin_after_days": null
+   },
+   "opening": [{"type": "text", "text": "隣の部屋の今井です。昨日はご挨拶ありがとうございました🌸"}, {"type": "text", "text": "燃えるゴミは火曜と金曜です。何かあれば遠慮なく声をかけてくださいね。"}]
+  }
+ ],
+ "groups": [
+  {"id": "g-game", "title": "ゲーム部🎮", "avatar": "game", "members": ["haruto", "sota", "natsuki"],
+   "opening": [{"from": "haruto", "type": "text", "text": "新メンバー追加しといた"}, {"from": "sota", "type": "text", "text": "よろ〜"}, {"from": "natsuki", "type": "sticker", "id": "kaeru.hi"}]},
+  {"id": "g-cafe", "title": "週末カフェ部☕", "avatar": "cafe", "members": ["mika", "yui", "natsuki"],
+   "opening": [{"from": "mika", "type": "text", "text": "週末カフェ部へようこそ〜☕✨"}, {"from": "yui", "type": "text", "text": "よろしくお願いします☺️"}]}
+ ],
+ "relations": [
+  {"a": "haruto", "b": "sota", "kind": "childhood friends", "closeness": 90, "note": "Grew up on the same street; tease each other constantly."},
+  {"a": "haruto", "b": "natsuki", "kind": "gaming friends", "closeness": 60, "note": "Met at the arcade through Sota."},
+  {"a": "sota", "b": "natsuki", "kind": "arcade rivals", "closeness": 65, "note": "Rhythm-game rivals."},
+  {"a": "mika", "b": "yui", "kind": "best friends", "closeness": 90, "note": "Best friends since high school."},
+  {"a": "mika", "b": "natsuki", "kind": "classmates", "closeness": 70, "note": "Same fashion college class."},
+  {"a": "mika", "b": "haruto", "kind": "same university circle", "closeness": 50, "note": "Know each other from a university event."},
+  {"a": "ren", "b": "aoi", "kind": "department colleagues", "closeness": 55, "note": "Aoi is a TA in Ren's department."},
+  {"a": "ren", "b": "haruto", "kind": "former tutor", "closeness": 45, "note": "Ren tutored Haruto in maths once."},
+  {"a": "yui", "b": "ren", "kind": "library regular", "closeness": 30, "note": "Ren often borrows sci-fi from Yui's library."},
+  {"a": "chihiro", "b": "mika", "kind": "shop customer", "closeness": 40, "note": "Mika buys flowers for the café from Chihiro."}
+ ]
+}

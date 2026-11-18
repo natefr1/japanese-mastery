@@ -19,7 +19,7 @@ pub const SESSION_MIN_CARDS: i64 = 10;
 pub const DAILY_GOAL_XP: i64 = 20;
 pub const DAILY_GOAL_YEN: i64 = 30;
 
-pub const CHARACTERS: &[&str] = &["haruto", "mika", "ren"];
+pub const CHARACTERS: &[&str] = &["haruto", "mika", "ren", "yui", "sota", "aoi", "natsuki", "chihiro"];
 
 /// Known quests and their rewards. The client cannot choose its own payout.
 pub struct QuestDef {
@@ -245,6 +245,8 @@ pub fn complete_quest(conn: &Connection, dev: &str, q: QuestCompletion, day: &st
                 "UPDATE characters SET relationship = MAX(0, MIN(100, relationship + ?2)), updated_at=?3, rev=rev+1, device_id=?4 WHERE id=?1",
                 params![ch, d, now, dev],
             )?;
+            // Keep the 生活 relationship model in step (bounded and rate-limited there too).
+            let _ = crate::npc::apply_delta(conn, dev, ch, &crate::npc::RelDelta { closeness: d as f64, trust: 0.0, shared_experience: true }, day);
             out.relationship_applied.push((ch.clone(), d));
         }
     } else if !already(conn, "quest_replay", def.id, Some(day))? && !already(conn, "quest", def.id, Some(day))? {

@@ -1,47 +1,101 @@
-// 生活: the life-sim hub. A small neighbourhood map, your phone, friends and passport.
-import { useEffect, useState } from "react";
+// 生活: the life-sim. The world (walkable neighbourhood or a quest scene) is the
+// base layer and always stays mounted; menus and the phone are overlays on top,
+// driven by the worldNav state machine. Closing an overlay always reveals the world.
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { api } from "../../lib/api";
 import { localDay } from "../../lib/day";
-import { CHARACTERS, characterById } from "../../lib/game/characters";
 import { QUESTS, questById } from "../../lib/game/questData";
-import type { CharacterState, PassportEntry, PlayerState, QuestProgress } from "../../lib/learning/types";
+import { worldStore, type Panel } from "../../lib/game/worldNav";
+import type { PassportEntry, PlayerState, QuestProgress } from "../../lib/learning/types";
 import { useNav } from "../../lib/nav";
+import { social, useChatChanged } from "../../lib/social/api";
+import type { CalendarEvent, ConversationView, NpcView, Stickers } from "../../lib/social/types";
 import { fmtDate, Modal, useToast } from "../../components/ui";
-import { Avatar } from "./Avatar";
+import { ErrorBoundary } from "../../components/ErrorBoundary";
+import Explore, { type Door } from "./Explore";
 import QuestPlayer from "./QuestPlayer";
+import Phone, { useWorldNav } from "./phone/Phone";
+import { NpcAvatar, StickerArt } from "./phone/art";
+import { bondLabel, REGISTER_EN, REGISTER_JA } from "./phone/Profile";
 
-type Tab = "quests" | "friends" | "passport";
+const MENU: { panel: Panel | "phone"; label: string; jp: string; key?: string }[] = [
+  { panel: "map", label: "Map", jp: "地図", key: "M" },
+  { panel: "phone", label: "Phone", jp: "スマホ", key: "P" },
+  { panel: "relationships", label: "Friends", jp: "友だち", key: "F" },
+  { panel: "journal", label: "Journal", jp: "日誌", key: "J" },
+  { panel: "calendar", label: "Calendar", jp: "予定", key: "C" },
+  { panel: "inventory", label: "Inventory", jp: "持ち物", key: "I" },
+  { panel: "apartment", label: "Apartment", jp: "部屋" },
+  { panel: "achievements", label: "Achievements", jp: "実績" },
+  { panel: "passport", label: "Passport", jp: "パスポート" },
+];
 
 export default function Seikatsu() {
   const { route, go } = useNav();
   const { toast } = useToast();
+  const nav = useWorldNav();
   const [player, setPlayer] = useState<PlayerState | null>(null);
   const [progress, setProgress] = useState<QuestProgress[]>([]);
-  const [chars, setChars] = useState<CharacterState[]>([]);
   const [passport, setPassport] = useState<PassportEntry[]>([]);
-  const [tab, setTab] = useState<Tab>("quests");
-  const [phone, setPhone] = useState(false);
+  const [chats, setChats] = useState<ConversationView[]>([]);
   const [addReal, setAddReal] = useState(false);
 
-  const load = () =>
-    Promise.all([api.playerState(localDay()), api.questProgress(), api.characters(), api.passport()])
-      .then(([p, q, c, pp]) => { setPlayer(p); setProgress(q); setChars(c); setPassport(pp); })
-      .catch((e: Error) => toast(e.message, { kind: "error" }));
-  useEffect(() => { load(); }, [route.questId]); // eslint-disable-line react-hooks/exhaustive-deps
+  const load = useCallback(() =>
+    Promise.all([api.playerState(localDay()), api.questProgress(), api.passport()])
+      .then(([p, q, pp]) => { setPlayer(p); setProgress(q); setPassport(pp); })
+      .catch((e: Error) => toast(e.message, { kind: "error" })), [toast]);
+  const loadChats = useCallback(() => social.chats().then(setChats).catch(() => {}), []);
+  useEffect(() => { load(); loadChats(); }, [load, loadChats, nav.scene.kind]);
+  useChatChanged(() => loadChats());
 
-  const playing = route.sub === "quest" && route.questId ? questById(route.questId) : undefined;
-  if (playing) return <QuestPlayer quest={playing} onExit={() => go({ page: "life" })} />;
+  // Deep links from elsewhere in the app (e.g. Home → "play this quest") become world actions.
+  useEffect(() => {
+    if (route.sub === "quest" && route.questId && questById(route.questId)) {
+      worldStore.dispatch({ t: "quest.start", questId: route.questId });
+      go({ page: "life" });
+    }
+  }, [route.sub, route.questId, go]);
 
-  const play = (id: string) => go({ page: "life", sub: "quest", questId: id });
+  // World hotkeys (ignored while typing or while the phone is open; the phone handles its own keys).
+  useEffect(() => {
+    const k = (e: KeyboardEvent) => {
+      if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
+      if ((e.target as HTMLElement)?.closest?.("input, textarea, select, [contenteditable]")) return;
+      if (document.querySelector(".modal-backdrop")) return;
+      const st = worldStore.get();
+      if (e.key === "Escape" && !st.phone.open && st.panel) {
+        e.preventDefault();
+        worldStore.dispatch({ t: "panel.close" });
+        return;
+      }
+      if (st.phone.open || st.scene.kind === "quest") return;
+      const item = MENU.find((m) => m.key && m.key.toLowerCase() === e.key.toLowerCase());
+      if (!item) return;
+      e.preventDefault();
+      if (item.panel === "phone") worldStore.dispatch({ t: "phone.open" });
+      else worldStore.dispatch(st.panel === item.panel ? { t: "panel.close" } : { t: "panel.open", panel: item.panel });
+    };
+    window.addEventListener("keydown", k);
+    return () => window.removeEventListener("keydown", k);
+  }, []);
+
+  const play = (id: string) => worldStore.dispatch({ t: "quest.start", questId: id });
   const prog = (id: string) => progress.find((p) => p.quest_id === id);
+  const unread = chats.filter((c) => !c.muted && !c.archived).reduce((a, c) => a + c.unread, 0);
   const levelPct = player ? ((player.xp - player.level_floor) / Math.max(1, player.level_ceil - player.level_floor)) * 100 : 0;
+  const playing = nav.scene.kind === "quest" ? questById(nav.scene.questId) : undefined;
+
+  const onDoor = useCallback((d: Door) => {
+    if (d.id === "konbini") worldStore.dispatch({ t: "quest.start", questId: "konbini-first-purchase" });
+    else if (d.id === "apartment") worldStore.dispatch({ t: "panel.open", panel: "apartment" });
+  }, []);
 
   return (
     <div className="page life">
       <div className="page-head">
         <div>
           <h1 className="page-title">生活<span className="jp-sub">Seikatsu · everyday life</span></h1>
-          <p className="page-desc">Use your Japanese in real situations. Scenes are authored and work offline. AI conversations come in Milestone 5.</p>
+          <p className="page-desc">Walk around, go into places, and text your friends — in your own Japanese.</p>
         </div>
         {player && (
           <div className="hud">
@@ -55,122 +109,245 @@ export default function Seikatsu() {
         )}
       </div>
 
-      <div className="life-grid">
-        <section className="map-panel">
-          <WorldMap
-            onHome={() => setPhone(true)}
-            onKonbini={() => play("konbini-first-purchase")}
-            konbiniDone={(prog("konbini-first-purchase")?.completions ?? 0) > 0}
-            unread={QUESTS.filter((q) => q.location === "phone" && !prog(q.id)).length}
-          />
-          <p className="faint" style={{ fontSize: 12, margin: "8px 4px 0" }}>Click your apartment to check your phone, or the konbini to go shopping. Dimmed places open in later updates.</p>
-        </section>
+      <nav className="world-menu" aria-label="生活 menu">
+        {MENU.map((m) => {
+          const on = m.panel === "phone" ? nav.phone.open : nav.panel === m.panel;
+          return (
+            <button key={m.panel} className={`wm-btn${on ? " on" : ""}`} title={m.key ? `${m.label} (${m.key})` : m.label}
+              onClick={() => m.panel === "phone" ? worldStore.dispatch(on ? { t: "phone.close" } : { t: "phone.open" }) : worldStore.dispatch(on ? { t: "panel.close" } : { t: "panel.open", panel: m.panel })}>
+              <span lang="ja">{m.jp}</span><small>{m.label}</small>
+              {m.panel === "phone" && unread > 0 && <span className="wm-badge">{unread > 99 ? "99+" : unread}</span>}
+            </button>
+          );
+        })}
+      </nav>
 
-        <aside className="panel side-tabs">
-          <div className="row" style={{ marginBottom: 10 }}>
-            {(["quests", "friends", "passport"] as Tab[]).map((t) => (
-              <button key={t} className={`chip${tab === t ? " on" : ""}`} onClick={() => setTab(t)}>
-                {{ quests: "Quests", friends: "Friends", passport: "Passport" }[t]}
-              </button>
-            ))}
-          </div>
-
-          {tab === "quests" && (
-            <div className="stack" style={{ gap: 10 }}>
-              {QUESTS.map((q) => {
-                const p = prog(q.id);
-                return (
-                  <div key={q.id} className="quest-row">
-                    <div>
-                      <b lang="ja">{q.titleJp}</b> <span className="faint">{q.title}</span>
-                      <div className="faint" style={{ fontSize: 12.5 }}>{q.summary}</div>
-                      {p && <div className="faint" style={{ fontSize: 12 }}>✓ completed {p.completions}× · best {p.best_score}</div>}
-                    </div>
-                    <button className="btn small primary" onClick={() => play(q.id)}>{p ? "Replay" : "Play"}</button>
-                  </div>
-                );
-              })}
-            </div>
+      <div className="world-stage">
+        <ErrorBoundary label="the world" onReset={() => worldStore.dispatch({ t: "quest.end" })}>
+          {playing ? (
+            <QuestPlayer key={playing.id} quest={playing} onExit={() => { worldStore.dispatch({ t: "quest.end" }); load(); }} />
+          ) : (
+            <Explore onEnter={onDoor} paused={nav.phone.open || !!nav.panel || addReal} />
           )}
+        </ErrorBoundary>
 
-          {tab === "friends" && (
-            <div className="stack" style={{ gap: 12 }}>
-              {CHARACTERS.map((c) => {
-                const st = chars.find((x) => x.id === c.id);
-                return (
-                  <div key={c.id} className={`friend${c.unlocked ? "" : " locked"}`}>
-                    <div className="row" style={{ flexWrap: "nowrap" }}>
-                      <Avatar id={c.id} size={40} />
-                      <div style={{ flex: 1 }}>
-                        <b lang="ja">{c.nameJp}</b> <span className="faint">{c.name}</span>
-                        <div className="bar-track" title="Friendship"><div className="bar-fill" style={{ width: `${st?.relationship ?? 0}%`, background: c.color }} /></div>
-                      </div>
-                    </div>
-                    <div className="faint" style={{ fontSize: 12.5, margin: "6px 0" }}>{c.bio}</div>
-                    {c.unlocked && <div className="faint" style={{ fontSize: 12 }}>Speaks: {c.style}</div>}
-                    {st && st.memories.length > 0 && (
-                      <div className="memories">
-                        <div className="faint" style={{ fontSize: 11.5, textTransform: "uppercase", letterSpacing: ".06em" }}>Remembers about you</div>
-                        {st.memories.map((m) => (
-                          <div key={m.id} className="memory">
-                            <span>{m.fact}</span>
-                            <button className="icon-btn" title="Forget this" onClick={() => api.memoryDelete(m.id).then(load)}>×</button>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+        {nav.panel && (
+          <aside className="world-panel" role="dialog" aria-label={MENU.find((m) => m.panel === nav.panel)?.label}>
+            <header>
+              <b lang="ja">{MENU.find((m) => m.panel === nav.panel)?.jp}</b>
+              <span className="faint">{MENU.find((m) => m.panel === nav.panel)?.label}</span>
+              <span className="spacer" />
+              <button className="icon-btn" onClick={() => worldStore.dispatch({ t: "panel.close" })} aria-label="Close (Esc)">×</button>
+            </header>
+            <div className="world-panel-body">
+              <ErrorBoundary label={nav.panel} compact>
+                <PanelBody panel={nav.panel} progress={progress} passport={passport} player={player} play={play} prog={prog} onAddReal={() => setAddReal(true)} />
+              </ErrorBoundary>
             </div>
-          )}
-
-          {tab === "passport" && (
-            <div className="stack" style={{ gap: 8 }}>
-              <p className="faint" style={{ fontSize: 12.5, margin: 0 }}>Real communication milestones. In-app scenes are marked <b>simulated</b>. Real-life ones are self-reported. Neither is a JLPT result.</p>
-              {passport.length === 0 && <p className="faint">No stamps yet. Finish a scene, or add something you did in real life.</p>}
-              {passport.map((p) => (
-                <div key={p.id} className={`stamp${p.simulated ? "" : " real"}`}>
-                  <b>{p.title}</b>
-                  <span className="faint" style={{ fontSize: 12 }}>{p.simulated ? "simulated" : "real world (self-reported)"} · {fmtDate(p.created_at)}</span>
-                  {p.detail && <span className="faint" style={{ fontSize: 12.5 }}>{p.detail}</span>}
-                </div>
-              ))}
-              <button className="btn small" onClick={() => setAddReal(true)}>+ Add a real-world achievement</button>
-            </div>
-          )}
-        </aside>
+          </aside>
+        )}
       </div>
 
-      {phone && <PhoneHome onClose={() => setPhone(false)} onOpen={(id) => { setPhone(false); play(id); }} progress={progress} />}
+      <Phone />
       {addReal && <AddReal onClose={() => setAddReal(false)} onSaved={() => { setAddReal(false); load(); }} />}
     </div>
   );
 }
 
-function PhoneHome({ onClose, onOpen, progress }: { onClose: () => void; onOpen: (questId: string) => void; progress: QuestProgress[] }) {
-  const threads = QUESTS.filter((q) => q.location === "phone");
+function PanelBody({ panel, progress, passport, player, play, prog, onAddReal }: {
+  panel: Panel; progress: QuestProgress[]; passport: PassportEntry[]; player: PlayerState | null;
+  play: (id: string) => void; prog: (id: string) => QuestProgress | undefined; onAddReal: () => void;
+}) {
+  switch (panel) {
+    case "map": return <MapPanel play={play} konbiniDone={(prog("konbini-first-purchase")?.completions ?? 0) > 0} />;
+    case "relationships": return <Relationships />;
+    case "journal": return <Journal play={play} prog={prog} />;
+    case "calendar": return <CalendarPanel />;
+    case "inventory": return <Inventory player={player} />;
+    case "apartment": return <Apartment />;
+    case "achievements": return <Achievements progress={progress} passport={passport} player={player} />;
+    case "passport": return <PassportPanel passport={passport} onAddReal={onAddReal} />;
+  }
+}
+
+function MapPanel({ play, konbiniDone }: { play: (id: string) => void; konbiniDone: boolean }) {
   return (
-    <Modal narrow title="📱 メッセ" onClose={onClose}>
-      <div className="stack" style={{ gap: 6 }}>
-        {threads.map((q) => {
-          const c = characterById(q.character!)!;
-          const first = q.nodes[q.start]!.lines[0]!;
-          const unread = !progress.find((p) => p.quest_id === q.id);
-          return (
-            <button key={q.id} className="thread" onClick={() => onOpen(q.id)}>
-              <Avatar id={c.id} size={40} />
-              <div style={{ flex: 1, textAlign: "left" }}>
-                <b lang="ja">{c.nameJp}</b>
-                <div className="faint" lang="ja" style={{ fontSize: 13 }}>{first.jp}</div>
+    <div className="stack" style={{ gap: 8 }}>
+      <WorldMap onHome={() => worldStore.dispatch({ t: "panel.open", panel: "apartment" })} onKonbini={() => play("konbini-first-purchase")} konbiniDone={konbiniDone} unread={0} />
+      <p className="faint" style={{ fontSize: 12, margin: 0 }}>Overview of the neighbourhood. Dimmed places open in later updates. Walk there on the street, or click to go straight in.</p>
+    </div>
+  );
+}
+
+function Relationships() {
+  const [npcs, setNpcs] = useState<NpcView[] | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+  useEffect(() => { social.npcs().then(setNpcs).catch((e: Error) => setErr(e.message)); }, []);
+  if (err) return <p className="faint">{err}</p>;
+  return (
+    <div className="stack" style={{ gap: 10 }}>
+      <p className="faint" style={{ fontSize: 12.5, margin: 0 }}>Each friendship has its own history: how close you are, how much they trust you, what you've done together. They talk more casually as it grows.</p>
+      {npcs?.map((n) => {
+        const b = bondLabel(n.score);
+        return (
+          <div key={n.id} className="rel-card">
+            <NpcAvatar id={n.id} color={n.color} size={46} />
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div><b lang="ja">{n.display}</b> <span className="faint">{n.role}</span></div>
+              <div style={{ fontSize: 13 }}><b lang="ja">{b.ja}</b> <span className="faint">· {b.en}</span></div>
+              <div className="faint" style={{ fontSize: 12 }}>Talks to you: <span lang="ja">{REGISTER_JA[n.register_stage]}</span> ({REGISTER_EN[n.register_stage]}) · {n.state.shared_experiences} shared moments · {n.state.meaningful_days} days talking</div>
+            </div>
+            <div className="stack" style={{ gap: 4 }}>
+              <button className="btn small primary" onClick={() => worldStore.dispatch({ t: "phone.open", screen: { s: "chat", id: `dm-${n.id}` } })}>Message</button>
+              <button className="btn small ghost" onClick={() => worldStore.dispatch({ t: "phone.open", screen: { s: "profile", id: n.id } })}>Profile</button>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function Journal({ play, prog }: { play: (id: string) => void; prog: (id: string) => QuestProgress | undefined }) {
+  const [plans, setPlans] = useState<CalendarEvent[]>([]);
+  useEffect(() => { social.calendar().then(setPlans).catch(() => {}); }, []);
+  const open = plans.filter((p) => p.status === "planned");
+  return (
+    <div className="stack" style={{ gap: 14 }}>
+      <section>
+        <h4 className="panel-h">Scenes</h4>
+        <div className="stack" style={{ gap: 10 }}>
+          {QUESTS.map((q) => {
+            const p = prog(q.id);
+            return (
+              <div key={q.id} className="quest-row">
+                <div>
+                  <b lang="ja">{q.titleJp}</b> <span className="faint">{q.title}</span>
+                  <div className="faint" style={{ fontSize: 12.5 }}>{q.summary}</div>
+                  {p && <div className="faint" style={{ fontSize: 12 }}>✓ completed {p.completions}× · best {p.best_score}</div>}
+                </div>
+                <button className="btn small primary" onClick={() => play(q.id)}>{p ? "Replay" : "Play"}</button>
               </div>
-              {unread && <span className="badge">1</span>}
-            </button>
-          );
-        })}
-        <div className="thread locked"><Avatar id="ren" size={40} /><div style={{ flex: 1 }}><b lang="ja">レン</b><div className="faint" style={{ fontSize: 13 }}>Joins in a later chapter</div></div></div>
+            );
+          })}
+        </div>
+      </section>
+      <section>
+        <h4 className="panel-h">Open plans with friends</h4>
+        {open.length === 0 ? <p className="faint" style={{ fontSize: 12.5 }}>None yet. Plans you make in chats (「土曜カフェ行こう」) show up here.</p> :
+          open.map((e) => <div key={e.id} className="plan-row"><b>{e.title}</b><span className="faint">{[e.when_text, e.place].filter(Boolean).join(" · ")}</span></div>)}
+      </section>
+    </div>
+  );
+}
+
+function CalendarPanel() {
+  const [ev, setEv] = useState<CalendarEvent[] | null>(null);
+  const load = () => social.calendar().then(setEv).catch(() => setEv([]));
+  useEffect(() => { load(); }, []);
+  const label: Record<string, string> = { planned: "予定", done: "済み", cancelled: "キャンセル" };
+  return (
+    <div className="stack" style={{ gap: 8 }}>
+      <p className="faint" style={{ fontSize: 12.5, margin: 0 }}>Plans come from your conversations. Friends may follow up on them.</p>
+      {ev?.length === 0 && <p className="faint">Nothing planned.</p>}
+      {ev?.map((e) => (
+        <div key={e.id} className={`plan-row${e.status !== "planned" ? " past" : ""}`}>
+          <div className="row" style={{ flexWrap: "nowrap" }}>
+            <b style={{ flex: 1 }}>{e.title}</b>
+            <span className="tag">{label[e.status] ?? e.status}</span>
+          </div>
+          <span className="faint">{[e.when_text, e.place].filter(Boolean).join(" · ")}</span>
+          <div className="row" style={{ gap: 6 }}>
+            {e.participants.map((p) => <NpcAvatar key={p} id={p} size={22} />)}
+            <span className="spacer" />
+            {e.status === "planned" && <>
+              <button className="btn small" onClick={() => social.calendarStatus(e.id, "done").then(load)}>Done</button>
+              <button className="btn small ghost" onClick={() => social.calendarStatus(e.id, "cancelled").then(load)}>Cancel</button>
+            </>}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function Inventory({ player }: { player: PlayerState | null }) {
+  const [st, setSt] = useState<Stickers | null>(null);
+  useEffect(() => { social.stickers().then(setSt).catch(() => {}); }, []);
+  const owned = st?.packs.filter((p) => st.state.owned.includes(p.id)) ?? [];
+  return (
+    <div className="stack" style={{ gap: 12 }}>
+      <div className="inv-money"><span className="faint">Wallet</span><b>¥{player?.yen.toLocaleString() ?? "…"}</b></div>
+      <section>
+        <h4 className="panel-h">Sticker packs</h4>
+        <div className="row" style={{ gap: 10 }}>
+          {owned.map((p) => <div key={p.id} className="inv-item"><StickerArt {...p.stickers[0]!} size={56} /><span>{p.name}</span></div>)}
+        </div>
+        <button className="btn small" style={{ marginTop: 8 }} onClick={() => worldStore.dispatch({ t: "phone.open", screen: { s: "stickers" } })}>Sticker shop</button>
+      </section>
+      <p className="faint" style={{ fontSize: 12.5 }}>Items you buy in shops arrive with the shopping-street update. Nothing here is a placeholder pretending to work.</p>
+    </div>
+  );
+}
+
+function Apartment() {
+  return (
+    <div className="stack" style={{ gap: 10 }}>
+      <div className="apt-art" aria-hidden="true">
+        <svg viewBox="0 0 320 150" width="100%"><rect width="320" height="150" rx="12" fill="#efe6d6" /><rect y="104" width="320" height="46" fill="#c9a77c" /><rect x="22" y="22" width="80" height="58" rx="4" fill="#9fd3f0" stroke="#fff" strokeWidth="5" /><rect x="190" y="64" width="110" height="46" rx="8" fill="#6c5ce7" /><rect x="196" y="56" width="40" height="16" rx="6" fill="#fff" /><rect x="128" y="76" width="44" height="32" rx="4" fill="#8a6a48" /><circle cx="150" cy="70" r="8" fill="#ffd166" /></svg>
       </div>
-    </Modal>
+      <p style={{ margin: 0 }}>Your room. Nice place to check your phone.</p>
+      <button className="btn primary" onClick={() => worldStore.dispatch({ t: "phone.open" })}>Check phone</button>
+      <p className="faint" style={{ fontSize: 12.5 }}>Decorating and inviting friends over come in a later update.</p>
+    </div>
+  );
+}
+
+function Achievements({ progress, passport, player }: { progress: QuestProgress[]; passport: PassportEntry[]; player: PlayerState | null }) {
+  const [npcs, setNpcs] = useState<NpcView[]>([]);
+  useEffect(() => { social.npcs().then(setNpcs).catch(() => {}); }, []);
+  const list = useMemo(() => {
+    const talked = npcs.filter((n) => n.state.last_player_msg_at).length;
+    const casual = npcs.filter((n) => n.register_stage >= 2 && n.register_stage > 0).length;
+    const close = npcs.filter((n) => n.score >= 50).length;
+    return [
+      { t: "First scene", d: "Finish any 生活 scene", ok: progress.some((p) => p.completions > 0) },
+      { t: "Said hi", d: "Message a friend", ok: talked >= 1 },
+      { t: "Social butterfly", d: "Talk with all 8 friends", ok: talked >= 8, p: `${talked}/8` },
+      { t: "タメ口", d: "A friend who started polite now talks casually to you", ok: npcs.some((n) => n.register_stage >= 2 && ["ren", "aoi", "yui"].includes(n.id)) },
+      { t: "仲良し", d: "Become close friends with someone", ok: close >= 1 },
+      { t: "Real world", d: "Add a real-life passport stamp", ok: passport.some((p) => !p.simulated) },
+      { t: "Level 5", d: "Reach level 5", ok: (player?.level ?? 0) >= 5 },
+    ].map((a) => ({ ...a, casual }));
+  }, [npcs, progress, passport, player]);
+  return (
+    <div className="stack" style={{ gap: 8 }}>
+      <p className="faint" style={{ fontSize: 12.5, margin: 0 }}>Computed from what you've actually done.</p>
+      {list.map((a) => (
+        <div key={a.t} className={`ach${a.ok ? " ok" : ""}`}>
+          <span className="ach-ico">{a.ok ? "★" : "☆"}</span>
+          <div style={{ flex: 1 }}><b>{a.t}</b><div className="faint" style={{ fontSize: 12 }}>{a.d}</div></div>
+          {"p" in a && a.p && !a.ok && <span className="faint">{a.p}</span>}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function PassportPanel({ passport, onAddReal }: { passport: PassportEntry[]; onAddReal: () => void }) {
+  return (
+    <div className="stack" style={{ gap: 8 }}>
+      <p className="faint" style={{ fontSize: 12.5, margin: 0 }}>Real communication milestones. In-app scenes are marked <b>simulated</b>. Real-life ones are self-reported. Neither is a JLPT result.</p>
+      {passport.length === 0 && <p className="faint">No stamps yet. Finish a scene, or add something you did in real life.</p>}
+      {passport.map((p) => (
+        <div key={p.id} className={`stamp${p.simulated ? "" : " real"}`}>
+          <b>{p.title}</b>
+          <span className="faint" style={{ fontSize: 12 }}>{p.simulated ? "simulated" : "real world (self-reported)"} · {fmtDate(p.created_at)}</span>
+          {p.detail && <span className="faint" style={{ fontSize: 12.5 }}>{p.detail}</span>}
+        </div>
+      ))}
+      <button className="btn small" onClick={onAddReal}>+ Add a real-world achievement</button>
+    </div>
   );
 }
 
