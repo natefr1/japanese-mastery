@@ -1,0 +1,7321 @@
+{
+ "format": "japanese-mastery.seed",
+ "version": 1,
+ "items": [
+  {
+   "word": "行く",
+   "reading": "いく",
+   "meaning": "to go",
+   "word_type": "iku",
+   "level": "N5",
+   "category": "core",
+   "note": "Irregular て-form: 行って (not 行いて).",
+   "examples": [
+    {
+     "jp": "今からコンビニ行くけど、何かいる？",
+     "en": "I'm going to the convenience store now, need anything?"
+    },
+    {
+     "jp": "明日、一緒に秋葉原に行こうよ。",
+     "en": "Let's go to Akihabara together tomorrow."
+    }
+   ]
+  },
+  {
+   "word": "来る",
+   "reading": "くる",
+   "meaning": "to come",
+   "word_type": "k",
+   "level": "N5",
+   "category": "core",
+   "note": "Fully irregular. Reading changes: き・こ・く.",
+   "examples": [
+    {
+     "jp": "うちに遊びに来ない？",
+     "en": "Wanna come hang out at my place?"
+    },
+    {
+     "jp": "ボスが来るぞ！",
+     "en": "The boss is coming!"
+    }
+   ]
+  },
+  {
+   "word": "する",
+   "reading": "する",
+   "meaning": "to do; to play (a game)",
+   "word_type": "su",
+   "level": "N5",
+   "category": "core",
+   "note": "Add する to nouns to make verbs: 配信する, 勉強する.",
+   "examples": [
+    {
+     "jp": "何のゲームする？",
+     "en": "What game should we play?"
+    },
+    {
+     "jp": "今日は何もしたくない。",
+     "en": "I don't want to do anything today."
+    }
+   ]
+  },
+  {
+   "word": "見る",
+   "reading": "みる",
+   "meaning": "to see; to watch",
+   "word_type": "i",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "この動画見た？めっちゃ面白いよ。",
+     "en": "Did you see this video? It's super funny."
+    },
+    {
+     "jp": "後ろ見て！何かいる！",
+     "en": "Look behind you! Something's there!"
+    }
+   ]
+  },
+  {
+   "word": "言う",
+   "reading": "いう",
+   "meaning": "to say",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今なんて言った？",
+     "en": "What did you just say?"
+    },
+    {
+     "jp": "だから言ったじゃん！",
+     "en": "I told you so!"
+    }
+   ]
+  },
+  {
+   "word": "聞く",
+   "reading": "きく",
+   "meaning": "to hear; to listen; to ask",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ちょっと聞いて、今日ヤバいことあった。",
+     "en": "Listen, something crazy happened today."
+    },
+    {
+     "jp": "先生に聞いてみる。",
+     "en": "I'll try asking the teacher."
+    }
+   ]
+  },
+  {
+   "word": "話す",
+   "reading": "はなす",
+   "meaning": "to speak; to talk",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "日本語で話してもいい？",
+     "en": "Is it okay if I talk in Japanese?"
+    },
+    {
+     "jp": "配信でこの話をしよう。",
+     "en": "Let's talk about this on stream."
+    }
+   ]
+  },
+  {
+   "word": "喋る",
+   "reading": "しゃべる",
+   "meaning": "to chat; to talk (casual)",
+   "word_type": "g",
+   "level": "N3",
+   "category": "core",
+   "note": "Godan despite ending in える.",
+   "examples": [
+    {
+     "jp": "あいつ、ずっと喋ってるな。",
+     "en": "That guy never stops talking."
+    },
+    {
+     "jp": "初対面だと上手く喋れない。",
+     "en": "I can't talk smoothly with people I just met."
+    }
+   ]
+  },
+  {
+   "word": "思う",
+   "reading": "おもう",
+   "meaning": "to think (opinion)",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "これは罠だと思う。",
+     "en": "I think this is a trap."
+    },
+    {
+     "jp": "今日は新しいゲームをやっていきたいと思います！",
+     "en": "Today I'd like to play a new game!"
+    }
+   ]
+  },
+  {
+   "word": "分かる",
+   "reading": "わかる",
+   "meaning": "to understand; to know",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "Already means 'can understand', so no potential form. Use が: 日本語が分かる.",
+   "examples": [
+    {
+     "jp": "分かった、すぐ行く。",
+     "en": "Got it, I'll be right there."
+    },
+    {
+     "jp": "このゲームのルールが全然分からない。",
+     "en": "I don't get this game's rules at all."
+    }
+   ]
+  },
+  {
+   "word": "知る",
+   "reading": "しる",
+   "meaning": "to know; to find out",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "'I know' = 知ってる. 'I don't know' = 知らない (never 知ってない).",
+   "examples": [
+    {
+     "jp": "このゲーム知ってる？",
+     "en": "Do you know this game?"
+    },
+    {
+     "jp": "え、知らなかった！",
+     "en": "Whoa, I didn't know that!"
+    }
+   ]
+  },
+  {
+   "word": "やる",
+   "reading": "やる",
+   "meaning": "to do (casual); to play",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "Very common in streams instead of する.",
+   "examples": [
+    {
+     "jp": "もう一回やろう！",
+     "en": "Let's go one more time!"
+    },
+    {
+     "jp": "今夜ホラゲーやるわ。",
+     "en": "I'm playing a horror game tonight."
+    }
+   ]
+  },
+  {
+   "word": "使う",
+   "reading": "つかう",
+   "meaning": "to use",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "このアイテム使っていい？",
+     "en": "Can I use this item?"
+    },
+    {
+     "jp": "回復を使わないで最後まで行けた。",
+     "en": "I made it to the end without using any heals."
+    }
+   ]
+  },
+  {
+   "word": "待つ",
+   "reading": "まつ",
+   "meaning": "to wait",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ちょっと待って！まだ準備できてない！",
+     "en": "Wait! I'm not ready yet!"
+    },
+    {
+     "jp": "ロビーで待ってるね。",
+     "en": "I'll be waiting in the lobby."
+    }
+   ]
+  },
+  {
+   "word": "持つ",
+   "reading": "もつ",
+   "meaning": "to hold; to have; to carry",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "鍵持ってる？",
+     "en": "Do you have the key?"
+    },
+    {
+     "jp": "弾をたくさん持っていこう。",
+     "en": "Let's bring a lot of ammo."
+    }
+   ]
+  },
+  {
+   "word": "帰る",
+   "reading": "かえる",
+   "meaning": "to go home; to return",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "Godan despite ending in える.",
+   "examples": [
+    {
+     "jp": "そろそろ帰るね。",
+     "en": "I'm gonna head home soon."
+    },
+    {
+     "jp": "家に帰ったら配信する。",
+     "en": "I'll stream once I get home."
+    }
+   ]
+  },
+  {
+   "word": "入る",
+   "reading": "はいる",
+   "meaning": "to enter; to join",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "Godan despite ending in いる.",
+   "examples": [
+    {
+     "jp": "部屋に入ったよ。",
+     "en": "I joined the room."
+    },
+    {
+     "jp": "そのドアに入っちゃダメ！",
+     "en": "Don't go through that door!"
+    }
+   ]
+  },
+  {
+   "word": "出る",
+   "reading": "でる",
+   "meaning": "to go out; to leave; to come out",
+   "word_type": "i",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "出口から出よう。",
+     "en": "Let's get out through the exit."
+    },
+    {
+     "jp": "次の動画は来週出ます。",
+     "en": "The next video comes out next week."
+    }
+   ]
+  },
+  {
+   "word": "起きる",
+   "reading": "おきる",
+   "meaning": "to wake up; to happen",
+   "word_type": "i",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "毎朝七時に起きる。",
+     "en": "I wake up at 7 every morning."
+    },
+    {
+     "jp": "何が起きたの？",
+     "en": "What just happened?"
+    }
+   ]
+  },
+  {
+   "word": "寝る",
+   "reading": "ねる",
+   "meaning": "to sleep; to go to bed",
+   "word_type": "i",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "昨日は三時まで寝なかった。",
+     "en": "I didn't go to bed until 3 last night."
+    },
+    {
+     "jp": "眠いから、もう寝るわ。",
+     "en": "I'm sleepy, I'm going to bed."
+    }
+   ]
+  },
+  {
+   "word": "食べる",
+   "reading": "たべる",
+   "meaning": "to eat",
+   "word_type": "i",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "何か食べに行かない？",
+     "en": "Want to go grab something to eat?"
+    },
+    {
+     "jp": "このラーメン、食べたことある？",
+     "en": "Have you ever eaten this ramen?"
+    }
+   ]
+  },
+  {
+   "word": "飲む",
+   "reading": "のむ",
+   "meaning": "to drink",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "何飲む？",
+     "en": "What are you drinking?"
+    },
+    {
+     "jp": "今夜飲みに行こう。",
+     "en": "Let's go drinking tonight."
+    }
+   ]
+  },
+  {
+   "word": "買う",
+   "reading": "かう",
+   "meaning": "to buy",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "新しいマイク買った！",
+     "en": "I bought a new mic!"
+    },
+    {
+     "jp": "セールの時に買おう。",
+     "en": "Let's buy it during the sale."
+    }
+   ]
+  },
+  {
+   "word": "作る",
+   "reading": "つくる",
+   "meaning": "to make; to create",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "サムネを作るのに一時間かかった。",
+     "en": "It took an hour to make the thumbnail."
+    },
+    {
+     "jp": "一緒にチャンネル作らない？",
+     "en": "Wanna make a channel together?"
+    }
+   ]
+  },
+  {
+   "word": "会う",
+   "reading": "あう",
+   "meaning": "to meet",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "Use に: 友達に会う.",
+   "examples": [
+    {
+     "jp": "初めて会った時のこと覚えてる？",
+     "en": "Remember when we first met?"
+    },
+    {
+     "jp": "週末会える？",
+     "en": "Can we meet up this weekend?"
+    }
+   ]
+  },
+  {
+   "word": "遊ぶ",
+   "reading": "あそぶ",
+   "meaning": "to play; to hang out",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "For friends, 遊ぶ = hang out (not just play).",
+   "examples": [
+    {
+     "jp": "今度一緒に遊ぼうよ！",
+     "en": "Let's hang out sometime!"
+    },
+    {
+     "jp": "子供の頃、このゲームでよく遊んだ。",
+     "en": "I played this game a lot as a kid."
+    }
+   ]
+  },
+  {
+   "word": "始める",
+   "reading": "はじめる",
+   "meaning": "to start (something)",
+   "word_type": "i",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "じゃあ、始めます！",
+     "en": "Alright, let's start!"
+    },
+    {
+     "jp": "ゲームを始める前にトイレ行ってくる。",
+     "en": "I'm going to the bathroom before we start."
+    }
+   ]
+  },
+  {
+   "word": "終わる",
+   "reading": "おわる",
+   "meaning": "to end; to finish",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "やっと終わった…",
+     "en": "It's finally over..."
+    },
+    {
+     "jp": "授業が終わったら連絡する。",
+     "en": "I'll message you when class is over."
+    }
+   ]
+  },
+  {
+   "word": "続ける",
+   "reading": "つづける",
+   "meaning": "to continue (something)",
+   "word_type": "i",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "このシリーズ、続けてほしい？",
+     "en": "Do you want me to continue this series?"
+    },
+    {
+     "jp": "諦めないで続けよう。",
+     "en": "Don't give up, keep going."
+    }
+   ]
+  },
+  {
+   "word": "決める",
+   "reading": "きめる",
+   "meaning": "to decide",
+   "word_type": "i",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "どのキャラにするか決めた？",
+     "en": "Did you decide which character you're using?"
+    },
+    {
+     "jp": "よし、決めた！",
+     "en": "Alright, decided!"
+    }
+   ]
+  },
+  {
+   "word": "考える",
+   "reading": "かんがえる",
+   "meaning": "to think about; to consider",
+   "word_type": "i",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ちょっと考えさせて。",
+     "en": "Let me think about it."
+    },
+    {
+     "jp": "何も考えずに走った。",
+     "en": "I ran without thinking."
+    }
+   ]
+  },
+  {
+   "word": "覚える",
+   "reading": "おぼえる",
+   "meaning": "to memorize; to remember",
+   "word_type": "i",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "この単語、なかなか覚えられない。",
+     "en": "I just can't memorize this word."
+    },
+    {
+     "jp": "俺のこと覚えてる？",
+     "en": "Do you remember me?"
+    }
+   ]
+  },
+  {
+   "word": "忘れる",
+   "reading": "わすれる",
+   "meaning": "to forget",
+   "word_type": "i",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "セーブするの忘れた！",
+     "en": "I forgot to save!"
+    },
+    {
+     "jp": "宿題を忘れないでね。",
+     "en": "Don't forget the homework."
+    }
+   ]
+  },
+  {
+   "word": "教える",
+   "reading": "おしえる",
+   "meaning": "to teach; to tell",
+   "word_type": "i",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "やり方教えて！",
+     "en": "Show me how to do it!"
+    },
+    {
+     "jp": "連絡先教えてくれる？",
+     "en": "Can you give me your contact info?"
+    }
+   ]
+  },
+  {
+   "word": "手伝う",
+   "reading": "てつだう",
+   "meaning": "to help (with a task)",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ボス戦、手伝ってくれない？",
+     "en": "Could you help me with the boss fight?"
+    },
+    {
+     "jp": "引っ越し手伝うよ。",
+     "en": "I'll help you move."
+    }
+   ]
+  },
+  {
+   "word": "頼む",
+   "reading": "たのむ",
+   "meaning": "to ask (a favor); to order",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "頼む！あと一回だけ！",
+     "en": "Please! Just one more time!"
+    },
+    {
+     "jp": "編集を友達に頼んだ。",
+     "en": "I asked a friend to do the editing."
+    }
+   ]
+  },
+  {
+   "word": "頑張る",
+   "reading": "がんばる",
+   "meaning": "to do your best; to hang in there",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "一緒に頑張ろう！",
+     "en": "Let's do our best together!"
+    },
+    {
+     "jp": "今日も頑張ってね。",
+     "en": "Good luck today."
+    }
+   ]
+  },
+  {
+   "word": "見せる",
+   "reading": "みせる",
+   "meaning": "to show",
+   "word_type": "i",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "新しいスキン見せて！",
+     "en": "Show me the new skin!"
+    },
+    {
+     "jp": "視聴者にこのシーンを見せたい。",
+     "en": "I want to show this scene to the viewers."
+    }
+   ]
+  },
+  {
+   "word": "送る",
+   "reading": "おくる",
+   "meaning": "to send",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "後でリンク送るね。",
+     "en": "I'll send you the link later."
+    },
+    {
+     "jp": "DM送ったよ。",
+     "en": "I sent you a DM."
+    }
+   ]
+  },
+  {
+   "word": "もらう",
+   "reading": "もらう",
+   "meaning": "to receive; to get (someone to do)",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "〜てもらう = have someone do something for you.",
+   "examples": [
+    {
+     "jp": "誕生日にゲームをもらった。",
+     "en": "I got a game for my birthday."
+    },
+    {
+     "jp": "友達に手伝ってもらった。",
+     "en": "I got my friend to help me."
+    }
+   ]
+  },
+  {
+   "word": "あげる",
+   "reading": "あげる",
+   "meaning": "to give",
+   "word_type": "i",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "これあげる。",
+     "en": "Here, you can have this."
+    },
+    {
+     "jp": "回復アイテムを仲間にあげた。",
+     "en": "I gave my teammate a healing item."
+    }
+   ]
+  },
+  {
+   "word": "くれる",
+   "reading": "くれる",
+   "meaning": "to give (to me)",
+   "word_type": "i",
+   "level": "N4",
+   "category": "core",
+   "note": "〜てくれる = someone does something for me. Command is くれ.",
+   "examples": [
+    {
+     "jp": "これ、くれるの？",
+     "en": "You're giving me this?"
+    },
+    {
+     "jp": "友達がおごってくれた。",
+     "en": "My friend treated me."
+    }
+   ]
+  },
+  {
+   "word": "気づく",
+   "reading": "きづく",
+   "meaning": "to notice; to realize",
+   "word_type": "g",
+   "level": "N3",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "全然気づかなかった！",
+     "en": "I didn't notice at all!"
+    },
+    {
+     "jp": "後ろに敵がいるのに気づいた。",
+     "en": "I noticed there was an enemy behind me."
+    }
+   ]
+  },
+  {
+   "word": "感じる",
+   "reading": "かんじる",
+   "meaning": "to feel; to sense",
+   "word_type": "i",
+   "level": "N3",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "誰かに見られてる感じがする…",
+     "en": "I feel like someone's watching me..."
+    },
+    {
+     "jp": "日本語が上手くなったと感じる。",
+     "en": "I feel like my Japanese has gotten better."
+    }
+   ]
+  },
+  {
+   "word": "信じる",
+   "reading": "しんじる",
+   "meaning": "to believe; to trust",
+   "word_type": "i",
+   "level": "N3",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "信じられない！",
+     "en": "I can't believe it!"
+    },
+    {
+     "jp": "俺を信じて！",
+     "en": "Trust me!"
+    }
+   ]
+  },
+  {
+   "word": "間違える",
+   "reading": "まちがえる",
+   "meaning": "to make a mistake",
+   "word_type": "i",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "道を間違えた。",
+     "en": "I went the wrong way."
+    },
+    {
+     "jp": "間違えてボタン押しちゃった。",
+     "en": "I pressed the button by mistake."
+    }
+   ]
+  },
+  {
+   "word": "住む",
+   "reading": "すむ",
+   "meaning": "to live (somewhere)",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "'I live in…' = 〜に住んでる.",
+   "examples": [
+    {
+     "jp": "どこに住んでるの？",
+     "en": "Where do you live?"
+    },
+    {
+     "jp": "いつか東京に住みたい。",
+     "en": "I want to live in Tokyo someday."
+    }
+   ]
+  },
+  {
+   "word": "払う",
+   "reading": "はらう",
+   "meaning": "to pay",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今日は俺が払うよ。",
+     "en": "I'll pay today."
+    },
+    {
+     "jp": "カードで払えますか？",
+     "en": "Can I pay by card?"
+    }
+   ]
+  },
+  {
+   "word": "着く",
+   "reading": "つく",
+   "meaning": "to arrive",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "駅に着いたら連絡して。",
+     "en": "Message me when you get to the station."
+    },
+    {
+     "jp": "もうすぐ着く！",
+     "en": "Almost there!"
+    }
+   ]
+  },
+  {
+   "word": "変える",
+   "reading": "かえる",
+   "meaning": "to change (something)",
+   "word_type": "i",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "設定を変えたら軽くなった。",
+     "en": "It ran smoother after I changed the settings."
+    },
+    {
+     "jp": "キャラ変えてもいい？",
+     "en": "Can I switch characters?"
+    }
+   ]
+  },
+  {
+   "word": "取る",
+   "reading": "とる",
+   "meaning": "to take; to grab; to get",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "そのアイテム取って！",
+     "en": "Grab that item!"
+    },
+    {
+     "jp": "単位を取るのが大変。",
+     "en": "Getting credits is tough."
+    }
+   ]
+  },
+  {
+   "word": "選ぶ",
+   "reading": "えらぶ",
+   "meaning": "to choose",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "好きなキャラを選んで。",
+     "en": "Pick the character you like."
+    },
+    {
+     "jp": "どっちを選ぶ？",
+     "en": "Which one are you choosing?"
+    }
+   ]
+  },
+  {
+   "word": "笑う",
+   "reading": "わらう",
+   "meaning": "to laugh; to smile",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "笑いすぎてお腹痛い。",
+     "en": "I laughed so hard my stomach hurts."
+    },
+    {
+     "jp": "笑わないで！",
+     "en": "Don't laugh!"
+    }
+   ]
+  },
+  {
+   "word": "泣く",
+   "reading": "なく",
+   "meaning": "to cry",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "このゲームのエンディングで泣いた。",
+     "en": "I cried at this game's ending."
+    },
+    {
+     "jp": "泣かないで。",
+     "en": "Don't cry."
+    }
+   ]
+  },
+  {
+   "word": "怒る",
+   "reading": "おこる",
+   "meaning": "to get angry; to scold",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "そんなことで怒らないでよ。",
+     "en": "Don't get mad over something like that."
+    },
+    {
+     "jp": "母に怒られた。",
+     "en": "I got scolded by my mom."
+    }
+   ]
+  },
+  {
+   "word": "困る",
+   "reading": "こまる",
+   "meaning": "to be troubled; to be stuck",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "それは困る。",
+     "en": "That's a problem for me."
+    },
+    {
+     "jp": "困ったら言ってね。",
+     "en": "Let me know if you're in trouble."
+    }
+   ]
+  },
+  {
+   "word": "走る",
+   "reading": "はしる",
+   "meaning": "to run",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "Godan despite ending in いる.",
+   "examples": [
+    {
+     "jp": "走れ！走れ！",
+     "en": "Run! Run!"
+    },
+    {
+     "jp": "走って逃げよう。",
+     "en": "Let's run for it."
+    }
+   ]
+  },
+  {
+   "word": "歩く",
+   "reading": "あるく",
+   "meaning": "to walk",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ゆっくり歩いて、音を立てないで。",
+     "en": "Walk slowly, don't make any noise."
+    },
+    {
+     "jp": "駅まで歩いて十分です。",
+     "en": "It's a ten-minute walk to the station."
+    }
+   ]
+  },
+  {
+   "word": "休む",
+   "reading": "やすむ",
+   "meaning": "to rest; to take a day off",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ちょっと休もう。",
+     "en": "Let's take a little break."
+    },
+    {
+     "jp": "明日は配信を休みます。",
+     "en": "I'm taking tomorrow off from streaming."
+    }
+   ]
+  },
+  {
+   "word": "ある",
+   "reading": "ある",
+   "meaning": "to exist; to have (things)",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "For objects/plants. Negative is just ない.",
+   "examples": [
+    {
+     "jp": "何か問題ある？",
+     "en": "Is there some problem?"
+    },
+    {
+     "jp": "このゲーム、隠しエンドがあるらしい。",
+     "en": "Apparently this game has a hidden ending."
+    }
+   ]
+  },
+  {
+   "word": "いる",
+   "reading": "いる",
+   "meaning": "to exist; to be (people, animals)",
+   "word_type": "i",
+   "level": "N5",
+   "category": "core",
+   "note": "For living things. Horror games: 何かいる = something's there.",
+   "examples": [
+    {
+     "jp": "部屋に誰かいる…",
+     "en": "Someone's in the room..."
+    },
+    {
+     "jp": "今どこにいる？",
+     "en": "Where are you right now?"
+    }
+   ]
+  },
+  {
+   "word": "なる",
+   "reading": "なる",
+   "meaning": "to become",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "日本語が上手になりたい。",
+     "en": "I want to get good at Japanese."
+    },
+    {
+     "jp": "有名になったらどうする？",
+     "en": "What will you do once you're famous?"
+    }
+   ]
+  },
+  {
+   "word": "できる",
+   "reading": "できる",
+   "meaning": "to be able to; to be done",
+   "word_type": "i",
+   "level": "N5",
+   "category": "core",
+   "note": "This IS the potential of する. Use が: 料理ができる.",
+   "examples": [
+    {
+     "jp": "日本語できる？",
+     "en": "Can you speak Japanese?"
+    },
+    {
+     "jp": "やっとクリアできた！",
+     "en": "I finally managed to clear it!"
+    }
+   ]
+  },
+  {
+   "word": "見つける",
+   "reading": "みつける",
+   "meaning": "to find",
+   "word_type": "i",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "鍵を見つけた！",
+     "en": "I found the key!"
+    },
+    {
+     "jp": "隠し部屋を見つけられる？",
+     "en": "Can you find the hidden room?"
+    }
+   ]
+  },
+  {
+   "word": "探す",
+   "reading": "さがす",
+   "meaning": "to look for; to search",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "出口を探そう。",
+     "en": "Let's look for the exit."
+    },
+    {
+     "jp": "一緒にやる仲間を探してる。",
+     "en": "I'm looking for people to play with."
+    }
+   ]
+  },
+  {
+   "word": "開ける",
+   "reading": "あける",
+   "meaning": "to open (something)",
+   "word_type": "i",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "このドア、開けないほうがいい。",
+     "en": "Better not open this door."
+    },
+    {
+     "jp": "箱を開けたら何か出てきた。",
+     "en": "When I opened the box, something came out."
+    }
+   ]
+  },
+  {
+   "word": "押す",
+   "reading": "おす",
+   "meaning": "to push; to press",
+   "word_type": "g",
+   "level": "N5",
+   "category": "core",
+   "note": "The second line is a classic Japanese comedy setup — it means 'push it'.",
+   "examples": [
+    {
+     "jp": "このボタン押して。",
+     "en": "Press this button."
+    },
+    {
+     "jp": "押すなよ！絶対押すなよ！",
+     "en": "Don't push it! Absolutely do NOT push it!"
+    }
+   ]
+  },
+  {
+   "word": "死ぬ",
+   "reading": "しぬ",
+   "meaning": "to die",
+   "word_type": "g",
+   "level": "N4",
+   "category": "core",
+   "note": "The only common verb ending in ぬ.",
+   "examples": [
+    {
+     "jp": "うわ、また死んだ！",
+     "en": "Ugh, I died again!"
+    },
+    {
+     "jp": "死ぬかと思った。",
+     "en": "I thought I was gonna die."
+    }
+   ]
+  },
+  {
+   "word": "でも",
+   "reading": "でも",
+   "meaning": "but; even so",
+   "word_type": "adv",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "行きたい。でも、お金がない。",
+     "en": "I want to go. But I don't have money."
+    },
+    {
+     "jp": "でも、それって罠じゃない？",
+     "en": "But isn't that a trap?"
+    }
+   ]
+  },
+  {
+   "word": "だから",
+   "reading": "だから",
+   "meaning": "so; that's why",
+   "word_type": "adv",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "だから言ったじゃん！",
+     "en": "That's why I told you!"
+    },
+    {
+     "jp": "怖い。だからやりたくない。",
+     "en": "It's scary. So I don't want to play it."
+    }
+   ]
+  },
+  {
+   "word": "ていうか",
+   "reading": "ていうか",
+   "meaning": "I mean; actually; rather",
+   "word_type": "adv",
+   "level": "N3",
+   "category": "core",
+   "note": "Casual topic-switcher. Also てか.",
+   "examples": [
+    {
+     "jp": "ていうか、ここどこ？",
+     "en": "Wait, actually, where even is this?"
+    },
+    {
+     "jp": "ていうか、お前強すぎ。",
+     "en": "I mean, you're way too good."
+    }
+   ]
+  },
+  {
+   "word": "そういえば",
+   "reading": "そういえば",
+   "meaning": "by the way; come to think of it",
+   "word_type": "adv",
+   "level": "N3",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "そういえば、あのゲーム買った？",
+     "en": "By the way, did you buy that game?"
+    },
+    {
+     "jp": "そういえば、明日テストだ！",
+     "en": "Oh yeah, there's a test tomorrow!"
+    }
+   ]
+  },
+  {
+   "word": "実は",
+   "reading": "じつは",
+   "meaning": "actually; to tell the truth",
+   "word_type": "adv",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "実は、ホラー苦手なんだ。",
+     "en": "To be honest, I'm bad with horror."
+    },
+    {
+     "jp": "実は、今日誕生日なんだ。",
+     "en": "Actually, today's my birthday."
+    }
+   ]
+  },
+  {
+   "word": "結局",
+   "reading": "けっきょく",
+   "meaning": "in the end; after all",
+   "word_type": "adv",
+   "level": "N3",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "結局、負けた。",
+     "en": "In the end, we lost."
+    },
+    {
+     "jp": "結局どうなったの？",
+     "en": "So how did it end up?"
+    }
+   ]
+  },
+  {
+   "word": "例えば",
+   "reading": "たとえば",
+   "meaning": "for example",
+   "word_type": "adv",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "例えば、どんなゲームが好き？",
+     "en": "For example, what kinds of games do you like?"
+    },
+    {
+     "jp": "例えば、マイクとか。",
+     "en": "Like, a mic or something."
+    }
+   ]
+  },
+  {
+   "word": "たぶん",
+   "reading": "たぶん",
+   "meaning": "probably; maybe",
+   "word_type": "adv",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "たぶん大丈夫。",
+     "en": "It's probably fine."
+    },
+    {
+     "jp": "たぶん、あっちに出口がある。",
+     "en": "The exit's probably over there."
+    }
+   ]
+  },
+  {
+   "word": "もう",
+   "reading": "もう",
+   "meaning": "already; anymore; (exasperated) ugh",
+   "word_type": "adv",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "もう無理！",
+     "en": "I can't anymore!"
+    },
+    {
+     "jp": "もう始まってる？",
+     "en": "Has it already started?"
+    }
+   ]
+  },
+  {
+   "word": "まだ",
+   "reading": "まだ",
+   "meaning": "still; not yet",
+   "word_type": "adv",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "まだ生きてる！",
+     "en": "I'm still alive!"
+    },
+    {
+     "jp": "まだ準備できてない。",
+     "en": "I'm not ready yet."
+    }
+   ]
+  },
+  {
+   "word": "すぐ",
+   "reading": "すぐ",
+   "meaning": "right away; soon",
+   "word_type": "adv",
+   "level": "N5",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "すぐ戻る。",
+     "en": "I'll be right back."
+    },
+    {
+     "jp": "すぐ死んだ。",
+     "en": "Died instantly."
+    }
+   ]
+  },
+  {
+   "word": "ずっと",
+   "reading": "ずっと",
+   "meaning": "the whole time; always; by far",
+   "word_type": "adv",
+   "level": "N4",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ずっと待ってたよ。",
+     "en": "I've been waiting the whole time."
+    },
+    {
+     "jp": "ずっとこのゲームやりたかった。",
+     "en": "I've wanted to play this game forever."
+    }
+   ]
+  },
+  {
+   "word": "急に",
+   "reading": "きゅうに",
+   "meaning": "suddenly",
+   "word_type": "adv",
+   "level": "N3",
+   "category": "core",
+   "note": "",
+   "examples": [
+    {
+     "jp": "急に出てきた！",
+     "en": "It suddenly popped out!"
+    },
+    {
+     "jp": "急にどうしたの？",
+     "en": "What's up all of a sudden?"
+    }
+   ]
+  },
+  {
+   "word": "本当に",
+   "reading": "ほんとうに",
+   "meaning": "really; truly",
+   "word_type": "adv",
+   "level": "N5",
+   "category": "core",
+   "note": "Casual: ほんとに / ほんと.",
+   "examples": [
+    {
+     "jp": "本当にありがとう。",
+     "en": "Thank you so much."
+    },
+    {
+     "jp": "本当に？",
+     "en": "Really?"
+    }
+   ]
+  },
+  {
+   "word": "敵",
+   "reading": "てき",
+   "meaning": "enemy",
+   "word_type": "n",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "敵が三人いる！",
+     "en": "There are three enemies!"
+    },
+    {
+     "jp": "後ろから敵が来てる。",
+     "en": "Enemies coming from behind."
+    }
+   ]
+  },
+  {
+   "word": "味方",
+   "reading": "みかた",
+   "meaning": "ally; teammate; your side",
+   "word_type": "n",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "味方を撃たないで！",
+     "en": "Don't shoot your teammates!"
+    },
+    {
+     "jp": "味方が全員やられた。",
+     "en": "All my teammates got taken out."
+    }
+   ]
+  },
+  {
+   "word": "仲間",
+   "reading": "なかま",
+   "meaning": "companion; friend; squadmate",
+   "word_type": "n",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "新しい仲間が加わった。",
+     "en": "A new party member joined."
+    },
+    {
+     "jp": "仲間を助けに行こう。",
+     "en": "Let's go save our buddy."
+    }
+   ]
+  },
+  {
+   "word": "倒す",
+   "reading": "たおす",
+   "meaning": "to defeat; to knock down",
+   "word_type": "g",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ボスを倒した！",
+     "en": "I beat the boss!"
+    },
+    {
+     "jp": "こいつ、どうやって倒すの？",
+     "en": "How do you even beat this guy?"
+    }
+   ]
+  },
+  {
+   "word": "勝つ",
+   "reading": "かつ",
+   "meaning": "to win",
+   "word_type": "g",
+   "level": "N4",
+   "category": "game",
+   "note": "Use に: 敵に勝つ.",
+   "examples": [
+    {
+     "jp": "勝った！",
+     "en": "We won!"
+    },
+    {
+     "jp": "絶対勝とうぜ！",
+     "en": "Let's definitely win this!"
+    }
+   ]
+  },
+  {
+   "word": "負ける",
+   "reading": "まける",
+   "meaning": "to lose",
+   "word_type": "i",
+   "level": "N4",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "また負けた…",
+     "en": "Lost again..."
+    },
+    {
+     "jp": "負けたら罰ゲームね。",
+     "en": "Whoever loses gets a punishment game."
+    }
+   ]
+  },
+  {
+   "word": "撃つ",
+   "reading": "うつ",
+   "meaning": "to shoot (a gun)",
+   "word_type": "g",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "撃て！撃て！",
+     "en": "Shoot! Shoot!"
+    },
+    {
+     "jp": "まだ撃たないで。",
+     "en": "Don't shoot yet."
+    }
+   ]
+  },
+  {
+   "word": "逃げる",
+   "reading": "にげる",
+   "meaning": "to run away; to escape",
+   "word_type": "i",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "逃げろ！",
+     "en": "Run!"
+    },
+    {
+     "jp": "ここから逃げられない！",
+     "en": "I can't escape from here!"
+    }
+   ]
+  },
+  {
+   "word": "隠れる",
+   "reading": "かくれる",
+   "meaning": "to hide",
+   "word_type": "i",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ロッカーに隠れよう。",
+     "en": "Let's hide in the locker."
+    },
+    {
+     "jp": "どこに隠れてるの？",
+     "en": "Where are you hiding?"
+    }
+   ]
+  },
+  {
+   "word": "追いかける",
+   "reading": "おいかける",
+   "meaning": "to chase",
+   "word_type": "i",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "何かに追いかけられてる！",
+     "en": "Something's chasing me!"
+    },
+    {
+     "jp": "あいつを追いかけて！",
+     "en": "Chase that guy!"
+    }
+   ]
+  },
+  {
+   "word": "助ける",
+   "reading": "たすける",
+   "meaning": "to save; to help",
+   "word_type": "i",
+   "level": "N4",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "助けて！",
+     "en": "Help me!"
+    },
+    {
+     "jp": "助けてくれてありがとう。",
+     "en": "Thanks for saving me."
+    }
+   ]
+  },
+  {
+   "word": "拾う",
+   "reading": "ひろう",
+   "meaning": "to pick up",
+   "word_type": "g",
+   "level": "N4",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "弾を拾って。",
+     "en": "Pick up the ammo."
+    },
+    {
+     "jp": "このアイテム拾える？",
+     "en": "Can you pick up this item?"
+    }
+   ]
+  },
+  {
+   "word": "落とす",
+   "reading": "おとす",
+   "meaning": "to drop; to lose; to fail (a class)",
+   "word_type": "g",
+   "level": "N4",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "武器を落としちゃった。",
+     "en": "I dropped my weapon."
+    },
+    {
+     "jp": "敵がお金を落とした。",
+     "en": "The enemy dropped some money."
+    }
+   ]
+  },
+  {
+   "word": "落ちる",
+   "reading": "おちる",
+   "meaning": "to fall; to disconnect; to fail",
+   "word_type": "i",
+   "level": "N4",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "回線落ちた。",
+     "en": "My connection dropped."
+    },
+    {
+     "jp": "穴に落ちた！",
+     "en": "I fell in a hole!"
+    }
+   ]
+  },
+  {
+   "word": "生き返る",
+   "reading": "いきかえる",
+   "meaning": "to come back to life",
+   "word_type": "g",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "仲間が生き返った！",
+     "en": "My teammate came back to life!"
+    },
+    {
+     "jp": "死んでも生き返れるよ。",
+     "en": "You can come back even if you die."
+    }
+   ]
+  },
+  {
+   "word": "復活",
+   "reading": "ふっかつ",
+   "meaning": "revival; respawn; comeback",
+   "word_type": "s",
+   "level": "N2",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "復活させて！",
+     "en": "Revive me!"
+    },
+    {
+     "jp": "このチャンネル、ついに復活しました！",
+     "en": "This channel is finally back!"
+    }
+   ]
+  },
+  {
+   "word": "回復",
+   "reading": "かいふく",
+   "meaning": "healing; recovery",
+   "word_type": "s",
+   "level": "N2",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "先に回復して。",
+     "en": "Heal first."
+    },
+    {
+     "jp": "回復アイテムがない！",
+     "en": "I'm out of healing items!"
+    }
+   ]
+  },
+  {
+   "word": "攻撃",
+   "reading": "こうげき",
+   "meaning": "attack",
+   "word_type": "s",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今攻撃して！",
+     "en": "Attack now!"
+    },
+    {
+     "jp": "攻撃が全然当たらない。",
+     "en": "My attacks aren't landing at all."
+    }
+   ]
+  },
+  {
+   "word": "防御",
+   "reading": "ぼうぎょ",
+   "meaning": "defense; guard",
+   "word_type": "n",
+   "level": "N2",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "防御力を上げよう。",
+     "en": "Let's raise our defense."
+    },
+    {
+     "jp": "防御が硬すぎる。",
+     "en": "Their defense is way too tanky."
+    }
+   ]
+  },
+  {
+   "word": "武器",
+   "reading": "ぶき",
+   "meaning": "weapon",
+   "word_type": "n",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "一番強い武器は何？",
+     "en": "What's the strongest weapon?"
+    },
+    {
+     "jp": "武器を変えた方がいい。",
+     "en": "You should switch weapons."
+    }
+   ]
+  },
+  {
+   "word": "弾",
+   "reading": "たま",
+   "meaning": "bullet; ammo",
+   "word_type": "n",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "弾がない！",
+     "en": "I've got no ammo!"
+    },
+    {
+     "jp": "弾切れだ！",
+     "en": "I'm out of ammo!"
+    }
+   ]
+  },
+  {
+   "word": "体力",
+   "reading": "たいりょく",
+   "meaning": "HP; stamina; physical strength",
+   "word_type": "n",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "体力がもう少ない！",
+     "en": "My HP is super low!"
+    },
+    {
+     "jp": "体力を回復しないと。",
+     "en": "I need to heal up."
+    }
+   ]
+  },
+  {
+   "word": "経験値",
+   "reading": "けいけんち",
+   "meaning": "experience points (XP)",
+   "word_type": "n",
+   "level": "N2",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "経験値を稼ごう。",
+     "en": "Let's grind some XP."
+    },
+    {
+     "jp": "このモンスター、経験値が多い。",
+     "en": "This monster gives a lot of XP."
+    }
+   ]
+  },
+  {
+   "word": "レベル上げ",
+   "reading": "れべるあげ",
+   "meaning": "leveling up; grinding",
+   "word_type": "n",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今日はレベル上げします。",
+     "en": "Today I'm grinding levels."
+    },
+    {
+     "jp": "レベル上げがだるい。",
+     "en": "Grinding is such a drag."
+    }
+   ]
+  },
+  {
+   "word": "装備",
+   "reading": "そうび",
+   "meaning": "equipment; to equip",
+   "word_type": "s",
+   "level": "N2",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "新しい装備を手に入れた。",
+     "en": "I got new gear."
+    },
+    {
+     "jp": "この剣を装備して。",
+     "en": "Equip this sword."
+    }
+   ]
+  },
+  {
+   "word": "操作",
+   "reading": "そうさ",
+   "meaning": "controls; to operate",
+   "word_type": "s",
+   "level": "N2",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "操作が難しい。",
+     "en": "The controls are hard."
+    },
+    {
+     "jp": "操作方法を教えて。",
+     "en": "Teach me the controls."
+    }
+   ]
+  },
+  {
+   "word": "対戦",
+   "reading": "たいせん",
+   "meaning": "versus match; to battle",
+   "word_type": "s",
+   "level": "N2",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "一対一で対戦しよう。",
+     "en": "Let's do a 1v1."
+    },
+    {
+     "jp": "対戦ゲームが好き。",
+     "en": "I like versus games."
+    }
+   ]
+  },
+  {
+   "word": "協力",
+   "reading": "きょうりょく",
+   "meaning": "co-op; cooperation",
+   "word_type": "s",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "協力プレイしよう！",
+     "en": "Let's play co-op!"
+    },
+    {
+     "jp": "協力しないとクリアできない。",
+     "en": "We can't clear it unless we work together."
+    }
+   ]
+  },
+  {
+   "word": "クリア",
+   "reading": "クリア",
+   "meaning": "clear (a stage/game)",
+   "word_type": "s",
+   "level": "N4",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "やっとクリアした！",
+     "en": "Finally beat it!"
+    },
+    {
+     "jp": "一日でクリアできるかな。",
+     "en": "I wonder if I can beat it in one day."
+    }
+   ]
+  },
+  {
+   "word": "詰む",
+   "reading": "つむ",
+   "meaning": "to be stuck/screwed (game over, no way out)",
+   "word_type": "g",
+   "level": "Slang",
+   "category": "game",
+   "note": "From shogi checkmate. 詰んだ is the most common form.",
+   "examples": [
+    {
+     "jp": "詰んだ…もう無理。",
+     "en": "I'm screwed... it's hopeless."
+    },
+    {
+     "jp": "ここで弾がないと詰む。",
+     "en": "If you've got no ammo here, you're done."
+    }
+   ]
+  },
+  {
+   "word": "沼る",
+   "reading": "ぬまる",
+   "meaning": "to get bogged down; to get hooked",
+   "word_type": "g",
+   "level": "Slang",
+   "category": "game",
+   "note": "From 沼 (swamp).",
+   "examples": [
+    {
+     "jp": "このボスで三時間沼った。",
+     "en": "I got stuck on this boss for three hours."
+    },
+    {
+     "jp": "このゲームに沼ってる。",
+     "en": "I'm totally hooked on this game."
+    }
+   ]
+  },
+  {
+   "word": "縛り",
+   "reading": "しばり",
+   "meaning": "self-imposed challenge run",
+   "word_type": "n",
+   "level": "N2",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "回復なし縛りでクリアする！",
+     "en": "I'm beating it with a no-healing challenge!"
+    },
+    {
+     "jp": "今回の縛りはヤバい。",
+     "en": "This challenge rule is insane."
+    }
+   ]
+  },
+  {
+   "word": "初見",
+   "reading": "しょけん",
+   "meaning": "first time seeing; blind playthrough; new viewer",
+   "word_type": "n",
+   "level": "Net",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "初見プレイです！",
+     "en": "This is my blind playthrough!"
+    },
+    {
+     "jp": "初見さん、いらっしゃい！",
+     "en": "Welcome, first-time viewers!"
+    }
+   ]
+  },
+  {
+   "word": "ネタバレ",
+   "reading": "ネタバレ",
+   "meaning": "spoiler",
+   "word_type": "s",
+   "level": "Net",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ネタバレしないで！",
+     "en": "No spoilers!"
+    },
+    {
+     "jp": "ネタバレ注意。",
+     "en": "Spoiler warning."
+    }
+   ]
+  },
+  {
+   "word": "野良",
+   "reading": "のら",
+   "meaning": "randoms (matchmade strangers)",
+   "word_type": "n",
+   "level": "Net",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "野良でランク行った。",
+     "en": "I went into ranked with randoms."
+    },
+    {
+     "jp": "野良の味方が強かった。",
+     "en": "My random teammates were good."
+    }
+   ]
+  },
+  {
+   "word": "ガチ",
+   "reading": "ガチ",
+   "meaning": "serious; for real; all-out",
+   "word_type": "na",
+   "level": "Slang",
+   "category": "game",
+   "note": "ガチ勢 = hardcore players.",
+   "examples": [
+    {
+     "jp": "ガチでやばい。",
+     "en": "For real, this is bad."
+    },
+    {
+     "jp": "今日はガチでやります。",
+     "en": "Today I'm going full tryhard."
+    }
+   ]
+  },
+  {
+   "word": "エイム",
+   "reading": "エイム",
+   "meaning": "aim",
+   "word_type": "n",
+   "level": "Net",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "エイムが悪すぎる。",
+     "en": "My aim is so bad."
+    },
+    {
+     "jp": "今日はエイムがいい。",
+     "en": "My aim's on point today."
+    }
+   ]
+  },
+  {
+   "word": "ラグい",
+   "reading": "ラグい",
+   "meaning": "laggy",
+   "word_type": "ia",
+   "level": "Net",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "サーバーがラグい。",
+     "en": "The server's laggy."
+    },
+    {
+     "jp": "ラグくて撃てない。",
+     "en": "It's so laggy I can't shoot."
+    }
+   ]
+  },
+  {
+   "word": "強い",
+   "reading": "つよい",
+   "meaning": "strong",
+   "word_type": "ia",
+   "level": "N5",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "このボス強すぎ！",
+     "en": "This boss is way too strong!"
+    },
+    {
+     "jp": "お前強いな！",
+     "en": "You're good!"
+    }
+   ]
+  },
+  {
+   "word": "弱い",
+   "reading": "よわい",
+   "meaning": "weak",
+   "word_type": "ia",
+   "level": "N5",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "このキャラ弱くない？",
+     "en": "Isn't this character weak?"
+    },
+    {
+     "jp": "俺、ホラーに弱いんだよ。",
+     "en": "I'm weak to horror stuff."
+    }
+   ]
+  },
+  {
+   "word": "難しい",
+   "reading": "むずかしい",
+   "meaning": "difficult",
+   "word_type": "ia",
+   "level": "N5",
+   "category": "game",
+   "note": "Slang shortening: ムズい.",
+   "examples": [
+    {
+     "jp": "このステージ難しすぎる。",
+     "en": "This stage is way too hard."
+    },
+    {
+     "jp": "難しくてもやめない。",
+     "en": "I won't quit even if it's hard."
+    }
+   ]
+  },
+  {
+   "word": "怖い",
+   "reading": "こわい",
+   "meaning": "scary; afraid",
+   "word_type": "ia",
+   "level": "N4",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "怖い怖い怖い！",
+     "en": "Scary scary scary!"
+    },
+    {
+     "jp": "このゲーム、思ったより怖くない。",
+     "en": "This game isn't as scary as I thought."
+    }
+   ]
+  },
+  {
+   "word": "危ない",
+   "reading": "あぶない",
+   "meaning": "dangerous; look out!",
+   "word_type": "ia",
+   "level": "N5",
+   "category": "game",
+   "note": "Slang: あぶねー！",
+   "examples": [
+    {
+     "jp": "危ない！",
+     "en": "Look out!"
+    },
+    {
+     "jp": "危なかった〜。",
+     "en": "That was close!"
+    }
+   ]
+  },
+  {
+   "word": "ホラー",
+   "reading": "ホラー",
+   "meaning": "horror",
+   "word_type": "n",
+   "level": "N3",
+   "category": "game",
+   "note": "ホラゲー = horror game.",
+   "examples": [
+    {
+     "jp": "ホラーゲーム苦手なんだよね。",
+     "en": "I'm not great with horror games."
+    },
+    {
+     "jp": "今日はホラー回です。",
+     "en": "Today's a horror episode."
+    }
+   ]
+  },
+  {
+   "word": "鍵",
+   "reading": "かぎ",
+   "meaning": "key; lock",
+   "word_type": "n",
+   "level": "N4",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "鍵がかかってる。",
+     "en": "It's locked."
+    },
+    {
+     "jp": "鍵はどこ？",
+     "en": "Where's the key?"
+    }
+   ]
+  },
+  {
+   "word": "謎",
+   "reading": "なぞ",
+   "meaning": "mystery; puzzle",
+   "word_type": "n",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "この謎が解けない。",
+     "en": "I can't solve this puzzle."
+    },
+    {
+     "jp": "謎すぎる。",
+     "en": "That makes zero sense."
+    }
+   ]
+  },
+  {
+   "word": "解く",
+   "reading": "とく",
+   "meaning": "to solve",
+   "word_type": "g",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "パズルを解いた！",
+     "en": "I solved the puzzle!"
+    },
+    {
+     "jp": "この謎、どうやって解くの？",
+     "en": "How do you solve this?"
+    }
+   ]
+  },
+  {
+   "word": "進む",
+   "reading": "すすむ",
+   "meaning": "to advance; to move forward",
+   "word_type": "g",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "先に進もう。",
+     "en": "Let's keep going."
+    },
+    {
+     "jp": "全然進まない。",
+     "en": "I'm not making any progress."
+    }
+   ]
+  },
+  {
+   "word": "戻る",
+   "reading": "もどる",
+   "meaning": "to go back; to return",
+   "word_type": "g",
+   "level": "N4",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "セーブポイントに戻ろう。",
+     "en": "Let's go back to the save point."
+    },
+    {
+     "jp": "ちょっと戻って！",
+     "en": "Go back a bit!"
+    }
+   ]
+  },
+  {
+   "word": "罠",
+   "reading": "わな",
+   "meaning": "trap",
+   "word_type": "n",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "これ絶対罠だろ。",
+     "en": "This is 100% a trap."
+    },
+    {
+     "jp": "罠にかかった！",
+     "en": "I fell for the trap!"
+    }
+   ]
+  },
+  {
+   "word": "ナイス",
+   "reading": "ナイス",
+   "meaning": "nice!",
+   "word_type": "x",
+   "level": "Net",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ナイス！",
+     "en": "Nice!"
+    },
+    {
+     "jp": "ナイスショット！",
+     "en": "Nice shot!"
+    }
+   ]
+  },
+  {
+   "word": "ドンマイ",
+   "reading": "ドンマイ",
+   "meaning": "don't worry about it (from 'don't mind')",
+   "word_type": "x",
+   "level": "Net",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ドンマイ、次がある。",
+     "en": "No worries, there's always next time."
+    },
+    {
+     "jp": "ドンマイドンマイ！",
+     "en": "It's fine, it's fine!"
+    }
+   ]
+  },
+  {
+   "word": "惜しい",
+   "reading": "おしい",
+   "meaning": "so close!; a shame",
+   "word_type": "ia",
+   "level": "N2",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "惜しい！あと少しだった。",
+     "en": "So close! Almost had it."
+    },
+    {
+     "jp": "惜しかったね。",
+     "en": "That was close, too bad."
+    }
+   ]
+  },
+  {
+   "word": "気をつけて",
+   "reading": "きをつけて",
+   "meaning": "be careful",
+   "word_type": "x",
+   "level": "N4",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "気をつけて、そこ罠あるよ。",
+     "en": "Careful, there's a trap there."
+    },
+    {
+     "jp": "帰り道、気をつけてね。",
+     "en": "Get home safe."
+    }
+   ]
+  },
+  {
+   "word": "後ろ",
+   "reading": "うしろ",
+   "meaning": "behind; back",
+   "word_type": "n",
+   "level": "N5",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "後ろ！後ろ！",
+     "en": "Behind you! Behind you!"
+    },
+    {
+     "jp": "後ろに何かいる。",
+     "en": "There's something behind me."
+    }
+   ]
+  },
+  {
+   "word": "こっち",
+   "reading": "こっち",
+   "meaning": "this way; over here",
+   "word_type": "x",
+   "level": "N5",
+   "category": "game",
+   "note": "そっち = there (near you), あっち = over there.",
+   "examples": [
+    {
+     "jp": "こっち来て！",
+     "en": "Come over here!"
+    },
+    {
+     "jp": "こっちの方が安全だ。",
+     "en": "This way is safer."
+    }
+   ]
+  },
+  {
+   "word": "招待",
+   "reading": "しょうたい",
+   "meaning": "invite",
+   "word_type": "s",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "フレンド招待送ったよ。",
+     "en": "I sent you a friend invite."
+    },
+    {
+     "jp": "部屋に招待して。",
+     "en": "Invite me to the room."
+    }
+   ]
+  },
+  {
+   "word": "ボイチャ",
+   "reading": "ボイチャ",
+   "meaning": "voice chat",
+   "word_type": "n",
+   "level": "Net",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ボイチャ入れる？",
+     "en": "Can you hop in voice chat?"
+    },
+    {
+     "jp": "ボイチャでやろう。",
+     "en": "Let's play with voice chat."
+    }
+   ]
+  },
+  {
+   "word": "回線",
+   "reading": "かいせん",
+   "meaning": "internet connection; line",
+   "word_type": "n",
+   "level": "N2",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "回線が悪い。",
+     "en": "My connection is bad."
+    },
+    {
+     "jp": "回線落ちしてごめん。",
+     "en": "Sorry, I disconnected."
+    }
+   ]
+  },
+  {
+   "word": "ランク",
+   "reading": "ランク",
+   "meaning": "ranked; rank",
+   "word_type": "n",
+   "level": "Net",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ランク上げたい。",
+     "en": "I want to rank up."
+    },
+    {
+     "jp": "ランク戦行こう。",
+     "en": "Let's go play ranked."
+    }
+   ]
+  },
+  {
+   "word": "キャラ",
+   "reading": "キャラ",
+   "meaning": "character",
+   "word_type": "n",
+   "level": "Net",
+   "category": "game",
+   "note": "Also means someone's persona: キャラが濃い = strong personality.",
+   "examples": [
+    {
+     "jp": "どのキャラ使う？",
+     "en": "Which character are you using?"
+    },
+    {
+     "jp": "このキャラ好き。",
+     "en": "I like this character."
+    }
+   ]
+  },
+  {
+   "word": "ステージ",
+   "reading": "ステージ",
+   "meaning": "stage; level",
+   "word_type": "n",
+   "level": "Net",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "次のステージに行こう。",
+     "en": "Let's go to the next stage."
+    },
+    {
+     "jp": "このステージ長い。",
+     "en": "This stage is long."
+    }
+   ]
+  },
+  {
+   "word": "選択肢",
+   "reading": "せんたくし",
+   "meaning": "choice; option",
+   "word_type": "n",
+   "level": "N3",
+   "category": "game",
+   "note": "",
+   "examples": [
+    {
+     "jp": "選択肢を間違えた。",
+     "en": "I picked the wrong option."
+    },
+    {
+     "jp": "どの選択肢がいい？",
+     "en": "Which option is best?"
+    }
+   ]
+  },
+  {
+   "word": "罰ゲーム",
+   "reading": "ばつげーむ",
+   "meaning": "punishment game (loser's penalty)",
+   "word_type": "n",
+   "level": "N2",
+   "category": "game",
+   "note": "Huge in Japanese YouTube collabs.",
+   "examples": [
+    {
+     "jp": "負けたら罰ゲーム！",
+     "en": "Loser gets a penalty!"
+    },
+    {
+     "jp": "罰ゲームは激辛ラーメン。",
+     "en": "The penalty is super-spicy ramen."
+    }
+   ]
+  },
+  {
+   "word": "実況",
+   "reading": "じっきょう",
+   "meaning": "live commentary; let's-play",
+   "word_type": "s",
+   "level": "N1",
+   "category": "stream",
+   "note": "ゲーム実況 is the name of the whole genre Kiyo is in.",
+   "examples": [
+    {
+     "jp": "ゲーム実況を始めたい。",
+     "en": "I want to start doing game let's-plays."
+    },
+    {
+     "jp": "今日もホラゲーを実況していきます！",
+     "en": "Today I'm doing commentary on another horror game!"
+    }
+   ]
+  },
+  {
+   "word": "実況者",
+   "reading": "じっきょうしゃ",
+   "meaning": "let's-player; game commentator",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "好きな実況者は誰？",
+     "en": "Who's your favorite let's-player?"
+    },
+    {
+     "jp": "キヨみたいな実況者になりたい。",
+     "en": "I want to be a commentator like Kiyo."
+    }
+   ]
+  },
+  {
+   "word": "配信",
+   "reading": "はいしん",
+   "meaning": "stream; broadcast; distribution",
+   "word_type": "s",
+   "level": "N2",
+   "category": "stream",
+   "note": "配信者 = streamer.",
+   "examples": [
+    {
+     "jp": "今夜八時から配信します！",
+     "en": "I'm streaming tonight from 8!"
+    },
+    {
+     "jp": "配信見に来てくれてありがとう！",
+     "en": "Thanks for coming to the stream!"
+    }
+   ]
+  },
+  {
+   "word": "生配信",
+   "reading": "なまはいしん",
+   "meaning": "livestream",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "生配信だから編集できない。",
+     "en": "It's live, so I can't edit it."
+    },
+    {
+     "jp": "今日は生配信でやります。",
+     "en": "Today we're doing it live."
+    }
+   ]
+  },
+  {
+   "word": "動画",
+   "reading": "どうが",
+   "meaning": "video",
+   "word_type": "n",
+   "level": "N3",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "新しい動画上げました！",
+     "en": "I uploaded a new video!"
+    },
+    {
+     "jp": "この動画、百万回再生いった。",
+     "en": "This video hit a million views."
+    }
+   ]
+  },
+  {
+   "word": "投稿",
+   "reading": "とうこう",
+   "meaning": "post; upload",
+   "word_type": "s",
+   "level": "N2",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "毎日投稿を頑張ってます。",
+     "en": "I'm going hard on daily uploads."
+    },
+    {
+     "jp": "動画を投稿した。",
+     "en": "I posted a video."
+    }
+   ]
+  },
+  {
+   "word": "上げる",
+   "reading": "あげる",
+   "meaning": "to raise; to upload; to hype up",
+   "word_type": "i",
+   "level": "N4",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "明日動画上げます。",
+     "en": "I'm uploading a video tomorrow."
+    },
+    {
+     "jp": "テンション上げていこう！",
+     "en": "Let's get hyped!"
+    }
+   ]
+  },
+  {
+   "word": "編集",
+   "reading": "へんしゅう",
+   "meaning": "editing",
+   "word_type": "s",
+   "level": "N2",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "編集に五時間かかった。",
+     "en": "Editing took five hours."
+    },
+    {
+     "jp": "この編集、天才すぎる。",
+     "en": "This edit is genius."
+    }
+   ]
+  },
+  {
+   "word": "サムネ",
+   "reading": "サムネ",
+   "meaning": "thumbnail",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "サムネ大事だよ。",
+     "en": "Thumbnails matter."
+    },
+    {
+     "jp": "サムネで釣られた。",
+     "en": "I got baited by the thumbnail."
+    }
+   ]
+  },
+  {
+   "word": "切り抜き",
+   "reading": "きりぬき",
+   "meaning": "clip (fan-made highlight)",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "切り抜きでバズった。",
+     "en": "It went viral through a clip."
+    },
+    {
+     "jp": "切り抜き動画で知りました。",
+     "en": "I found you through a clip video."
+    }
+   ]
+  },
+  {
+   "word": "チャンネル登録",
+   "reading": "ちゃんねるとうろく",
+   "meaning": "subscribe (to a channel)",
+   "word_type": "s",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "チャンネル登録よろしくお願いします！",
+     "en": "Please subscribe!"
+    },
+    {
+     "jp": "登録してくれた人、ありがとう！",
+     "en": "Thanks to everyone who subscribed!"
+    }
+   ]
+  },
+  {
+   "word": "登録者",
+   "reading": "とうろくしゃ",
+   "meaning": "subscribers",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "登録者十万人いった！",
+     "en": "We hit 100K subscribers!"
+    },
+    {
+     "jp": "登録者が増えてきた。",
+     "en": "The subs are going up."
+    }
+   ]
+  },
+  {
+   "word": "高評価",
+   "reading": "こうひょうか",
+   "meaning": "like (thumbs up)",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "高評価お願いします！",
+     "en": "Please hit like!"
+    },
+    {
+     "jp": "高評価ありがとう。",
+     "en": "Thanks for the likes."
+    }
+   ]
+  },
+  {
+   "word": "視聴者",
+   "reading": "しちょうしゃ",
+   "meaning": "viewer",
+   "word_type": "n",
+   "level": "N2",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "視聴者のみんな、こんばんは！",
+     "en": "Good evening, everyone watching!"
+    },
+    {
+     "jp": "視聴者参加型です。",
+     "en": "Viewers can join in."
+    }
+   ]
+  },
+  {
+   "word": "リスナー",
+   "reading": "リスナー",
+   "meaning": "viewers / audience (streams)",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "リスナーさんからのコメント。",
+     "en": "Here's a comment from a viewer."
+    },
+    {
+     "jp": "リスナーに助けられた。",
+     "en": "Chat helped me out."
+    }
+   ]
+  },
+  {
+   "word": "コメント",
+   "reading": "コメント",
+   "meaning": "comment",
+   "word_type": "s",
+   "level": "N3",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "コメントで教えてください。",
+     "en": "Let me know in the comments."
+    },
+    {
+     "jp": "コメント全部読んでるよ。",
+     "en": "I read every comment."
+    }
+   ]
+  },
+  {
+   "word": "コメ欄",
+   "reading": "こめらん",
+   "meaning": "comment section",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "コメ欄が荒れてる。",
+     "en": "The comments are a mess."
+    },
+    {
+     "jp": "コメ欄で教えて。",
+     "en": "Tell me in the comments."
+    }
+   ]
+  },
+  {
+   "word": "概要欄",
+   "reading": "がいようらん",
+   "meaning": "video description box",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "リンクは概要欄に貼っておきます。",
+     "en": "I'll put the link in the description."
+    },
+    {
+     "jp": "概要欄見てね。",
+     "en": "Check the description."
+    }
+   ]
+  },
+  {
+   "word": "スパチャ",
+   "reading": "スパチャ",
+   "meaning": "Super Chat (paid message)",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "スパチャありがとうございます！",
+     "en": "Thank you for the Super Chat!"
+    },
+    {
+     "jp": "今からスパチャ読みします。",
+     "en": "Reading Super Chats now."
+    }
+   ]
+  },
+  {
+   "word": "枠",
+   "reading": "わく",
+   "meaning": "a stream session/slot",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今日の枠は長めです。",
+     "en": "Today's stream is a long one."
+    },
+    {
+     "jp": "次の枠で続きやります。",
+     "en": "I'll continue next stream."
+    }
+   ]
+  },
+  {
+   "word": "企画",
+   "reading": "きかく",
+   "meaning": "project; video concept",
+   "word_type": "n",
+   "level": "N2",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "新しい企画を考えた。",
+     "en": "I came up with a new video idea."
+    },
+    {
+     "jp": "コラボ企画やりませんか？",
+     "en": "Want to do a collab project?"
+    }
+   ]
+  },
+  {
+   "word": "コラボ",
+   "reading": "コラボ",
+   "meaning": "collab",
+   "word_type": "s",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今度コラボしようよ！",
+     "en": "Let's collab sometime!"
+    },
+    {
+     "jp": "コラボ動画出ました。",
+     "en": "The collab video is out."
+    }
+   ]
+  },
+  {
+   "word": "再生数",
+   "reading": "さいせいすう",
+   "meaning": "view count",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "再生数が伸びない。",
+     "en": "The views aren't growing."
+    },
+    {
+     "jp": "再生数より楽しさが大事。",
+     "en": "Having fun matters more than views."
+    }
+   ]
+  },
+  {
+   "word": "伸びる",
+   "reading": "のびる",
+   "meaning": "to grow; (views) to take off",
+   "word_type": "i",
+   "level": "N3",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "この動画、めっちゃ伸びてる！",
+     "en": "This video is blowing up!"
+    },
+    {
+     "jp": "なかなか伸びない。",
+     "en": "It's just not taking off."
+    }
+   ]
+  },
+  {
+   "word": "バズる",
+   "reading": "バズる",
+   "meaning": "to go viral",
+   "word_type": "g",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "この動画バズった！",
+     "en": "This video went viral!"
+    },
+    {
+     "jp": "いつかバズりたい。",
+     "en": "I want to go viral someday."
+    }
+   ]
+  },
+  {
+   "word": "炎上",
+   "reading": "えんじょう",
+   "meaning": "getting flamed; controversy",
+   "word_type": "s",
+   "level": "N1",
+   "category": "stream",
+   "note": "Literally 'catching fire'.",
+   "examples": [
+    {
+     "jp": "炎上しないように気をつけて。",
+     "en": "Be careful not to start a controversy."
+    },
+    {
+     "jp": "あの配信者、炎上してる。",
+     "en": "That streamer is getting dragged."
+    }
+   ]
+  },
+  {
+   "word": "収益化",
+   "reading": "しゅうえきか",
+   "meaning": "monetization",
+   "word_type": "s",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "やっと収益化できた！",
+     "en": "I finally got monetized!"
+    },
+    {
+     "jp": "収益化の条件は何？",
+     "en": "What are the monetization requirements?"
+    }
+   ]
+  },
+  {
+   "word": "案件",
+   "reading": "あんけん",
+   "meaning": "sponsorship deal; (business) matter",
+   "word_type": "n",
+   "level": "N1",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "これは案件動画です。",
+     "en": "This is a sponsored video."
+    },
+    {
+     "jp": "初めて案件が来た！",
+     "en": "I got my first sponsorship!"
+    }
+   ]
+  },
+  {
+   "word": "神回",
+   "reading": "かみかい",
+   "meaning": "legendary episode",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今日の配信、神回だった！",
+     "en": "Today's stream was legendary!"
+    },
+    {
+     "jp": "神回確定。",
+     "en": "Certified classic."
+    }
+   ]
+  },
+  {
+   "word": "草",
+   "reading": "くさ",
+   "meaning": "lol (internet)",
+   "word_type": "x",
+   "level": "Net",
+   "category": "stream",
+   "note": "From 'www' looking like grass. 大草原 = ROFL.",
+   "examples": [
+    {
+     "jp": "それは草。",
+     "en": "That's hilarious."
+    },
+    {
+     "jp": "草生える。",
+     "en": "LMAO."
+    }
+   ]
+  },
+  {
+   "word": "ワロタ",
+   "reading": "ワロタ",
+   "meaning": "lol (from 笑った)",
+   "word_type": "x",
+   "level": "Net",
+   "category": "stream",
+   "note": "2ch-era net slang, still used in chat.",
+   "examples": [
+    {
+     "jp": "これはワロタ。",
+     "en": "This got me, lol."
+    },
+    {
+     "jp": "ワロタwww",
+     "en": "LOL."
+    }
+   ]
+  },
+  {
+   "word": "声",
+   "reading": "こえ",
+   "meaning": "voice",
+   "word_type": "n",
+   "level": "N5",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "声がいいね。",
+     "en": "You have a great voice."
+    },
+    {
+     "jp": "声出していこう！",
+     "en": "Let's get loud!"
+    }
+   ]
+  },
+  {
+   "word": "マイク",
+   "reading": "マイク",
+   "meaning": "mic",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "マイク入ってる？",
+     "en": "Is my mic on?"
+    },
+    {
+     "jp": "マイクミュートになってた。",
+     "en": "My mic was muted."
+    }
+   ]
+  },
+  {
+   "word": "音量",
+   "reading": "おんりょう",
+   "meaning": "volume",
+   "word_type": "n",
+   "level": "N2",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "音量大丈夫？",
+     "en": "Is the volume okay?"
+    },
+    {
+     "jp": "ゲームの音量下げるね。",
+     "en": "I'll lower the game volume."
+    }
+   ]
+  },
+  {
+   "word": "画面",
+   "reading": "がめん",
+   "meaning": "screen",
+   "word_type": "n",
+   "level": "N3",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "画面見えてる？",
+     "en": "Can you see my screen?"
+    },
+    {
+     "jp": "画面が真っ暗。",
+     "en": "The screen's pitch black."
+    }
+   ]
+  },
+  {
+   "word": "今回は",
+   "reading": "こんかいは",
+   "meaning": "this time; in this video",
+   "word_type": "x",
+   "level": "N3",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今回はこのゲームをやっていきます！",
+     "en": "In this video, we're playing this game!"
+    },
+    {
+     "jp": "今回はここまで。",
+     "en": "That's it for this time."
+    }
+   ]
+  },
+  {
+   "word": "どうも",
+   "reading": "どうも",
+   "meaning": "hey; thanks (casual)",
+   "word_type": "x",
+   "level": "N4",
+   "category": "stream",
+   "note": "Standard 実況 intro: はいどうも、キヨです。",
+   "examples": [
+    {
+     "jp": "はいどうも、〇〇です！",
+     "en": "Hey, what's up, it's ___!"
+    },
+    {
+     "jp": "どうもありがとう。",
+     "en": "Thanks a lot."
+    }
+   ]
+  },
+  {
+   "word": "やっていきたいと思います",
+   "reading": "やっていきたいとおもいます",
+   "meaning": "I'd like to (start) playing…",
+   "word_type": "x",
+   "level": "N3",
+   "category": "stream",
+   "note": "THE classic Japanese YouTuber phrase.",
+   "examples": [
+    {
+     "jp": "早速やっていきたいと思います！",
+     "en": "Let's get right into it!"
+    },
+    {
+     "jp": "今日はマイクラをやっていきたいと思います。",
+     "en": "Today I'll be playing Minecraft."
+    }
+   ]
+  },
+  {
+   "word": "早速",
+   "reading": "さっそく",
+   "meaning": "right away; without delay",
+   "word_type": "adv",
+   "level": "N3",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "早速始めましょう！",
+     "en": "Let's start right away!"
+    },
+    {
+     "jp": "早速やられた。",
+     "en": "Already got killed."
+    }
+   ]
+  },
+  {
+   "word": "ご視聴ありがとうございました",
+   "reading": "ごしちょうありがとうございました",
+   "meaning": "thank you for watching",
+   "word_type": "x",
+   "level": "N2",
+   "category": "stream",
+   "note": "Standard outro.",
+   "examples": [
+    {
+     "jp": "最後までご視聴ありがとうございました！",
+     "en": "Thanks for watching to the end!"
+    },
+    {
+     "jp": "ご視聴ありがとうございました。また次回！",
+     "en": "Thanks for watching. See you next time!"
+    }
+   ]
+  },
+  {
+   "word": "また次回",
+   "reading": "またじかい",
+   "meaning": "see you next time",
+   "word_type": "x",
+   "level": "N4",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "それではまた次回！",
+     "en": "Well then, see you next time!"
+    },
+    {
+     "jp": "続きはまた次回。",
+     "en": "To be continued next time."
+    }
+   ]
+  },
+  {
+   "word": "最後まで",
+   "reading": "さいごまで",
+   "meaning": "until the end",
+   "word_type": "x",
+   "level": "N4",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "最後まで見てね！",
+     "en": "Watch till the end!"
+    },
+    {
+     "jp": "最後まで諦めない。",
+     "en": "I won't give up until the end."
+    }
+   ]
+  },
+  {
+   "word": "皆さん",
+   "reading": "みなさん",
+   "meaning": "everyone (polite)",
+   "word_type": "n",
+   "level": "N5",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "皆さん、こんにちは！",
+     "en": "Hello, everyone!"
+    },
+    {
+     "jp": "皆さんのおかげです。",
+     "en": "It's all thanks to you guys."
+    }
+   ]
+  },
+  {
+   "word": "みんな",
+   "reading": "みんな",
+   "meaning": "everyone (casual)",
+   "word_type": "n",
+   "level": "N5",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "みんな、ありがとう！",
+     "en": "Thanks, everyone!"
+    },
+    {
+     "jp": "みんなはどう思う？",
+     "en": "What do you all think?"
+    }
+   ]
+  },
+  {
+   "word": "撮る",
+   "reading": "とる",
+   "meaning": "to record; to film; to take (photo)",
+   "word_type": "g",
+   "level": "N4",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今日は三本撮った。",
+     "en": "I recorded three videos today."
+    },
+    {
+     "jp": "一緒に動画撮ろう！",
+     "en": "Let's film a video together!"
+    }
+   ]
+  },
+  {
+   "word": "録画",
+   "reading": "ろくが",
+   "meaning": "recording",
+   "word_type": "s",
+   "level": "N2",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "録画できてなかった…",
+     "en": "It didn't record..."
+    },
+    {
+     "jp": "録画ボタン押した？",
+     "en": "Did you hit record?"
+    }
+   ]
+  },
+  {
+   "word": "ファン",
+   "reading": "ファン",
+   "meaning": "fan",
+   "word_type": "n",
+   "level": "N3",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ファンの人に会えた！",
+     "en": "I got to meet a fan!"
+    },
+    {
+     "jp": "ずっとファンです！",
+     "en": "I've been a fan forever!"
+    }
+   ]
+  },
+  {
+   "word": "アンチ",
+   "reading": "アンチ",
+   "meaning": "hater",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "アンチは気にしない。",
+     "en": "I don't care about haters."
+    },
+    {
+     "jp": "アンチコメントが来た。",
+     "en": "I got a hate comment."
+    }
+   ]
+  },
+  {
+   "word": "話題",
+   "reading": "わだい",
+   "meaning": "topic; trending",
+   "word_type": "n",
+   "level": "N2",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今話題のゲーム。",
+     "en": "The game everyone's talking about."
+    },
+    {
+     "jp": "話題を変えよう。",
+     "en": "Let's change the subject."
+    }
+   ]
+  },
+  {
+   "word": "流行る",
+   "reading": "はやる",
+   "meaning": "to be popular; to trend",
+   "word_type": "g",
+   "level": "N3",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今このゲームが流行ってる。",
+     "en": "This game is trending right now."
+    },
+    {
+     "jp": "流行りに乗ろう。",
+     "en": "Let's ride the trend."
+    }
+   ]
+  },
+  {
+   "word": "テンション",
+   "reading": "テンション",
+   "meaning": "energy; hype level (NOT 'tension')",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "テンション高いね！",
+     "en": "You're so hyped!"
+    },
+    {
+     "jp": "今日テンション低い。",
+     "en": "I'm low-energy today."
+    }
+   ]
+  },
+  {
+   "word": "ネタ",
+   "reading": "ネタ",
+   "meaning": "material; joke; bit; topic",
+   "word_type": "n",
+   "level": "Net",
+   "category": "stream",
+   "note": "",
+   "examples": [
+    {
+     "jp": "動画のネタがない。",
+     "en": "I've got no video ideas."
+    },
+    {
+     "jp": "それ、ネタでしょ？",
+     "en": "That's a joke, right?"
+    }
+   ]
+  },
+  {
+   "word": "マジで",
+   "reading": "マジで",
+   "meaning": "seriously; for real",
+   "word_type": "x",
+   "level": "Slang",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "マジで？",
+     "en": "Seriously?"
+    },
+    {
+     "jp": "マジでやばい。",
+     "en": "This is seriously bad."
+    }
+   ]
+  },
+  {
+   "word": "ヤバい",
+   "reading": "ヤバい",
+   "meaning": "crazy; awful; amazing (context)",
+   "word_type": "ia",
+   "level": "Slang",
+   "category": "react",
+   "note": "Good OR bad depending on tone. Slang: ヤバっ / やべー.",
+   "examples": [
+    {
+     "jp": "ヤバい、ヤバい！",
+     "en": "Oh no, oh no!"
+    },
+    {
+     "jp": "この景色ヤバくない？",
+     "en": "Isn't this view insane?"
+    }
+   ]
+  },
+  {
+   "word": "えぐい",
+   "reading": "えぐい",
+   "meaning": "brutal; insane (intense)",
+   "word_type": "ia",
+   "level": "Slang",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "この威力えぐい。",
+     "en": "This damage is insane."
+    },
+    {
+     "jp": "えぐかった…",
+     "en": "That was brutal..."
+    }
+   ]
+  },
+  {
+   "word": "すごい",
+   "reading": "すごい",
+   "meaning": "amazing; incredible",
+   "word_type": "ia",
+   "level": "N4",
+   "category": "react",
+   "note": "Casual: すげー！",
+   "examples": [
+    {
+     "jp": "すごっ！",
+     "en": "Whoa!"
+    },
+    {
+     "jp": "すごく上手いね。",
+     "en": "You're really good."
+    }
+   ]
+  },
+  {
+   "word": "めっちゃ",
+   "reading": "めっちゃ",
+   "meaning": "super; really (Kansai-origin)",
+   "word_type": "adv",
+   "level": "Slang",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "めっちゃ怖い。",
+     "en": "Super scary."
+    },
+    {
+     "jp": "めっちゃ楽しかった！",
+     "en": "That was so fun!"
+    }
+   ]
+  },
+  {
+   "word": "超",
+   "reading": "ちょう",
+   "meaning": "super; ultra",
+   "word_type": "adv",
+   "level": "N3",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "超ムズい。",
+     "en": "Super hard."
+    },
+    {
+     "jp": "超嬉しい！",
+     "en": "So happy!"
+    }
+   ]
+  },
+  {
+   "word": "全然",
+   "reading": "ぜんぜん",
+   "meaning": "not at all; (casual) totally",
+   "word_type": "adv",
+   "level": "N4",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "全然大丈夫。",
+     "en": "Totally fine."
+    },
+    {
+     "jp": "全然当たらない。",
+     "en": "I can't hit anything."
+    }
+   ]
+  },
+  {
+   "word": "絶対",
+   "reading": "ぜったい",
+   "meaning": "absolutely; definitely",
+   "word_type": "adv",
+   "level": "N4",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "絶対勝つ！",
+     "en": "I'm definitely winning!"
+    },
+    {
+     "jp": "絶対行かない。",
+     "en": "I'm absolutely not going."
+    }
+   ]
+  },
+  {
+   "word": "無理",
+   "reading": "むり",
+   "meaning": "impossible; no way",
+   "word_type": "na",
+   "level": "N3",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "無理無理無理！",
+     "en": "No no no no!"
+    },
+    {
+     "jp": "もう無理。",
+     "en": "I can't anymore."
+    }
+   ]
+  },
+  {
+   "word": "最高",
+   "reading": "さいこう",
+   "meaning": "the best",
+   "word_type": "na",
+   "level": "N3",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "最高だ！",
+     "en": "This is the best!"
+    },
+    {
+     "jp": "今日の配信、最高でした。",
+     "en": "Today's stream was amazing."
+    }
+   ]
+  },
+  {
+   "word": "最悪",
+   "reading": "さいあく",
+   "meaning": "the worst",
+   "word_type": "na",
+   "level": "N3",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "最悪…",
+     "en": "This is the worst..."
+    },
+    {
+     "jp": "最悪のタイミングだ。",
+     "en": "Worst possible timing."
+    }
+   ]
+  },
+  {
+   "word": "嘘",
+   "reading": "うそ",
+   "meaning": "lie; no way!",
+   "word_type": "n",
+   "level": "N4",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "嘘でしょ？",
+     "en": "No way, you're kidding?"
+    },
+    {
+     "jp": "嘘つかないで。",
+     "en": "Don't lie."
+    }
+   ]
+  },
+  {
+   "word": "なんで",
+   "reading": "なんで",
+   "meaning": "why?!",
+   "word_type": "x",
+   "level": "N4",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "なんで？！",
+     "en": "Why?!"
+    },
+    {
+     "jp": "なんで今来るの？！",
+     "en": "Why are you coming NOW?!"
+    }
+   ]
+  },
+  {
+   "word": "やめて",
+   "reading": "やめて",
+   "meaning": "stop!; don't!",
+   "word_type": "x",
+   "level": "N4",
+   "category": "react",
+   "note": "From やめる (to stop). やめろ = blunt command.",
+   "examples": [
+    {
+     "jp": "やめて！来ないで！",
+     "en": "Stop! Don't come over here!"
+    },
+    {
+     "jp": "マジでやめて。",
+     "en": "Seriously, stop."
+    }
+   ]
+  },
+  {
+   "word": "ビビる",
+   "reading": "ビビる",
+   "meaning": "to get scared; to flinch",
+   "word_type": "g",
+   "level": "Slang",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "めっちゃビビった。",
+     "en": "That scared the crap out of me."
+    },
+    {
+     "jp": "ビビってないし！",
+     "en": "I'm not scared!"
+    }
+   ]
+  },
+  {
+   "word": "びっくり",
+   "reading": "びっくり",
+   "meaning": "surprise; to be startled",
+   "word_type": "s",
+   "level": "N3",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "びっくりした！",
+     "en": "That startled me!"
+    },
+    {
+     "jp": "びっくりさせないで。",
+     "en": "Don't scare me like that."
+    }
+   ]
+  },
+  {
+   "word": "叫ぶ",
+   "reading": "さけぶ",
+   "meaning": "to scream; to shout",
+   "word_type": "g",
+   "level": "N3",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "叫びすぎて喉痛い。",
+     "en": "I screamed so much my throat hurts."
+    },
+    {
+     "jp": "叫ばないで！",
+     "en": "Don't scream!"
+    }
+   ]
+  },
+  {
+   "word": "うるさい",
+   "reading": "うるさい",
+   "meaning": "loud; annoying; shut up",
+   "word_type": "ia",
+   "level": "N4",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "うるさい！",
+     "en": "Shut up!"
+    },
+    {
+     "jp": "声うるさくてごめん。",
+     "en": "Sorry for being so loud."
+    }
+   ]
+  },
+  {
+   "word": "ウケる",
+   "reading": "ウケる",
+   "meaning": "to be hilarious",
+   "word_type": "g",
+   "level": "Slang",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "それウケる。",
+     "en": "That's hilarious."
+    },
+    {
+     "jp": "めっちゃウケた。",
+     "en": "That killed."
+    }
+   ]
+  },
+  {
+   "word": "面白い",
+   "reading": "おもしろい",
+   "meaning": "funny; interesting",
+   "word_type": "ia",
+   "level": "N4",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "この実況者、面白いね。",
+     "en": "This commentator is funny."
+    },
+    {
+     "jp": "面白くなってきた！",
+     "en": "Now it's getting interesting!"
+    }
+   ]
+  },
+  {
+   "word": "つまらない",
+   "reading": "つまらない",
+   "meaning": "boring",
+   "word_type": "ia",
+   "level": "N4",
+   "category": "react",
+   "note": "Casual: つまんない.",
+   "examples": [
+    {
+     "jp": "つまらない話でごめん。",
+     "en": "Sorry for the boring story."
+    },
+    {
+     "jp": "このステージつまらない。",
+     "en": "This stage is boring."
+    }
+   ]
+  },
+  {
+   "word": "天才",
+   "reading": "てんさい",
+   "meaning": "genius",
+   "word_type": "n",
+   "level": "N3",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "天才か？",
+     "en": "Am I a genius?"
+    },
+    {
+     "jp": "俺、天才かもしれない。",
+     "en": "I might be a genius."
+    }
+   ]
+  },
+  {
+   "word": "バカ",
+   "reading": "バカ",
+   "meaning": "idiot; stupid",
+   "word_type": "na",
+   "level": "N4",
+   "category": "react",
+   "note": "Fine jokingly between close friends; rude otherwise.",
+   "examples": [
+    {
+     "jp": "バカじゃないの？",
+     "en": "Are you stupid?"
+    },
+    {
+     "jp": "バカなことした。",
+     "en": "I did something dumb."
+    }
+   ]
+  },
+  {
+   "word": "かっこいい",
+   "reading": "かっこいい",
+   "meaning": "cool",
+   "word_type": "ia",
+   "level": "N4",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "そのスキン、かっこいい！",
+     "en": "That skin is cool!"
+    },
+    {
+     "jp": "かっこよく決めたかった。",
+     "en": "I wanted to pull it off looking cool."
+    }
+   ]
+  },
+  {
+   "word": "可愛い",
+   "reading": "かわいい",
+   "meaning": "cute",
+   "word_type": "ia",
+   "level": "N5",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "この犬、可愛い！",
+     "en": "This dog is so cute!"
+    },
+    {
+     "jp": "可愛くない？",
+     "en": "Isn't it cute?"
+    }
+   ]
+  },
+  {
+   "word": "キモい",
+   "reading": "キモい",
+   "meaning": "gross; creepy",
+   "word_type": "ia",
+   "level": "Slang",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "キモっ！",
+     "en": "Ew!"
+    },
+    {
+     "jp": "この敵キモすぎる。",
+     "en": "This enemy is so gross."
+    }
+   ]
+  },
+  {
+   "word": "ダサい",
+   "reading": "ダサい",
+   "meaning": "lame; uncool",
+   "word_type": "ia",
+   "level": "Slang",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ダサいミスした。",
+     "en": "I made a lame mistake."
+    },
+    {
+     "jp": "それダサくない？",
+     "en": "Isn't that kind of lame?"
+    }
+   ]
+  },
+  {
+   "word": "ムカつく",
+   "reading": "ムカつく",
+   "meaning": "to be irritating; to piss off",
+   "word_type": "g",
+   "level": "Slang",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "このボス、ムカつく！",
+     "en": "This boss is so annoying!"
+    },
+    {
+     "jp": "マジでムカついた。",
+     "en": "That seriously pissed me off."
+    }
+   ]
+  },
+  {
+   "word": "キレる",
+   "reading": "キレる",
+   "meaning": "to snap; to lose it",
+   "word_type": "i",
+   "level": "Slang",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "キレそう。",
+     "en": "I'm about to snap."
+    },
+    {
+     "jp": "キレないで。",
+     "en": "Don't lose it."
+    }
+   ]
+  },
+  {
+   "word": "焦る",
+   "reading": "あせる",
+   "meaning": "to panic; to be in a rush",
+   "word_type": "g",
+   "level": "N2",
+   "category": "react",
+   "note": "Godan despite ending in える.",
+   "examples": [
+    {
+     "jp": "焦らないで。",
+     "en": "Don't panic."
+    },
+    {
+     "jp": "時間がなくて焦った。",
+     "en": "I panicked since there was no time."
+    }
+   ]
+  },
+  {
+   "word": "よっしゃ",
+   "reading": "よっしゃ",
+   "meaning": "yes!; let's go!",
+   "word_type": "x",
+   "level": "Slang",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "よっしゃー！勝った！",
+     "en": "LET'S GO! We won!"
+    },
+    {
+     "jp": "よっしゃ、行くぞ！",
+     "en": "Alright, here we go!"
+    }
+   ]
+  },
+  {
+   "word": "セーフ",
+   "reading": "セーフ",
+   "meaning": "safe!",
+   "word_type": "x",
+   "level": "Net",
+   "category": "react",
+   "note": "アウト = out / you're done.",
+   "examples": [
+    {
+     "jp": "セーフ！",
+     "en": "Safe!"
+    },
+    {
+     "jp": "ギリギリセーフ！",
+     "en": "Barely made it!"
+    }
+   ]
+  },
+  {
+   "word": "ギリギリ",
+   "reading": "ギリギリ",
+   "meaning": "just barely",
+   "word_type": "adv",
+   "level": "N3",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ギリギリ間に合った。",
+     "en": "I barely made it in time."
+    },
+    {
+     "jp": "体力ギリギリ。",
+     "en": "I'm hanging on by a thread."
+    }
+   ]
+  },
+  {
+   "word": "おい",
+   "reading": "おい",
+   "meaning": "hey! (rough)",
+   "word_type": "x",
+   "level": "N4",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "おい！何してんの！",
+     "en": "Hey! What are you doing!"
+    },
+    {
+     "jp": "おいおいおい。",
+     "en": "Whoa whoa whoa."
+    }
+   ]
+  },
+  {
+   "word": "うわ",
+   "reading": "うわ",
+   "meaning": "whoa; ugh",
+   "word_type": "x",
+   "level": "N4",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "うわっ！",
+     "en": "Whoa!"
+    },
+    {
+     "jp": "うわ、最悪。",
+     "en": "Ugh, the worst."
+    }
+   ]
+  },
+  {
+   "word": "あれ",
+   "reading": "あれ",
+   "meaning": "huh?; that thing",
+   "word_type": "x",
+   "level": "N4",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "あれ？ここどこ？",
+     "en": "Huh? Where am I?"
+    },
+    {
+     "jp": "あれ、おかしいな。",
+     "en": "Huh, that's weird."
+    }
+   ]
+  },
+  {
+   "word": "なるほど",
+   "reading": "なるほど",
+   "meaning": "I see; makes sense",
+   "word_type": "x",
+   "level": "N4",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "なるほどね。",
+     "en": "Ah, I see."
+    },
+    {
+     "jp": "なるほど、そういうことか。",
+     "en": "Oh, so that's how it is."
+    }
+   ]
+  },
+  {
+   "word": "確かに",
+   "reading": "たしかに",
+   "meaning": "true; that's right",
+   "word_type": "adv",
+   "level": "N3",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "確かに。",
+     "en": "Fair point."
+    },
+    {
+     "jp": "確かにそれは難しい。",
+     "en": "Yeah, that is hard."
+    }
+   ]
+  },
+  {
+   "word": "さすが",
+   "reading": "さすが",
+   "meaning": "as expected (of you); impressive",
+   "word_type": "adv",
+   "level": "N3",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "さすが！",
+     "en": "Impressive, as always!"
+    },
+    {
+     "jp": "さすがプロだね。",
+     "en": "That's a pro for you."
+    }
+   ]
+  },
+  {
+   "word": "普通に",
+   "reading": "ふつうに",
+   "meaning": "normally; (slang) honestly, legit",
+   "word_type": "adv",
+   "level": "Slang",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "普通に上手い。",
+     "en": "Honestly, that's legit good."
+    },
+    {
+     "jp": "普通に怖い。",
+     "en": "That's genuinely scary."
+    }
+   ]
+  },
+  {
+   "word": "とりあえず",
+   "reading": "とりあえず",
+   "meaning": "for now; first of all",
+   "word_type": "adv",
+   "level": "N3",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "とりあえずやってみよう。",
+     "en": "Let's just try it for now."
+    },
+    {
+     "jp": "とりあえず回復しよう。",
+     "en": "Let's heal up first."
+    }
+   ]
+  },
+  {
+   "word": "一旦",
+   "reading": "いったん",
+   "meaning": "for a moment; once",
+   "word_type": "adv",
+   "level": "N2",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "一旦落ち着こう。",
+     "en": "Let's calm down for a sec."
+    },
+    {
+     "jp": "一旦セーブしよう。",
+     "en": "Let's save for now."
+    }
+   ]
+  },
+  {
+   "word": "正直",
+   "reading": "しょうじき",
+   "meaning": "honest; honestly",
+   "word_type": "na",
+   "level": "N3",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "正直、怖かった。",
+     "en": "Honestly, it was scary."
+    },
+    {
+     "jp": "正直に言って。",
+     "en": "Be honest."
+    }
+   ]
+  },
+  {
+   "word": "やっぱり",
+   "reading": "やっぱり",
+   "meaning": "as I thought; after all",
+   "word_type": "adv",
+   "level": "N3",
+   "category": "react",
+   "note": "Casual: やっぱ.",
+   "examples": [
+    {
+     "jp": "やっぱりな！",
+     "en": "I knew it!"
+    },
+    {
+     "jp": "やっぱりこのゲーム好き。",
+     "en": "I really do love this game."
+    }
+   ]
+  },
+  {
+   "word": "意味わからん",
+   "reading": "いみわからん",
+   "meaning": "makes no sense; what the heck",
+   "word_type": "x",
+   "level": "Slang",
+   "category": "react",
+   "note": "Casual form of 意味が分からない.",
+   "examples": [
+    {
+     "jp": "意味わからん！",
+     "en": "What the heck!"
+    },
+    {
+     "jp": "この展開、意味わからん。",
+     "en": "This plot twist makes no sense."
+    }
+   ]
+  },
+  {
+   "word": "エモい",
+   "reading": "エモい",
+   "meaning": "emotional; nostalgic; hits different",
+   "word_type": "ia",
+   "level": "Slang",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "このBGMエモい。",
+     "en": "This music hits different."
+    },
+    {
+     "jp": "エモすぎる。",
+     "en": "So emotional."
+    }
+   ]
+  },
+  {
+   "word": "しょうがない",
+   "reading": "しょうがない",
+   "meaning": "it can't be helped",
+   "word_type": "x",
+   "level": "N3",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "しょうがないね。",
+     "en": "Oh well."
+    },
+    {
+     "jp": "負けてもしょうがない。",
+     "en": "If we lose, so be it."
+    }
+   ]
+  },
+  {
+   "word": "勘弁して",
+   "reading": "かんべんして",
+   "meaning": "give me a break; spare me",
+   "word_type": "x",
+   "level": "N2",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "勘弁してくれよ…",
+     "en": "Oh come on, give me a break..."
+    },
+    {
+     "jp": "もう勘弁して。",
+     "en": "Please, no more."
+    }
+   ]
+  },
+  {
+   "word": "フラグ",
+   "reading": "フラグ",
+   "meaning": "jinx; foreshadowing ('flag')",
+   "word_type": "n",
+   "level": "Net",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "それフラグだよ。",
+     "en": "You just jinxed it."
+    },
+    {
+     "jp": "フラグ回収。",
+     "en": "Called it — the jinx came true."
+    }
+   ]
+  },
+  {
+   "word": "ツッコミ",
+   "reading": "ツッコミ",
+   "meaning": "comeback; straight-man retort",
+   "word_type": "n",
+   "level": "Net",
+   "category": "react",
+   "note": "Japanese comedy duo roles: ボケ (funny one) and ツッコミ (the one who calls it out).",
+   "examples": [
+    {
+     "jp": "ツッコミが上手い。",
+     "en": "You're great at comebacks."
+    },
+    {
+     "jp": "誰かツッコんで！",
+     "en": "Somebody call that out!"
+    }
+   ]
+  },
+  {
+   "word": "ボケ",
+   "reading": "ボケ",
+   "meaning": "joke; the silly one (comedy)",
+   "word_type": "n",
+   "level": "Net",
+   "category": "react",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今のボケ？",
+     "en": "Was that a joke?"
+    },
+    {
+     "jp": "ボケすぎ。",
+     "en": "You're goofing too much."
+    }
+   ]
+  },
+  {
+   "word": "リアクション",
+   "reading": "リアクション",
+   "meaning": "reaction",
+   "word_type": "n",
+   "level": "Net",
+   "category": "react",
+   "note": "Big reactions are the core of CoryxKenshin-style content.",
+   "examples": [
+    {
+     "jp": "リアクションがでかい。",
+     "en": "Your reactions are huge."
+    },
+    {
+     "jp": "いいリアクション！",
+     "en": "Great reaction!"
+    }
+   ]
+  },
+  {
+   "word": "友達",
+   "reading": "ともだち",
+   "meaning": "friend",
+   "word_type": "n",
+   "level": "N5",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "友達と一緒にゲームする。",
+     "en": "I play games with my friends."
+    },
+    {
+     "jp": "友達になろう！",
+     "en": "Let's be friends!"
+    }
+   ]
+  },
+  {
+   "word": "仲良く",
+   "reading": "なかよく",
+   "meaning": "on good terms",
+   "word_type": "adv",
+   "level": "N3",
+   "category": "social",
+   "note": "仲がいい = close (as friends).",
+   "examples": [
+    {
+     "jp": "仲良くしようね。",
+     "en": "Let's get along."
+    },
+    {
+     "jp": "すぐ仲良くなった。",
+     "en": "We got close right away."
+    }
+   ]
+  },
+  {
+   "word": "誘う",
+   "reading": "さそう",
+   "meaning": "to invite (out)",
+   "word_type": "g",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "飲み会に誘われた。",
+     "en": "I got invited to a drinking party."
+    },
+    {
+     "jp": "今度誘ってね。",
+     "en": "Invite me next time."
+    }
+   ]
+  },
+  {
+   "word": "連絡先",
+   "reading": "れんらくさき",
+   "meaning": "contact info",
+   "word_type": "n",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "連絡先交換しない？",
+     "en": "Wanna exchange contacts?"
+    },
+    {
+     "jp": "連絡先知らない。",
+     "en": "I don't have their contact."
+    }
+   ]
+  },
+  {
+   "word": "交換",
+   "reading": "こうかん",
+   "meaning": "exchange; trade",
+   "word_type": "s",
+   "level": "N3",
+   "category": "social",
+   "note": "LINE is THE messaging app in Japan.",
+   "examples": [
+    {
+     "jp": "LINE交換しよう。",
+     "en": "Let's swap LINE."
+    },
+    {
+     "jp": "アイテム交換しない？",
+     "en": "Wanna trade items?"
+    }
+   ]
+  },
+  {
+   "word": "連絡",
+   "reading": "れんらく",
+   "meaning": "contact; to get in touch",
+   "word_type": "s",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "後で連絡する。",
+     "en": "I'll message you later."
+    },
+    {
+     "jp": "連絡ありがとう。",
+     "en": "Thanks for reaching out."
+    }
+   ]
+  },
+  {
+   "word": "暇",
+   "reading": "ひま",
+   "meaning": "free (time); bored",
+   "word_type": "na",
+   "level": "N4",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今暇？",
+     "en": "You free right now?"
+    },
+    {
+     "jp": "暇だったらゲームしよう。",
+     "en": "If you're free, let's play."
+    }
+   ]
+  },
+  {
+   "word": "今度",
+   "reading": "こんど",
+   "meaning": "next time; sometime",
+   "word_type": "n",
+   "level": "N4",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今度遊ぼう。",
+     "en": "Let's hang out sometime."
+    },
+    {
+     "jp": "今度こそ勝つ。",
+     "en": "This time I'll win for sure."
+    }
+   ]
+  },
+  {
+   "word": "一緒に",
+   "reading": "いっしょに",
+   "meaning": "together",
+   "word_type": "adv",
+   "level": "N5",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "一緒にやろう。",
+     "en": "Let's do it together."
+    },
+    {
+     "jp": "一緒に帰らない？",
+     "en": "Want to walk home together?"
+    }
+   ]
+  },
+  {
+   "word": "趣味",
+   "reading": "しゅみ",
+   "meaning": "hobby",
+   "word_type": "n",
+   "level": "N4",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "趣味は何？",
+     "en": "What are your hobbies?"
+    },
+    {
+     "jp": "趣味はゲームと動画作りです。",
+     "en": "My hobbies are gaming and making videos."
+    }
+   ]
+  },
+  {
+   "word": "好き",
+   "reading": "すき",
+   "meaning": "to like",
+   "word_type": "na",
+   "level": "N5",
+   "category": "social",
+   "note": "Use が: ゲームが好き. 大好き = love.",
+   "examples": [
+    {
+     "jp": "どんなゲームが好き？",
+     "en": "What kind of games do you like?"
+    },
+    {
+     "jp": "好きなアニメは？",
+     "en": "What's your favorite anime?"
+    }
+   ]
+  },
+  {
+   "word": "嫌い",
+   "reading": "きらい",
+   "meaning": "to dislike; to hate",
+   "word_type": "na",
+   "level": "N5",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "辛い食べ物は嫌い。",
+     "en": "I don't like spicy food."
+    },
+    {
+     "jp": "嫌いじゃないよ。",
+     "en": "I don't dislike it."
+    }
+   ]
+  },
+  {
+   "word": "得意",
+   "reading": "とくい",
+   "meaning": "good at; strong point",
+   "word_type": "na",
+   "level": "N4",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "FPSが得意です。",
+     "en": "I'm good at FPS games."
+    },
+    {
+     "jp": "得意なことは何？",
+     "en": "What are you good at?"
+    }
+   ]
+  },
+  {
+   "word": "苦手",
+   "reading": "にがて",
+   "meaning": "bad at; not a fan of",
+   "word_type": "na",
+   "level": "N4",
+   "category": "social",
+   "note": "Softer than 嫌い.",
+   "examples": [
+    {
+     "jp": "ホラーが苦手。",
+     "en": "I'm not good with horror."
+    },
+    {
+     "jp": "初対面は苦手です。",
+     "en": "I'm awkward meeting new people."
+    }
+   ]
+  },
+  {
+   "word": "人見知り",
+   "reading": "ひとみしり",
+   "meaning": "shy around strangers",
+   "word_type": "s",
+   "level": "N2",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "実は人見知りなんだ。",
+     "en": "I'm actually shy around new people."
+    },
+    {
+     "jp": "全然人見知りしないね。",
+     "en": "You're not shy at all."
+    }
+   ]
+  },
+  {
+   "word": "出身",
+   "reading": "しゅっしん",
+   "meaning": "hometown; where you're from",
+   "word_type": "n",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "どこ出身？",
+     "en": "Where are you from?"
+    },
+    {
+     "jp": "アメリカ出身です。",
+     "en": "I'm from America."
+    }
+   ]
+  },
+  {
+   "word": "紹介",
+   "reading": "しょうかい",
+   "meaning": "introduction",
+   "word_type": "s",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "友達を紹介するね。",
+     "en": "Let me introduce my friend."
+    },
+    {
+     "jp": "いいゲーム紹介して。",
+     "en": "Recommend me a good game."
+    }
+   ]
+  },
+  {
+   "word": "自己紹介",
+   "reading": "じこしょうかい",
+   "meaning": "self-introduction",
+   "word_type": "s",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "簡単に自己紹介します。",
+     "en": "Let me briefly introduce myself."
+    },
+    {
+     "jp": "自己紹介お願いします。",
+     "en": "Please introduce yourself."
+    }
+   ]
+  },
+  {
+   "word": "約束",
+   "reading": "やくそく",
+   "meaning": "promise; plans",
+   "word_type": "s",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "約束だよ。",
+     "en": "It's a promise."
+    },
+    {
+     "jp": "今日は友達と約束がある。",
+     "en": "I have plans with a friend today."
+    }
+   ]
+  },
+  {
+   "word": "飲み会",
+   "reading": "のみかい",
+   "meaning": "drinking party; social night out",
+   "word_type": "n",
+   "level": "Slang",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今夜飲み会ある。",
+     "en": "I've got a drinking party tonight."
+    },
+    {
+     "jp": "飲み会来る？",
+     "en": "You coming to the party?"
+    }
+   ]
+  },
+  {
+   "word": "奢る",
+   "reading": "おごる",
+   "meaning": "to treat (pay for someone)",
+   "word_type": "g",
+   "level": "N2",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今日は奢るよ。",
+     "en": "It's on me today."
+    },
+    {
+     "jp": "奢ってくれてありがとう。",
+     "en": "Thanks for treating me."
+    }
+   ]
+  },
+  {
+   "word": "割り勘",
+   "reading": "わりかん",
+   "meaning": "split the bill",
+   "word_type": "n",
+   "level": "Slang",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "割り勘にしよう。",
+     "en": "Let's split it."
+    },
+    {
+     "jp": "割り勘でいい？",
+     "en": "Okay to split the bill?"
+    }
+   ]
+  },
+  {
+   "word": "楽しい",
+   "reading": "たのしい",
+   "meaning": "fun",
+   "word_type": "ia",
+   "level": "N5",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今日楽しかった！",
+     "en": "Today was fun!"
+    },
+    {
+     "jp": "楽しくなってきた。",
+     "en": "It's getting fun."
+    }
+   ]
+  },
+  {
+   "word": "久しぶり",
+   "reading": "ひさしぶり",
+   "meaning": "long time no see",
+   "word_type": "na",
+   "level": "N4",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "久しぶり！元気？",
+     "en": "Long time no see! How are you?"
+    },
+    {
+     "jp": "久しぶりにこのゲームやる。",
+     "en": "First time playing this game in a while."
+    }
+   ]
+  },
+  {
+   "word": "元気",
+   "reading": "げんき",
+   "meaning": "well; energetic",
+   "word_type": "na",
+   "level": "N5",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "元気？",
+     "en": "How's it going?"
+    },
+    {
+     "jp": "元気出して。",
+     "en": "Cheer up."
+    }
+   ]
+  },
+  {
+   "word": "よろしく",
+   "reading": "よろしく",
+   "meaning": "nice to meet you; I'm counting on you",
+   "word_type": "x",
+   "level": "N5",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "これからよろしく！",
+     "en": "Looking forward to hanging out!"
+    },
+    {
+     "jp": "よろしくね。",
+     "en": "Nice to meet you / Thanks in advance."
+    }
+   ]
+  },
+  {
+   "word": "ありがとう",
+   "reading": "ありがとう",
+   "meaning": "thank you",
+   "word_type": "x",
+   "level": "N5",
+   "category": "social",
+   "note": "Casual: あざす / あざっす (very casual).",
+   "examples": [
+    {
+     "jp": "マジでありがとう。",
+     "en": "Seriously, thank you."
+    },
+    {
+     "jp": "手伝ってくれてありがとう。",
+     "en": "Thanks for helping me."
+    }
+   ]
+  },
+  {
+   "word": "ごめん",
+   "reading": "ごめん",
+   "meaning": "sorry (casual)",
+   "word_type": "x",
+   "level": "N5",
+   "category": "social",
+   "note": "Polite: すみません / ごめんなさい.",
+   "examples": [
+    {
+     "jp": "ごめん、遅れた！",
+     "en": "Sorry, I'm late!"
+    },
+    {
+     "jp": "ごめんね、今忙しい。",
+     "en": "Sorry, I'm busy right now."
+    }
+   ]
+  },
+  {
+   "word": "大丈夫",
+   "reading": "だいじょうぶ",
+   "meaning": "okay; all right; no thanks",
+   "word_type": "na",
+   "level": "N5",
+   "category": "social",
+   "note": "Also used to politely decline: 大丈夫です = I'm good, no thanks.",
+   "examples": [
+    {
+     "jp": "大丈夫？",
+     "en": "You okay?"
+    },
+    {
+     "jp": "大丈夫、気にしないで。",
+     "en": "It's fine, don't worry about it."
+    }
+   ]
+  },
+  {
+   "word": "気にしないで",
+   "reading": "きにしないで",
+   "meaning": "don't worry about it",
+   "word_type": "x",
+   "level": "N4",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "気にしないで。",
+     "en": "Don't worry about it."
+    },
+    {
+     "jp": "全然気にしてないよ。",
+     "en": "I'm not bothered at all."
+    }
+   ]
+  },
+  {
+   "word": "冗談",
+   "reading": "じょうだん",
+   "meaning": "joke; kidding",
+   "word_type": "n",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "冗談だよ。",
+     "en": "Just kidding."
+    },
+    {
+     "jp": "冗談でしょ？",
+     "en": "You're joking, right?"
+    }
+   ]
+  },
+  {
+   "word": "からかう",
+   "reading": "からかう",
+   "meaning": "to tease",
+   "word_type": "g",
+   "level": "N2",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "からかわないで。",
+     "en": "Stop teasing me."
+    },
+    {
+     "jp": "ちょっとからかっただけ。",
+     "en": "I was just messing with you."
+    }
+   ]
+  },
+  {
+   "word": "恥ずかしい",
+   "reading": "はずかしい",
+   "meaning": "embarrassing; embarrassed",
+   "word_type": "ia",
+   "level": "N4",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "恥ずかしい！",
+     "en": "So embarrassing!"
+    },
+    {
+     "jp": "日本語を間違えて恥ずかしかった。",
+     "en": "I messed up my Japanese and was embarrassed."
+    }
+   ]
+  },
+  {
+   "word": "寂しい",
+   "reading": "さびしい",
+   "meaning": "lonely; sad (missing someone)",
+   "word_type": "ia",
+   "level": "N4",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "寂しくなるね。",
+     "en": "I'm gonna miss you."
+    },
+    {
+     "jp": "一人だと寂しい。",
+     "en": "It's lonely by myself."
+    }
+   ]
+  },
+  {
+   "word": "嬉しい",
+   "reading": "うれしい",
+   "meaning": "happy; glad",
+   "word_type": "ia",
+   "level": "N4",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "めっちゃ嬉しい！",
+     "en": "I'm so happy!"
+    },
+    {
+     "jp": "来てくれて嬉しい。",
+     "en": "I'm glad you came."
+    }
+   ]
+  },
+  {
+   "word": "気が合う",
+   "reading": "きがあう",
+   "meaning": "to get along; to click",
+   "word_type": "g",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "俺たち気が合うね。",
+     "en": "We really click."
+    },
+    {
+     "jp": "すぐ気が合った。",
+     "en": "We hit it off instantly."
+    }
+   ]
+  },
+  {
+   "word": "先輩",
+   "reading": "せんぱい",
+   "meaning": "senior (older student/coworker)",
+   "word_type": "n",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "先輩、お疲れ様です！",
+     "en": "Good work today, senpai!"
+    },
+    {
+     "jp": "サークルの先輩に誘われた。",
+     "en": "A senior from my club invited me."
+    }
+   ]
+  },
+  {
+   "word": "後輩",
+   "reading": "こうはい",
+   "meaning": "junior (younger student/coworker)",
+   "word_type": "n",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "後輩に教えた。",
+     "en": "I taught my junior."
+    },
+    {
+     "jp": "可愛い後輩だ。",
+     "en": "They're a sweet junior."
+    }
+   ]
+  },
+  {
+   "word": "同い年",
+   "reading": "おないどし",
+   "meaning": "same age",
+   "word_type": "n",
+   "level": "N2",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "同い年なの？",
+     "en": "We're the same age?"
+    },
+    {
+     "jp": "同い年だからタメ口でいいよ。",
+     "en": "We're the same age, so talk casually."
+    }
+   ]
+  },
+  {
+   "word": "タメ口",
+   "reading": "ためぐち",
+   "meaning": "casual speech (to equals)",
+   "word_type": "n",
+   "level": "Slang",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "タメ口でいいよ。",
+     "en": "You can talk casually with me."
+    },
+    {
+     "jp": "先輩にタメ口はダメ。",
+     "en": "Don't use casual speech with a senior."
+    }
+   ]
+  },
+  {
+   "word": "敬語",
+   "reading": "けいご",
+   "meaning": "polite/honorific speech",
+   "word_type": "n",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "敬語じゃなくていいよ。",
+     "en": "You don't have to be formal."
+    },
+    {
+     "jp": "敬語が難しい。",
+     "en": "Keigo is hard."
+    }
+   ]
+  },
+  {
+   "word": "呼ぶ",
+   "reading": "よぶ",
+   "meaning": "to call; to invite",
+   "word_type": "g",
+   "level": "N4",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "何て呼べばいい？",
+     "en": "What should I call you?"
+    },
+    {
+     "jp": "ネイトって呼んで。",
+     "en": "Call me Nate."
+    }
+   ]
+  },
+  {
+   "word": "あだ名",
+   "reading": "あだな",
+   "meaning": "nickname",
+   "word_type": "n",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "あだ名ある？",
+     "en": "Do you have a nickname?"
+    },
+    {
+     "jp": "あだ名つけて。",
+     "en": "Give me a nickname."
+    }
+   ]
+  },
+  {
+   "word": "お疲れ様",
+   "reading": "おつかれさま",
+   "meaning": "good work; thanks for your effort",
+   "word_type": "x",
+   "level": "N4",
+   "category": "social",
+   "note": "Used constantly: after class, games, streams. Short: おつ / おつかれ.",
+   "examples": [
+    {
+     "jp": "お疲れ様！",
+     "en": "Good work!"
+    },
+    {
+     "jp": "今日もお疲れ。",
+     "en": "Nice work today."
+    }
+   ]
+  },
+  {
+   "word": "いい",
+   "reading": "いい",
+   "meaning": "good; nice",
+   "word_type": "ia",
+   "level": "N5",
+   "category": "social",
+   "note": "Irregular: conjugates from よい → よくない, よかった.",
+   "examples": [
+    {
+     "jp": "いいね！",
+     "en": "Nice!"
+    },
+    {
+     "jp": "それいいじゃん！",
+     "en": "That's great!"
+    }
+   ]
+  },
+  {
+   "word": "話しかける",
+   "reading": "はなしかける",
+   "meaning": "to start talking to someone",
+   "word_type": "i",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "勇気を出して話しかけた。",
+     "en": "I worked up the courage to talk to them."
+    },
+    {
+     "jp": "気軽に話しかけてね。",
+     "en": "Feel free to come talk to me."
+    }
+   ]
+  },
+  {
+   "word": "相談",
+   "reading": "そうだん",
+   "meaning": "consultation; to talk something over",
+   "word_type": "s",
+   "level": "N3",
+   "category": "social",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ちょっと相談がある。",
+     "en": "I need to talk something over with you."
+    },
+    {
+     "jp": "何でも相談して。",
+     "en": "You can come to me about anything."
+    }
+   ]
+  },
+  {
+   "word": "大学",
+   "reading": "だいがく",
+   "meaning": "university",
+   "word_type": "n",
+   "level": "N5",
+   "category": "uni",
+   "note": "大学生 = university student.",
+   "examples": [
+    {
+     "jp": "どこの大学行ってるの？",
+     "en": "Which university do you go to?"
+    },
+    {
+     "jp": "日本の大学に行きたい。",
+     "en": "I want to go to a Japanese university."
+    }
+   ]
+  },
+  {
+   "word": "授業",
+   "reading": "じゅぎょう",
+   "meaning": "class; lesson",
+   "word_type": "n",
+   "level": "N4",
+   "category": "uni",
+   "note": "コマ = class period.",
+   "examples": [
+    {
+     "jp": "今日授業何コマある？",
+     "en": "How many classes do you have today?"
+    },
+    {
+     "jp": "授業中に寝ちゃった。",
+     "en": "I fell asleep in class."
+    }
+   ]
+  },
+  {
+   "word": "講義",
+   "reading": "こうぎ",
+   "meaning": "lecture",
+   "word_type": "n",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "この講義、面白い。",
+     "en": "This lecture is interesting."
+    },
+    {
+     "jp": "講義のスライドもらえる？",
+     "en": "Can I get the lecture slides?"
+    }
+   ]
+  },
+  {
+   "word": "教授",
+   "reading": "きょうじゅ",
+   "meaning": "professor",
+   "word_type": "n",
+   "level": "N3",
+   "category": "uni",
+   "note": "Address as 〜先生, not 〜教授.",
+   "examples": [
+    {
+     "jp": "教授に質問しに行く。",
+     "en": "I'm going to ask the professor a question."
+    },
+    {
+     "jp": "あの教授、厳しいよ。",
+     "en": "That professor is strict."
+    }
+   ]
+  },
+  {
+   "word": "留学生",
+   "reading": "りゅうがくせい",
+   "meaning": "international student",
+   "word_type": "n",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "留学生です。",
+     "en": "I'm an international student."
+    },
+    {
+     "jp": "留学生の友達が多い。",
+     "en": "I have a lot of international student friends."
+    }
+   ]
+  },
+  {
+   "word": "留学",
+   "reading": "りゅうがく",
+   "meaning": "studying abroad",
+   "word_type": "s",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "日本に留学したい。",
+     "en": "I want to study abroad in Japan."
+    },
+    {
+     "jp": "留学してどれくらい？",
+     "en": "How long have you been studying abroad?"
+    }
+   ]
+  },
+  {
+   "word": "専攻",
+   "reading": "せんこう",
+   "meaning": "major",
+   "word_type": "s",
+   "level": "N2",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "専攻は何？",
+     "en": "What's your major?"
+    },
+    {
+     "jp": "コンピューターサイエンスを専攻してる。",
+     "en": "I'm majoring in computer science."
+    }
+   ]
+  },
+  {
+   "word": "学部",
+   "reading": "がくぶ",
+   "meaning": "faculty; department",
+   "word_type": "n",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "何学部？",
+     "en": "What faculty are you in?"
+    },
+    {
+     "jp": "工学部です。",
+     "en": "I'm in engineering."
+    }
+   ]
+  },
+  {
+   "word": "単位",
+   "reading": "たんい",
+   "meaning": "credit (course)",
+   "word_type": "n",
+   "level": "N2",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "単位落とした…",
+     "en": "I failed the credit..."
+    },
+    {
+     "jp": "この授業、楽に単位取れる。",
+     "en": "This class is easy credits."
+    }
+   ]
+  },
+  {
+   "word": "試験",
+   "reading": "しけん",
+   "meaning": "exam",
+   "word_type": "n",
+   "level": "N4",
+   "category": "uni",
+   "note": "Also テスト.",
+   "examples": [
+    {
+     "jp": "来週試験がある。",
+     "en": "I have an exam next week."
+    },
+    {
+     "jp": "試験に受かった！",
+     "en": "I passed the exam!"
+    }
+   ]
+  },
+  {
+   "word": "レポート",
+   "reading": "レポート",
+   "meaning": "paper; written report",
+   "word_type": "n",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "レポートがまだ終わらない。",
+     "en": "My paper still isn't done."
+    },
+    {
+     "jp": "レポートを出した。",
+     "en": "I turned in my report."
+    }
+   ]
+  },
+  {
+   "word": "課題",
+   "reading": "かだい",
+   "meaning": "assignment",
+   "word_type": "n",
+   "level": "N2",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "課題多すぎ。",
+     "en": "Way too many assignments."
+    },
+    {
+     "jp": "課題やった？",
+     "en": "Did you do the assignment?"
+    }
+   ]
+  },
+  {
+   "word": "締め切り",
+   "reading": "しめきり",
+   "meaning": "deadline",
+   "word_type": "n",
+   "level": "N2",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "締め切りは明日まで。",
+     "en": "The deadline is tomorrow."
+    },
+    {
+     "jp": "締め切りに間に合わない！",
+     "en": "I'm not going to make the deadline!"
+    }
+   ]
+  },
+  {
+   "word": "出席",
+   "reading": "しゅっせき",
+   "meaning": "attendance",
+   "word_type": "s",
+   "level": "N2",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "出席取るよ。",
+     "en": "Taking attendance."
+    },
+    {
+     "jp": "この授業は出席が大事。",
+     "en": "Attendance matters in this class."
+    }
+   ]
+  },
+  {
+   "word": "サボる",
+   "reading": "サボる",
+   "meaning": "to skip (class/work); to slack off",
+   "word_type": "g",
+   "level": "Slang",
+   "category": "uni",
+   "note": "From French 'sabotage'.",
+   "examples": [
+    {
+     "jp": "今日の授業サボった。",
+     "en": "I skipped class today."
+    },
+    {
+     "jp": "サボらないで！",
+     "en": "Don't slack off!"
+    }
+   ]
+  },
+  {
+   "word": "図書館",
+   "reading": "としょかん",
+   "meaning": "library",
+   "word_type": "n",
+   "level": "N5",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "図書館で勉強しよう。",
+     "en": "Let's study at the library."
+    },
+    {
+     "jp": "図書館は何時まで？",
+     "en": "Until when is the library open?"
+    }
+   ]
+  },
+  {
+   "word": "学食",
+   "reading": "がくしょく",
+   "meaning": "campus cafeteria",
+   "word_type": "n",
+   "level": "Slang",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "学食行かない？",
+     "en": "Wanna go to the cafeteria?"
+    },
+    {
+     "jp": "学食のカレーが安い。",
+     "en": "The cafeteria curry is cheap."
+    }
+   ]
+  },
+  {
+   "word": "サークル",
+   "reading": "サークル",
+   "meaning": "university club (casual)",
+   "word_type": "n",
+   "level": "N3",
+   "category": "uni",
+   "note": "サークル = casual club; 部活 = serious club.",
+   "examples": [
+    {
+     "jp": "どのサークル入ってる？",
+     "en": "What club are you in?"
+    },
+    {
+     "jp": "ゲームサークルに入った。",
+     "en": "I joined the gaming club."
+    }
+   ]
+  },
+  {
+   "word": "部活",
+   "reading": "ぶかつ",
+   "meaning": "club activities (serious)",
+   "word_type": "n",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "部活は何してた？",
+     "en": "What club were you in?"
+    },
+    {
+     "jp": "部活が忙しい。",
+     "en": "Club activities keep me busy."
+    }
+   ]
+  },
+  {
+   "word": "ゼミ",
+   "reading": "ゼミ",
+   "meaning": "seminar (small research group)",
+   "word_type": "n",
+   "level": "Slang",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ゼミの発表がある。",
+     "en": "I have a seminar presentation."
+    },
+    {
+     "jp": "ゼミの先生に相談した。",
+     "en": "I talked to my seminar professor."
+    }
+   ]
+  },
+  {
+   "word": "卒業",
+   "reading": "そつぎょう",
+   "meaning": "graduation",
+   "word_type": "s",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "来年卒業する。",
+     "en": "I graduate next year."
+    },
+    {
+     "jp": "卒業したら何したい？",
+     "en": "What do you want to do after graduating?"
+    }
+   ]
+  },
+  {
+   "word": "入学",
+   "reading": "にゅうがく",
+   "meaning": "enrollment; entering school",
+   "word_type": "s",
+   "level": "N3",
+   "category": "uni",
+   "note": "Japanese school year starts in April.",
+   "examples": [
+    {
+     "jp": "四月に入学した。",
+     "en": "I enrolled in April."
+    },
+    {
+     "jp": "入学試験が難しい。",
+     "en": "The entrance exam is hard."
+    }
+   ]
+  },
+  {
+   "word": "奨学金",
+   "reading": "しょうがくきん",
+   "meaning": "scholarship",
+   "word_type": "n",
+   "level": "N2",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "奨学金をもらった。",
+     "en": "I got a scholarship."
+    },
+    {
+     "jp": "奨学金に申し込む。",
+     "en": "I'm applying for a scholarship."
+    }
+   ]
+  },
+  {
+   "word": "寮",
+   "reading": "りょう",
+   "meaning": "dorm",
+   "word_type": "n",
+   "level": "N2",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "寮に住んでる。",
+     "en": "I live in the dorm."
+    },
+    {
+     "jp": "寮の友達とゲームした。",
+     "en": "I gamed with my dorm friends."
+    }
+   ]
+  },
+  {
+   "word": "バイト",
+   "reading": "バイト",
+   "meaning": "part-time job",
+   "word_type": "s",
+   "level": "Slang",
+   "category": "uni",
+   "note": "From German 'Arbeit'.",
+   "examples": [
+    {
+     "jp": "バイトしてる？",
+     "en": "Do you have a part-time job?"
+    },
+    {
+     "jp": "今日はバイトがある。",
+     "en": "I have work today."
+    }
+   ]
+  },
+  {
+   "word": "勉強",
+   "reading": "べんきょう",
+   "meaning": "study",
+   "word_type": "s",
+   "level": "N5",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "日本語を勉強してる。",
+     "en": "I'm studying Japanese."
+    },
+    {
+     "jp": "一緒に勉強しよう。",
+     "en": "Let's study together."
+    }
+   ]
+  },
+  {
+   "word": "復習",
+   "reading": "ふくしゅう",
+   "meaning": "review (after class)",
+   "word_type": "s",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今日の授業を復習する。",
+     "en": "I'll review today's class."
+    },
+    {
+     "jp": "復習しないと忘れる。",
+     "en": "If you don't review, you forget."
+    }
+   ]
+  },
+  {
+   "word": "予習",
+   "reading": "よしゅう",
+   "meaning": "preparation (before class)",
+   "word_type": "s",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "予習しておいて。",
+     "en": "Prep beforehand."
+    },
+    {
+     "jp": "予習してなかった。",
+     "en": "I didn't prep."
+    }
+   ]
+  },
+  {
+   "word": "質問",
+   "reading": "しつもん",
+   "meaning": "question",
+   "word_type": "s",
+   "level": "N4",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "質問してもいいですか？",
+     "en": "May I ask a question?"
+    },
+    {
+     "jp": "質問ある人？",
+     "en": "Anyone have questions?"
+    }
+   ]
+  },
+  {
+   "word": "答える",
+   "reading": "こたえる",
+   "meaning": "to answer",
+   "word_type": "i",
+   "level": "N4",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "この問題に答えて。",
+     "en": "Answer this question."
+    },
+    {
+     "jp": "答えられなかった。",
+     "en": "I couldn't answer."
+    }
+   ]
+  },
+  {
+   "word": "習う",
+   "reading": "ならう",
+   "meaning": "to learn (from someone)",
+   "word_type": "g",
+   "level": "N4",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ギターを習ってる。",
+     "en": "I'm taking guitar lessons."
+    },
+    {
+     "jp": "この文法は前に習った。",
+     "en": "I learned this grammar before."
+    }
+   ]
+  },
+  {
+   "word": "理解",
+   "reading": "りかい",
+   "meaning": "understanding",
+   "word_type": "s",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "内容が理解できない。",
+     "en": "I can't understand the content."
+    },
+    {
+     "jp": "理解してくれてありがとう。",
+     "en": "Thanks for understanding."
+    }
+   ]
+  },
+  {
+   "word": "説明",
+   "reading": "せつめい",
+   "meaning": "explanation",
+   "word_type": "s",
+   "level": "N4",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "もう一回説明してくれる？",
+     "en": "Could you explain it once more?"
+    },
+    {
+     "jp": "説明が分かりやすい。",
+     "en": "The explanation is easy to follow."
+    }
+   ]
+  },
+  {
+   "word": "発表",
+   "reading": "はっぴょう",
+   "meaning": "presentation; announcement",
+   "word_type": "s",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "明日、発表がある。",
+     "en": "I have a presentation tomorrow."
+    },
+    {
+     "jp": "結果が発表された。",
+     "en": "The results were announced."
+    }
+   ]
+  },
+  {
+   "word": "履修",
+   "reading": "りしゅう",
+   "meaning": "course registration; taking a course",
+   "word_type": "s",
+   "level": "N1",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "何の授業を履修してる？",
+     "en": "What classes are you taking?"
+    },
+    {
+     "jp": "履修登録の締め切りはいつ？",
+     "en": "When is the course registration deadline?"
+    }
+   ]
+  },
+  {
+   "word": "休講",
+   "reading": "きゅうこう",
+   "meaning": "class cancelled",
+   "word_type": "n",
+   "level": "N2",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今日の授業、休講だって！",
+     "en": "Today's class is cancelled!"
+    },
+    {
+     "jp": "休講で暇になった。",
+     "en": "Class got cancelled, so I'm free."
+    }
+   ]
+  },
+  {
+   "word": "時間割",
+   "reading": "じかんわり",
+   "meaning": "class timetable",
+   "word_type": "n",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "時間割見せて。",
+     "en": "Show me your timetable."
+    },
+    {
+     "jp": "時間割が決まった。",
+     "en": "My schedule is set."
+    }
+   ]
+  },
+  {
+   "word": "留年",
+   "reading": "りゅうねん",
+   "meaning": "repeating a year",
+   "word_type": "s",
+   "level": "N1",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "留年したくない。",
+     "en": "I don't want to repeat a year."
+    },
+    {
+     "jp": "単位が足りなくて留年した。",
+     "en": "I didn't have enough credits and had to repeat."
+    }
+   ]
+  },
+  {
+   "word": "就活",
+   "reading": "しゅうかつ",
+   "meaning": "job hunting",
+   "word_type": "s",
+   "level": "Slang",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "就活が始まった。",
+     "en": "Job hunting season started."
+    },
+    {
+     "jp": "就活中だから忙しい。",
+     "en": "I'm busy job hunting."
+    }
+   ]
+  },
+  {
+   "word": "提出",
+   "reading": "ていしゅつ",
+   "meaning": "submission",
+   "word_type": "s",
+   "level": "N2",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "レポートを提出した。",
+     "en": "I submitted my paper."
+    },
+    {
+     "jp": "提出期限は金曜日。",
+     "en": "The submission deadline is Friday."
+    }
+   ]
+  },
+  {
+   "word": "申し込む",
+   "reading": "もうしこむ",
+   "meaning": "to apply; to sign up",
+   "word_type": "g",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "イベントに申し込んだ。",
+     "en": "I signed up for the event."
+    },
+    {
+     "jp": "オンラインで申し込める。",
+     "en": "You can apply online."
+    }
+   ]
+  },
+  {
+   "word": "合格",
+   "reading": "ごうかく",
+   "meaning": "passing (an exam)",
+   "word_type": "s",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "N3に合格した！",
+     "en": "I passed N3!"
+    },
+    {
+     "jp": "合格おめでとう！",
+     "en": "Congrats on passing!"
+    }
+   ]
+  },
+  {
+   "word": "遅刻",
+   "reading": "ちこく",
+   "meaning": "being late",
+   "word_type": "s",
+   "level": "N3",
+   "category": "uni",
+   "note": "",
+   "examples": [
+    {
+     "jp": "また遅刻した。",
+     "en": "I was late again."
+    },
+    {
+     "jp": "遅刻しないでね。",
+     "en": "Don't be late."
+    }
+   ]
+  },
+  {
+   "word": "お世話になっております",
+   "reading": "おせわになっております",
+   "meaning": "thank you for your continued support (email opener)",
+   "word_type": "x",
+   "level": "N2",
+   "category": "keigo",
+   "note": "How almost every business email or sponsor DM starts.",
+   "examples": [
+    {
+     "jp": "お世話になっております。〇〇です。",
+     "en": "Hello, this is ___ (formal email opener)."
+    },
+    {
+     "jp": "いつもお世話になっております。",
+     "en": "Thank you as always for your support."
+    }
+   ]
+  },
+  {
+   "word": "よろしくお願いいたします",
+   "reading": "よろしくおねがいいたします",
+   "meaning": "thank you in advance (very polite)",
+   "word_type": "x",
+   "level": "N3",
+   "category": "keigo",
+   "note": "",
+   "examples": [
+    {
+     "jp": "今後ともよろしくお願いいたします。",
+     "en": "I look forward to working with you."
+    },
+    {
+     "jp": "ご確認よろしくお願いいたします。",
+     "en": "Thank you for checking."
+    }
+   ]
+  },
+  {
+   "word": "恐れ入りますが",
+   "reading": "おそれいりますが",
+   "meaning": "I'm sorry to trouble you, but…",
+   "word_type": "x",
+   "level": "N2",
+   "category": "keigo",
+   "note": "",
+   "examples": [
+    {
+     "jp": "恐れ入りますが、もう一度教えていただけますか？",
+     "en": "Sorry to trouble you, could you tell me once more?"
+    },
+    {
+     "jp": "恐れ入りますが、少々お待ちください。",
+     "en": "Sorry, please wait a moment."
+    }
+   ]
+  },
+  {
+   "word": "申し訳ございません",
+   "reading": "もうしわけございません",
+   "meaning": "I sincerely apologize",
+   "word_type": "x",
+   "level": "N3",
+   "category": "keigo",
+   "note": "",
+   "examples": [
+    {
+     "jp": "返信が遅くなり、申し訳ございません。",
+     "en": "My apologies for the late reply."
+    },
+    {
+     "jp": "大変申し訳ございません。",
+     "en": "I'm terribly sorry."
+    }
+   ]
+  },
+  {
+   "word": "拝見",
+   "reading": "はいけん",
+   "meaning": "to see/look at (humble)",
+   "word_type": "s",
+   "level": "N2",
+   "category": "keigo",
+   "note": "",
+   "examples": [
+    {
+     "jp": "動画を拝見しました。",
+     "en": "I watched your video (humble)."
+    },
+    {
+     "jp": "資料を拝見します。",
+     "en": "I'll take a look at the materials."
+    }
+   ]
+  },
+  {
+   "word": "伺う",
+   "reading": "うかがう",
+   "meaning": "to ask; to visit (humble)",
+   "word_type": "g",
+   "level": "N3",
+   "category": "keigo",
+   "note": "",
+   "examples": [
+    {
+     "jp": "少し伺ってもよろしいですか？",
+     "en": "May I ask you something?"
+    },
+    {
+     "jp": "明日、事務所に伺います。",
+     "en": "I'll visit your office tomorrow."
+    }
+   ]
+  },
+  {
+   "word": "いただく",
+   "reading": "いただく",
+   "meaning": "to receive (humble); to eat (humble)",
+   "word_type": "g",
+   "level": "N3",
+   "category": "keigo",
+   "note": "いただきます before eating comes from this.",
+   "examples": [
+    {
+     "jp": "コメントをいただきました。",
+     "en": "I received a comment."
+    },
+    {
+     "jp": "教えていただけますか？",
+     "en": "Could you please teach me?"
+    }
+   ]
+  },
+  {
+   "word": "確認",
+   "reading": "かくにん",
+   "meaning": "confirmation; to check",
+   "word_type": "s",
+   "level": "N3",
+   "category": "keigo",
+   "note": "",
+   "examples": [
+    {
+     "jp": "スケジュールを確認します。",
+     "en": "I'll check the schedule."
+    },
+    {
+     "jp": "ご確認ください。",
+     "en": "Please check."
+    }
+   ]
+  },
+  {
+   "word": "都合",
+   "reading": "つごう",
+   "meaning": "convenience; availability",
+   "word_type": "n",
+   "level": "N3",
+   "category": "keigo",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ご都合はいかがですか？",
+     "en": "How is your availability?"
+    },
+    {
+     "jp": "都合が悪くなった。",
+     "en": "Something came up."
+    }
+   ]
+  },
+  {
+   "word": "予定",
+   "reading": "よてい",
+   "meaning": "plans; schedule",
+   "word_type": "n",
+   "level": "N4",
+   "category": "keigo",
+   "note": "",
+   "examples": [
+    {
+     "jp": "週末の予定は？",
+     "en": "Any plans for the weekend?"
+    },
+    {
+     "jp": "収録の予定を決めましょう。",
+     "en": "Let's set the recording schedule."
+    }
+   ]
+  },
+  {
+   "word": "参加",
+   "reading": "さんか",
+   "meaning": "participation",
+   "word_type": "s",
+   "level": "N3",
+   "category": "keigo",
+   "note": "",
+   "examples": [
+    {
+     "jp": "企画に参加したいです。",
+     "en": "I'd like to join the project."
+    },
+    {
+     "jp": "参加してくれてありがとう。",
+     "en": "Thanks for joining."
+    }
+   ]
+  },
+  {
+   "word": "失礼します",
+   "reading": "しつれいします",
+   "meaning": "excuse me (entering/leaving/hanging up)",
+   "word_type": "x",
+   "level": "N4",
+   "category": "keigo",
+   "note": "",
+   "examples": [
+    {
+     "jp": "失礼します。",
+     "en": "Excuse me (entering a room)."
+    },
+    {
+     "jp": "お先に失礼します。",
+     "en": "I'll be heading out first."
+    }
+   ]
+  },
+  {
+   "word": "承知しました",
+   "reading": "しょうちしました",
+   "meaning": "understood; certainly (business)",
+   "word_type": "x",
+   "level": "N2",
+   "category": "keigo",
+   "note": "",
+   "examples": [
+    {
+     "jp": "承知しました。",
+     "en": "Understood."
+    },
+    {
+     "jp": "日程の件、承知いたしました。",
+     "en": "Noted on the schedule."
+    }
+   ]
+  },
+  {
+   "word": "問題ありません",
+   "reading": "もんだいありません",
+   "meaning": "no problem (polite)",
+   "word_type": "x",
+   "level": "N3",
+   "category": "keigo",
+   "note": "",
+   "examples": [
+    {
+     "jp": "その日程で問題ありません。",
+     "en": "That date works fine."
+    },
+    {
+     "jp": "問題ありませんか？",
+     "en": "Is that okay?"
+    }
+   ]
+  },
+  {
+   "word": "ぜひ",
+   "reading": "ぜひ",
+   "meaning": "by all means; definitely",
+   "word_type": "adv",
+   "level": "N3",
+   "category": "keigo",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ぜひコラボさせてください！",
+     "en": "I'd love to collab!"
+    },
+    {
+     "jp": "ぜひ来てください。",
+     "en": "Please do come."
+    }
+   ]
+  },
+  {
+   "word": "初めまして",
+   "reading": "はじめまして",
+   "meaning": "nice to meet you (first time)",
+   "word_type": "x",
+   "level": "N4",
+   "category": "keigo",
+   "note": "",
+   "examples": [
+    {
+     "jp": "初めまして、ネイトです。",
+     "en": "Nice to meet you, I'm Nate."
+    },
+    {
+     "jp": "初めまして、よろしくお願いします。",
+     "en": "Nice to meet you, I look forward to it."
+    }
+   ]
+  },
+  {
+   "word": "〜てもいい",
+   "reading": "てもいい",
+   "meaning": "may I…? / it's okay to…",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "これ使ってもいい？",
+     "en": "Can I use this?"
+    },
+    {
+     "jp": "先に行ってもいいよ。",
+     "en": "You can go ahead first."
+    }
+   ]
+  },
+  {
+   "word": "〜ちゃダメ",
+   "reading": "ちゃだめ",
+   "meaning": "you must not… (casual)",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "Polite/written: 〜てはいけない.",
+   "examples": [
+    {
+     "jp": "そこ行っちゃダメ！",
+     "en": "Don't go there!"
+    },
+    {
+     "jp": "見ちゃダメ！",
+     "en": "Don't look!"
+    }
+   ]
+  },
+  {
+   "word": "〜なきゃ",
+   "reading": "なきゃ",
+   "meaning": "gotta…; have to… (casual)",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "Negative stem + なきゃ. Full: 〜なければならない.",
+   "examples": [
+    {
+     "jp": "もう行かなきゃ。",
+     "en": "I gotta go."
+    },
+    {
+     "jp": "早く逃げなきゃ！",
+     "en": "We need to get out of here!"
+    }
+   ]
+  },
+  {
+   "word": "〜たことがある",
+   "reading": "たことがある",
+   "meaning": "have done … before",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "このゲームやったことある？",
+     "en": "Have you played this game before?"
+    },
+    {
+     "jp": "日本に行ったことがない。",
+     "en": "I've never been to Japan."
+    }
+   ]
+  },
+  {
+   "word": "〜ながら",
+   "reading": "ながら",
+   "meaning": "while doing…",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ゲームしながら話そう。",
+     "en": "Let's chat while we play."
+    },
+    {
+     "jp": "笑いながら死んだ。",
+     "en": "I died laughing."
+    }
+   ]
+  },
+  {
+   "word": "〜すぎる",
+   "reading": "すぎる",
+   "meaning": "too much…",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "難しすぎる！",
+     "en": "This is way too hard!"
+    },
+    {
+     "jp": "食べすぎた。",
+     "en": "I ate too much."
+    }
+   ]
+  },
+  {
+   "word": "〜そう",
+   "reading": "そう",
+   "meaning": "looks like…; about to…",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "落ちそう！",
+     "en": "I'm about to fall!"
+    },
+    {
+     "jp": "美味しそう！",
+     "en": "That looks delicious!"
+    }
+   ]
+  },
+  {
+   "word": "〜みたい",
+   "reading": "みたい",
+   "meaning": "seems like…; like…",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "罠みたい。",
+     "en": "Looks like a trap."
+    },
+    {
+     "jp": "夢みたい！",
+     "en": "It's like a dream!"
+    }
+   ]
+  },
+  {
+   "word": "〜っぽい",
+   "reading": "っぽい",
+   "meaning": "-ish; kinda seems like",
+   "word_type": "gr",
+   "level": "Slang",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "あれボスっぽい。",
+     "en": "That looks like a boss."
+    },
+    {
+     "jp": "雨っぽい。",
+     "en": "Looks like rain."
+    }
+   ]
+  },
+  {
+   "word": "〜かも",
+   "reading": "かも",
+   "meaning": "maybe; might",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "Full: かもしれない.",
+   "examples": [
+    {
+     "jp": "罠かも。",
+     "en": "Might be a trap."
+    },
+    {
+     "jp": "今日は配信できないかも。",
+     "en": "I might not be able to stream today."
+    }
+   ]
+  },
+  {
+   "word": "〜はず",
+   "reading": "はず",
+   "meaning": "should be (expected)",
+   "word_type": "gr",
+   "level": "N3",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ここに鍵があるはず。",
+     "en": "The key should be here."
+    },
+    {
+     "jp": "もう着いてるはずだよ。",
+     "en": "They should've arrived by now."
+    }
+   ]
+  },
+  {
+   "word": "〜てみる",
+   "reading": "てみる",
+   "meaning": "try doing…",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "やってみる！",
+     "en": "I'll give it a shot!"
+    },
+    {
+     "jp": "日本語で話してみた。",
+     "en": "I tried talking in Japanese."
+    }
+   ]
+  },
+  {
+   "word": "〜ておく",
+   "reading": "ておく",
+   "meaning": "do in advance; leave as is",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "Casual: 〜とく (セーブしとこう).",
+   "examples": [
+    {
+     "jp": "セーブしておこう。",
+     "en": "Let's save just in case."
+    },
+    {
+     "jp": "回復を取っておく。",
+     "en": "I'll save the healing for later."
+    }
+   ]
+  },
+  {
+   "word": "〜ちゃう / 〜てしまう",
+   "reading": "ちゃう",
+   "meaning": "end up doing (oops); completely",
+   "word_type": "gr",
+   "level": "N3",
+   "category": "grammar",
+   "note": "See the ちゃった row in every verb's table.",
+   "examples": [
+    {
+     "jp": "死んじゃった。",
+     "en": "I ended up dying."
+    },
+    {
+     "jp": "全部食べちゃった。",
+     "en": "I ate it all."
+    }
+   ]
+  },
+  {
+   "word": "〜てくれない？",
+   "reading": "てくれない",
+   "meaning": "could you … for me? (casual request)",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "ちょっと手伝ってくれない？",
+     "en": "Could you help me out?"
+    },
+    {
+     "jp": "それ取ってくれない？",
+     "en": "Could you grab that for me?"
+    }
+   ]
+  },
+  {
+   "word": "〜って",
+   "reading": "って",
+   "meaning": "quoting; topic marker (casual)",
+   "word_type": "gr",
+   "level": "Slang",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "キヨって知ってる？",
+     "en": "You know Kiyo?"
+    },
+    {
+     "jp": "明日休みだって。",
+     "en": "They said tomorrow's off."
+    }
+   ]
+  },
+  {
+   "word": "〜じゃん",
+   "reading": "じゃん",
+   "meaning": "isn't it?; you know! (casual)",
+   "word_type": "gr",
+   "level": "Slang",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "いいじゃん！",
+     "en": "That's great!"
+    },
+    {
+     "jp": "言ったじゃん！",
+     "en": "I told you!"
+    }
+   ]
+  },
+  {
+   "word": "〜よね",
+   "reading": "よね",
+   "meaning": "right? (seeking agreement)",
+   "word_type": "gr",
+   "level": "N5",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "このゲーム、面白いよね。",
+     "en": "This game is fun, right?"
+    },
+    {
+     "jp": "明日だよね？",
+     "en": "It's tomorrow, right?"
+    }
+   ]
+  },
+  {
+   "word": "〜んだ",
+   "reading": "んだ",
+   "meaning": "explaining; giving context",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "Also んです (polite). Sounds natural and conversational.",
+   "examples": [
+    {
+     "jp": "実はホラー苦手なんだ。",
+     "en": "The thing is, I'm bad with horror."
+    },
+    {
+     "jp": "どうしたの？何があったんだ？",
+     "en": "What's wrong? What happened?"
+    }
+   ]
+  },
+  {
+   "word": "〜けど",
+   "reading": "けど",
+   "meaning": "but; although (also softening)",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "Ending with けど softens a request.",
+   "examples": [
+    {
+     "jp": "行きたいけど、時間ない。",
+     "en": "I want to go, but I don't have time."
+    },
+    {
+     "jp": "ちょっといいですか、質問なんですけど…",
+     "en": "Excuse me, I have a question..."
+    }
+   ]
+  },
+  {
+   "word": "〜から",
+   "reading": "から",
+   "meaning": "because; so",
+   "word_type": "gr",
+   "level": "N5",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "怖いから行かない。",
+     "en": "It's scary, so I'm not going."
+    },
+    {
+     "jp": "今行くから待って！",
+     "en": "I'm coming now, so wait!"
+    }
+   ]
+  },
+  {
+   "word": "〜たら",
+   "reading": "たら",
+   "meaning": "if / when …",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "勝ったら奢って。",
+     "en": "If I win, treat me."
+    },
+    {
+     "jp": "家に着いたら連絡する。",
+     "en": "I'll message you when I get home."
+    }
+   ]
+  },
+  {
+   "word": "〜のに",
+   "reading": "のに",
+   "meaning": "even though… (frustration)",
+   "word_type": "gr",
+   "level": "N3",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "回復したのに死んだ。",
+     "en": "I healed and still died."
+    },
+    {
+     "jp": "練習したのに負けた。",
+     "en": "I lost even though I practiced."
+    }
+   ]
+  },
+  {
+   "word": "〜ことにする",
+   "reading": "ことにする",
+   "meaning": "decide to…",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "毎日投稿することにした。",
+     "en": "I decided to upload every day."
+    },
+    {
+     "jp": "今日は休むことにした。",
+     "en": "I decided to take today off."
+    }
+   ]
+  },
+  {
+   "word": "〜ように",
+   "reading": "ように",
+   "meaning": "so that…; in order to",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "上手くなるように練習する。",
+     "en": "I practice so I get better."
+    },
+    {
+     "jp": "忘れないようにメモする。",
+     "en": "I'll write it down so I don't forget."
+    }
+   ]
+  },
+  {
+   "word": "〜ばいい",
+   "reading": "ばいい",
+   "meaning": "should I… / you just need to…",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "どうすればいい？",
+     "en": "What should I do?"
+    },
+    {
+     "jp": "このボタンを押せばいい。",
+     "en": "You just press this button."
+    }
+   ]
+  },
+  {
+   "word": "〜ほうがいい",
+   "reading": "ほうがいい",
+   "meaning": "you'd better…; it's better to…",
+   "word_type": "gr",
+   "level": "N4",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "逃げたほうがいい。",
+     "en": "We'd better run."
+    },
+    {
+     "jp": "早く寝たほうがいいよ。",
+     "en": "You should get to bed early."
+    }
+   ]
+  },
+  {
+   "word": "〜し",
+   "reading": "し",
+   "meaning": "and also… (listing reasons)",
+   "word_type": "gr",
+   "level": "N3",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "怖いし、暗いし、無理。",
+     "en": "It's scary, it's dark — no way."
+    },
+    {
+     "jp": "安いし美味しいし、最高。",
+     "en": "Cheap and delicious, it's the best."
+    }
+   ]
+  },
+  {
+   "word": "〜ていく / 〜てくる",
+   "reading": "ていく",
+   "meaning": "going/coming (change over time); go and do",
+   "word_type": "gr",
+   "level": "N3",
+   "category": "grammar",
+   "note": "",
+   "examples": [
+    {
+     "jp": "強くなっていく。",
+     "en": "I'm getting stronger."
+    },
+    {
+     "jp": "ちょっと飲み物買ってくる。",
+     "en": "I'll go grab a drink and come back."
+    }
+   ]
+  }
+ ]
+}

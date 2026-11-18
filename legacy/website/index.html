@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japanese for Gamers, Uni &amp; Creators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0f14;--panel:#151922;--panel2:#1c2230;--line:#2a3142;--text:#e8ebf2;--dim:#9aa3b5;--acc:#ff3d5a;--acc2:#ffc23d;--ok:#3dd68c;--blue:#4da3ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans JP","Space Grotesk",system-ui,sans-serif;line-height:1.5}
+header{padding:28px 20px 12px;max-width:1200px;margin:0 auto}
+h1{font-family:"Space Grotesk","Noto Sans JP";font-size:clamp(26px,4vw,40px);margin:0 0 4px;letter-spacing:-.5px}
+h1 span{color:var(--acc)}
+.sub{color:var(--dim);margin:0 0 16px;font-size:14px}
+.bar{position:sticky;top:0;z-index:5;background:rgba(13,15,20,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;flex-direction:column;gap:10px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+input[type=search]{flex:1;min-width:220px;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:10px 14px;border-radius:10px;font-size:15px;font-family:inherit}
+input[type=search]:focus{outline:2px solid var(--acc);border-color:transparent}
+.chip{background:var(--panel);border:1px solid var(--line);color:var(--dim);padding:6px 12px;border-radius:999px;font-size:13px;cursor:pointer;font-family:inherit;white-space:nowrap}
+.chip:hover{color:var(--text)}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.chip.lv.on{background:var(--acc2);border-color:var(--acc2);color:#111}
+.tog{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--dim);cursor:pointer;user-select:none}
+.count{font-size:13px;color:var(--dim);margin-left:auto}
+main{max-width:1200px;margin:0 auto;padding:18px 20px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.word{font-size:30px;font-weight:900;line-height:1.15}
+.kana{color:var(--acc2);font-size:15px;font-weight:700}
+.tags{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.tag{font-size:11px;padding:2px 8px;border-radius:6px;background:var(--panel2);color:var(--dim);border:1px solid var(--line);white-space:nowrap}
+.tag.t{color:var(--blue)}
+.tag.l{color:var(--acc2)}
+.mean{font-size:16px;font-weight:700;font-family:"Space Grotesk","Noto Sans JP"}
+.hide .mean,.hide .en{filter:blur(6px);cursor:pointer;transition:filter .15s}
+.hide .mean.show,.hide .en.show{filter:none}
+.note{font-size:12.5px;color:var(--dim);background:var(--panel2);border-left:3px solid var(--acc);padding:6px 10px;border-radius:0 8px 8px 0}
+.ex{display:flex;flex-direction:column;gap:7px}
+.ex div{font-size:14.5px}
+.ex .jp{font-weight:700}
+.ex .en{color:var(--dim);font-size:13px;font-family:"Space Grotesk","Noto Sans JP"}
+details{border-top:1px solid var(--line);padding-top:8px}
+summary{cursor:pointer;color:var(--acc);font-size:13px;font-weight:700;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ "}
+details[open] summary::before{content:"▾ "}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px}
+td{padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{color:var(--dim);width:42%}
+td b{font-size:14.5px}
+td small{display:block;color:var(--acc2);font-size:11.5px}
+.empty{grid-column:1/-1;text-align:center;color:var(--dim);padding:60px}
+.legend{max-width:1200px;margin:0 auto;padding:0 20px;color:var(--dim);font-size:13px}
+.legend b{color:var(--text)}
+@media(max-width:420px){main{grid-template-columns:1fr}.word{font-size:26px}}
+</style>
+</head>
+<body>
+<header>
+<h1>日本語 <span>for Gamers, Uni &amp; Creators</span></h1>
+<p class="sub">The words you'll hear and use while gaming with friends, at a Japanese university, making new friends, and running a 実況 (let's-play) channel. Verbs and adjectives have their main conjugations built in. Tap "Hide English" to quiz yourself, then tap a blurred line to see it.</p>
+</header>
+<div class="bar"><div class="bar-in">
+<div class="row">
+<input type="search" id="q" placeholder="Search kanji, kana or English… (e.g. 倒す, にげる, revive)">
+<label class="tog"><input type="checkbox" id="hide"> Hide English</label>
+<label class="tog"><input type="checkbox" id="verbs"> Verbs only</label>
+</div>
+<div class="row" id="cats"></div>
+<div class="row" id="lvls"><span class="count" id="count"></span></div>
+</div></div>
+<p class="legend" style="margin-top:14px"><b>Levels:</b> N5→N1 are JLPT levels (N5 easiest). <b>Slang/Net</b> = casual speech and internet talk you'll hear constantly from streamers but won't find in textbooks. <b>Types:</b> godan / ichidan / irregular verbs, い-adj, な-adj, noun, phrase, grammar.</p>
+<main id="list"></main>
+<script>
+const CATS={game:"🎮 Gaming",stream:"🎙️ Creator / Streaming",react:"😱 Reactions & Slang",social:"🤝 Friends & Social",uni:"🎓 University",core:"⭐ Core Verbs & Words",keigo:"👔 Polite / Collabs",grammar:"🧩 Grammar Patterns"};
+const TYPES={g:"godan verb",i:"ichidan verb",iku:"godan verb (irregular て)",s:"する verb",su:"irregular verb",k:"irregular verb",ia:"い-adjective",na:"な-adjective",n:"noun",x:"phrase",adv:"adverb / connector",gr:"grammar"};
+const RAW=[];
+RAW.push(
+["core","N5","行く","いく","iku","to go","今からコンビニ行くけど、何かいる？","I'm going to the convenience store now, need anything?","明日、一緒に秋葉原に行こうよ。","Let's go to Akihabara together tomorrow.","Irregular て-form: 行って (not 行いて)."],
+["core","N5","来る","くる","k","to come","うちに遊びに来ない？","Wanna come hang out at my place?","ボスが来るぞ！","The boss is coming!","Fully irregular. Reading changes: き・こ・く."],
+["core","N5","","する","su","to do; to play (a game)","何のゲームする？","What game should we play?","今日は何もしたくない。","I don't want to do anything today.","Add する to nouns to make verbs: 配信する, 勉強する."],
+["core","N5","見る","みる","i","to see; to watch","この動画見た？めっちゃ面白いよ。","Did you see this video? It's super funny.","後ろ見て！何かいる！","Look behind you! Something's there!"],
+["core","N5","言う","いう","g","to say","今なんて言った？","What did you just say?","だから言ったじゃん！","I told you so!"],
+["core","N5","聞く","きく","g","to hear; to listen; to ask","ちょっと聞いて、今日ヤバいことあった。","Listen, something crazy happened today.","先生に聞いてみる。","I'll try asking the teacher."],
+["core","N5","話す","はなす","g","to speak; to talk","日本語で話してもいい？","Is it okay if I talk in Japanese?","配信でこの話をしよう。","Let's talk about this on stream."],
+["core","N3","喋る","しゃべる","g","to chat; to talk (casual)","あいつ、ずっと喋ってるな。","That guy never stops talking.","初対面だと上手く喋れない。","I can't talk smoothly with people I just met.","Godan despite ending in える."],
+["core","N5","思う","おもう","g","to think (opinion)","これは罠だと思う。","I think this is a trap.","今日は新しいゲームをやっていきたいと思います！","Today I'd like to play a new game!"],
+["core","N5","分かる","わかる","g","to understand; to know","分かった、すぐ行く。","Got it, I'll be right there.","このゲームのルールが全然分からない。","I don't get this game's rules at all.","Already means 'can understand', so no potential form. Use が: 日本語が分かる."],
+["core","N5","知る","しる","g","to know; to find out","このゲーム知ってる？","Do you know this game?","え、知らなかった！","Whoa, I didn't know that!","'I know' = 知ってる. 'I don't know' = 知らない (never 知ってない)."],
+["core","N4","","やる","g","to do (casual); to play","もう一回やろう！","Let's go one more time!","今夜ホラゲーやるわ。","I'm playing a horror game tonight.","Very common in streams instead of する."],
+["core","N5","使う","つかう","g","to use","このアイテム使っていい？","Can I use this item?","回復を使わないで最後まで行けた。","I made it to the end without using any heals."],
+["core","N5","待つ","まつ","g","to wait","ちょっと待って！まだ準備できてない！","Wait! I'm not ready yet!","ロビーで待ってるね。","I'll be waiting in the lobby."],
+["core","N5","持つ","もつ","g","to hold; to have; to carry","鍵持ってる？","Do you have the key?","弾をたくさん持っていこう。","Let's bring a lot of ammo."],
+["core","N5","帰る","かえる","g","to go home; to return","そろそろ帰るね。","I'm gonna head home soon.","家に帰ったら配信する。","I'll stream once I get home.","Godan despite ending in える."],
+["core","N5","入る","はいる","g","to enter; to join","部屋に入ったよ。","I joined the room.","そのドアに入っちゃダメ！","Don't go through that door!","Godan despite ending in いる."],
+["core","N5","出る","でる","i","to go out; to leave; to come out","出口から出よう。","Let's get out through the exit.","次の動画は来週出ます。","The next video comes out next week."],
+["core","N5","起きる","おきる","i","to wake up; to happen","毎朝七時に起きる。","I wake up at 7 every morning.","何が起きたの？","What just happened?"],
+["core","N5","寝る","ねる","i","to sleep; to go to bed","昨日は三時まで寝なかった。","I didn't go to bed until 3 last night.","眠いから、もう寝るわ。","I'm sleepy, I'm going to bed."],
+["core","N5","食べる","たべる","i","to eat","何か食べに行かない？","Want to go grab something to eat?","このラーメン、食べたことある？","Have you ever eaten this ramen?"],
+["core","N5","飲む","のむ","g","to drink","何飲む？","What are you drinking?","今夜飲みに行こう。","Let's go drinking tonight."],
+["core","N5","買う","かう","g","to buy","新しいマイク買った！","I bought a new mic!","セールの時に買おう。","Let's buy it during the sale."],
+["core","N5","作る","つくる","g","to make; to create","サムネを作るのに一時間かかった。","It took an hour to make the thumbnail.","一緒にチャンネル作らない？","Wanna make a channel together?"],
+["core","N5","会う","あう","g","to meet","初めて会った時のこと覚えてる？","Remember when we first met?","週末会える？","Can we meet up this weekend?","Use に: 友達に会う."],
+["core","N5","遊ぶ","あそぶ","g","to play; to hang out","今度一緒に遊ぼうよ！","Let's hang out sometime!","子供の頃、このゲームでよく遊んだ。","I played this game a lot as a kid.","For friends, 遊ぶ = hang out (not just play)."],
+["core","N4","始める","はじめる","i","to start (something)","じゃあ、始めます！","Alright, let's start!","ゲームを始める前にトイレ行ってくる。","I'm going to the bathroom before we start."],
+["core","N4","終わる","おわる","g","to end; to finish","やっと終わった…","It's finally over...","授業が終わったら連絡する。","I'll message you when class is over."],
+["core","N4","続ける","つづける","i","to continue (something)","このシリーズ、続けてほしい？","Do you want me to continue this series?","諦めないで続けよう。","Don't give up, keep going."],
+["core","N4","決める","きめる","i","to decide","どのキャラにするか決めた？","Did you decide which character you're using?","よし、決めた！","Alright, decided!"],
+["core","N4","考える","かんがえる","i","to think about; to consider","ちょっと考えさせて。","Let me think about it.","何も考えずに走った。","I ran without thinking."],
+["core","N5","覚える","おぼえる","i","to memorize; to remember","この単語、なかなか覚えられない。","I just can't memorize this word.","俺のこと覚えてる？","Do you remember me?"],
+["core","N5","忘れる","わすれる","i","to forget","セーブするの忘れた！","I forgot to save!","宿題を忘れないでね。","Don't forget the homework."],
+["core","N5","教える","おしえる","i","to teach; to tell","やり方教えて！","Show me how to do it!","連絡先教えてくれる？","Can you give me your contact info?"],
+["core","N4","手伝う","てつだう","g","to help (with a task)","ボス戦、手伝ってくれない？","Could you help me with the boss fight?","引っ越し手伝うよ。","I'll help you move."],
+["core","N4","頼む","たのむ","g","to ask (a favor); to order","頼む！あと一回だけ！","Please! Just one more time!","編集を友達に頼んだ。","I asked a friend to do the editing."],
+["core","N4","頑張る","がんばる","g","to do your best; to hang in there","一緒に頑張ろう！","Let's do our best together!","今日も頑張ってね。","Good luck today."],
+["core","N4","見せる","みせる","i","to show","新しいスキン見せて！","Show me the new skin!","視聴者にこのシーンを見せたい。","I want to show this scene to the viewers."],
+["core","N4","送る","おくる","g","to send","後でリンク送るね。","I'll send you the link later.","DM送ったよ。","I sent you a DM."],
+["core","N4","","もらう","g","to receive; to get (someone to do)","誕生日にゲームをもらった。","I got a game for my birthday.","友達に手伝ってもらった。","I got my friend to help me.","〜てもらう = have someone do something for you."],
+["core","N4","","あげる","i","to give","これあげる。","Here, you can have this.","回復アイテムを仲間にあげた。","I gave my teammate a healing item."],
+["core","N4","","くれる","i","to give (to me)","これ、くれるの？","You're giving me this?","友達がおごってくれた。","My friend treated me.","〜てくれる = someone does something for me. Command is くれ."],
+["core","N3","気づく","きづく","g","to notice; to realize","全然気づかなかった！","I didn't notice at all!","後ろに敵がいるのに気づいた。","I noticed there was an enemy behind me."],
+["core","N3","感じる","かんじる","i","to feel; to sense","誰かに見られてる感じがする…","I feel like someone's watching me...","日本語が上手くなったと感じる。","I feel like my Japanese has gotten better."],
+["core","N3","信じる","しんじる","i","to believe; to trust","信じられない！","I can't believe it!","俺を信じて！","Trust me!"],
+["core","N4","間違える","まちがえる","i","to make a mistake","道を間違えた。","I went the wrong way.","間違えてボタン押しちゃった。","I pressed the button by mistake."],
+["core","N4","住む","すむ","g","to live (somewhere)","どこに住んでるの？","Where do you live?","いつか東京に住みたい。","I want to live in Tokyo someday.","'I live in…' = 〜に住んでる."],
+["core","N4","払う","はらう","g","to pay","今日は俺が払うよ。","I'll pay today.","カードで払えますか？","Can I pay by card?"],
+["core","N4","着く","つく","g","to arrive","駅に着いたら連絡して。","Message me when you get to the station.","もうすぐ着く！","Almost there!"],
+["core","N4","変える","かえる","i","to change (something)","設定を変えたら軽くなった。","It ran smoother after I changed the settings.","キャラ変えてもいい？","Can I switch characters?"],
+["core","N5","取る","とる","g","to take; to grab; to get","そのアイテム取って！","Grab that item!","単位を取るのが大変。","Getting credits is tough."],
+["core","N4","選ぶ","えらぶ","g","to choose","好きなキャラを選んで。","Pick the character you like.","どっちを選ぶ？","Which one are you choosing?"],
+["core","N4","笑う","わらう","g","to laugh; to smile","笑いすぎてお腹痛い。","I laughed so hard my stomach hurts.","笑わないで！","Don't laugh!"],
+["core","N4","泣く","なく","g","to cry","このゲームのエンディングで泣いた。","I cried at this game's ending.","泣かないで。","Don't cry."],
+["core","N4","怒る","おこる","g","to get angry; to scold","そんなことで怒らないでよ。","Don't get mad over something like that.","母に怒られた。","I got scolded by my mom."],
+["core","N4","困る","こまる","g","to be troubled; to be stuck","それは困る。","That's a problem for me.","困ったら言ってね。","Let me know if you're in trouble."],
+["core","N5","走る","はしる","g","to run","走れ！走れ！","Run! Run!","走って逃げよう。","Let's run for it.","Godan despite ending in いる."],
+["core","N5","歩く","あるく","g","to walk","ゆっくり歩いて、音を立てないで。","Walk slowly, don't make any noise.","駅まで歩いて十分です。","It's a ten-minute walk to the station."],
+["core","N5","休む","やすむ","g","to rest; to take a day off","ちょっと休もう。","Let's take a little break.","明日は配信を休みます。","I'm taking tomorrow off from streaming."],
+["core","N5","","ある","g","to exist; to have (things)","何か問題ある？","Is there some problem?","このゲーム、隠しエンドがあるらしい。","Apparently this game has a hidden ending.","For objects/plants. Negative is just ない."],
+["core","N5","","いる","i","to exist; to be (people, animals)","部屋に誰かいる…","Someone's in the room...","今どこにいる？","Where are you right now?","For living things. Horror games: 何かいる = something's there."],
+["core","N5","","なる","g","to become","日本語が上手になりたい。","I want to get good at Japanese.","有名になったらどうする？","What will you do once you're famous?"],
+["core","N5","","できる","i","to be able to; to be done","日本語できる？","Can you speak Japanese?","やっとクリアできた！","I finally managed to clear it!","This IS the potential of する. Use が: 料理ができる."],
+["core","N4","見つける","みつける","i","to find","鍵を見つけた！","I found the key!","隠し部屋を見つけられる？","Can you find the hidden room?"],
+["core","N4","探す","さがす","g","to look for; to search","出口を探そう。","Let's look for the exit.","一緒にやる仲間を探してる。","I'm looking for people to play with."],
+["core","N5","開ける","あける","i","to open (something)","このドア、開けないほうがいい。","Better not open this door.","箱を開けたら何か出てきた。","When I opened the box, something came out."],
+["core","N5","押す","おす","g","to push; to press","このボタン押して。","Press this button.","押すなよ！絶対押すなよ！","Don't push it! Absolutely do NOT push it!","The second line is a classic Japanese comedy setup — it means 'push it'."],
+["core","N4","死ぬ","しぬ","g","to die","うわ、また死んだ！","Ugh, I died again!","死ぬかと思った。","I thought I was gonna die.","The only common verb ending in ぬ."],
+["core","N4","","でも","adv","but; even so","行きたい。でも、お金がない。","I want to go. But I don't have money.","でも、それって罠じゃない？","But isn't that a trap?"],
+["core","N4","","だから","adv","so; that's why","だから言ったじゃん！","That's why I told you!","怖い。だからやりたくない。","It's scary. So I don't want to play it."],
+["core","N3","","ていうか","adv","I mean; actually; rather","ていうか、ここどこ？","Wait, actually, where even is this?","ていうか、お前強すぎ。","I mean, you're way too good.","Casual topic-switcher. Also てか."],
+["core","N3","","そういえば","adv","by the way; come to think of it","そういえば、あのゲーム買った？","By the way, did you buy that game?","そういえば、明日テストだ！","Oh yeah, there's a test tomorrow!"],
+["core","N4","実は","じつは","adv","actually; to tell the truth","実は、ホラー苦手なんだ。","To be honest, I'm bad with horror.","実は、今日誕生日なんだ。","Actually, today's my birthday."],
+["core","N3","結局","けっきょく","adv","in the end; after all","結局、負けた。","In the end, we lost.","結局どうなったの？","So how did it end up?"],
+["core","N4","例えば","たとえば","adv","for example","例えば、どんなゲームが好き？","For example, what kinds of games do you like?","例えば、マイクとか。","Like, a mic or something."],
+["core","N4","","たぶん","adv","probably; maybe","たぶん大丈夫。","It's probably fine.","たぶん、あっちに出口がある。","The exit's probably over there."],
+["core","N5","","もう","adv","already; anymore; (exasperated) ugh","もう無理！","I can't anymore!","もう始まってる？","Has it already started?"],
+["core","N5","","まだ","adv","still; not yet","まだ生きてる！","I'm still alive!","まだ準備できてない。","I'm not ready yet."],
+["core","N5","","すぐ","adv","right away; soon","すぐ戻る。","I'll be right back.","すぐ死んだ。","Died instantly."],
+["core","N4","","ずっと","adv","the whole time; always; by far","ずっと待ってたよ。","I've been waiting the whole time.","ずっとこのゲームやりたかった。","I've wanted to play this game forever."],
+["core","N3","急に","きゅうに","adv","suddenly","急に出てきた！","It suddenly popped out!","急にどうしたの？","What's up all of a sudden?"],
+["core","N5","本当に","ほんとうに","adv","really; truly","本当にありがとう。","Thank you so much.","本当に？","Really?","Casual: ほんとに / ほんと."]
+);
+
+RAW.push(
+["game","N3","敵","てき","n","enemy","敵が三人いる！","There are three enemies!","後ろから敵が来てる。","Enemies coming from behind."],
+["game","N3","味方","みかた","n","ally; teammate; your side","味方を撃たないで！","Don't shoot your teammates!","味方が全員やられた。","All my teammates got taken out."],
+["game","N3","仲間","なかま","n","companion; friend; squadmate","新しい仲間が加わった。","A new party member joined.","仲間を助けに行こう。","Let's go save our buddy."],
+["game","N3","倒す","たおす","g","to defeat; to knock down","ボスを倒した！","I beat the boss!","こいつ、どうやって倒すの？","How do you even beat this guy?"],
+["game","N4","勝つ","かつ","g","to win","勝った！","We won!","絶対勝とうぜ！","Let's definitely win this!","Use に: 敵に勝つ."],
+["game","N4","負ける","まける","i","to lose","また負けた…","Lost again...","負けたら罰ゲームね。","Whoever loses gets a punishment game."],
+["game","N3","撃つ","うつ","g","to shoot (a gun)","撃て！撃て！","Shoot! Shoot!","まだ撃たないで。","Don't shoot yet."],
+["game","N3","逃げる","にげる","i","to run away; to escape","逃げろ！","Run!","ここから逃げられない！","I can't escape from here!"],
+["game","N3","隠れる","かくれる","i","to hide","ロッカーに隠れよう。","Let's hide in the locker.","どこに隠れてるの？","Where are you hiding?"],
+["game","N3","追いかける","おいかける","i","to chase","何かに追いかけられてる！","Something's chasing me!","あいつを追いかけて！","Chase that guy!"],
+["game","N4","助ける","たすける","i","to save; to help","助けて！","Help me!","助けてくれてありがとう。","Thanks for saving me."],
+["game","N4","拾う","ひろう","g","to pick up","弾を拾って。","Pick up the ammo.","このアイテム拾える？","Can you pick up this item?"],
+["game","N4","落とす","おとす","g","to drop; to lose; to fail (a class)","武器を落としちゃった。","I dropped my weapon.","敵がお金を落とした。","The enemy dropped some money."],
+["game","N4","落ちる","おちる","i","to fall; to disconnect; to fail","回線落ちた。","My connection dropped.","穴に落ちた！","I fell in a hole!"],
+["game","N3","生き返る","いきかえる","g","to come back to life","仲間が生き返った！","My teammate came back to life!","死んでも生き返れるよ。","You can come back even if you die."],
+["game","N2","復活","ふっかつ","s","revival; respawn; comeback","復活させて！","Revive me!","このチャンネル、ついに復活しました！","This channel is finally back!"],
+["game","N2","回復","かいふく","s","healing; recovery","先に回復して。","Heal first.","回復アイテムがない！","I'm out of healing items!"],
+["game","N3","攻撃","こうげき","s","attack","今攻撃して！","Attack now!","攻撃が全然当たらない。","My attacks aren't landing at all."],
+["game","N2","防御","ぼうぎょ","n","defense; guard","防御力を上げよう。","Let's raise our defense.","防御が硬すぎる。","Their defense is way too tanky."],
+["game","N3","武器","ぶき","n","weapon","一番強い武器は何？","What's the strongest weapon?","武器を変えた方がいい。","You should switch weapons."],
+["game","N3","弾","たま","n","bullet; ammo","弾がない！","I've got no ammo!","弾切れだ！","I'm out of ammo!"],
+["game","N3","体力","たいりょく","n","HP; stamina; physical strength","体力がもう少ない！","My HP is super low!","体力を回復しないと。","I need to heal up."],
+["game","N2","経験値","けいけんち","n","experience points (XP)","経験値を稼ごう。","Let's grind some XP.","このモンスター、経験値が多い。","This monster gives a lot of XP."],
+["game","N3","レベル上げ","れべるあげ","n","leveling up; grinding","今日はレベル上げします。","Today I'm grinding levels.","レベル上げがだるい。","Grinding is such a drag."],
+["game","N2","装備","そうび","s","equipment; to equip","新しい装備を手に入れた。","I got new gear.","この剣を装備して。","Equip this sword."],
+["game","N2","操作","そうさ","s","controls; to operate","操作が難しい。","The controls are hard.","操作方法を教えて。","Teach me the controls."],
+["game","N2","対戦","たいせん","s","versus match; to battle","一対一で対戦しよう。","Let's do a 1v1.","対戦ゲームが好き。","I like versus games."],
+["game","N3","協力","きょうりょく","s","co-op; cooperation","協力プレイしよう！","Let's play co-op!","協力しないとクリアできない。","We can't clear it unless we work together."],
+["game","N4","クリア","くりあ","s","clear (a stage/game)","やっとクリアした！","Finally beat it!","一日でクリアできるかな。","I wonder if I can beat it in one day."],
+["game","Slang","詰む","つむ","g","to be stuck/screwed (game over, no way out)","詰んだ…もう無理。","I'm screwed... it's hopeless.","ここで弾がないと詰む。","If you've got no ammo here, you're done.","From shogi checkmate. 詰んだ is the most common form."],
+["game","Slang","沼る","ぬまる","g","to get bogged down; to get hooked","このボスで三時間沼った。","I got stuck on this boss for three hours.","このゲームに沼ってる。","I'm totally hooked on this game.","From 沼 (swamp)."],
+["game","N2","縛り","しばり","n","self-imposed challenge run","回復なし縛りでクリアする！","I'm beating it with a no-healing challenge!","今回の縛りはヤバい。","This challenge rule is insane."],
+["game","Net","初見","しょけん","n","first time seeing; blind playthrough; new viewer","初見プレイです！","This is my blind playthrough!","初見さん、いらっしゃい！","Welcome, first-time viewers!"],
+["game","Net","ネタバレ","ねたばれ","s","spoiler","ネタバレしないで！","No spoilers!","ネタバレ注意。","Spoiler warning."],
+["game","Net","野良","のら","n","randoms (matchmade strangers)","野良でランク行った。","I went into ranked with randoms.","野良の味方が強かった。","My random teammates were good."],
+["game","Slang","ガチ","がち","na","serious; for real; all-out","ガチでやばい。","For real, this is bad.","今日はガチでやります。","Today I'm going full tryhard.","ガチ勢 = hardcore players."],
+["game","Net","エイム","えいむ","n","aim","エイムが悪すぎる。","My aim is so bad.","今日はエイムがいい。","My aim's on point today."],
+["game","Net","","ラグい","ia","laggy","サーバーがラグい。","The server's laggy.","ラグくて撃てない。","It's so laggy I can't shoot."],
+["game","N5","強い","つよい","ia","strong","このボス強すぎ！","This boss is way too strong!","お前強いな！","You're good!"],
+["game","N5","弱い","よわい","ia","weak","このキャラ弱くない？","Isn't this character weak?","俺、ホラーに弱いんだよ。","I'm weak to horror stuff."],
+["game","N5","難しい","むずかしい","ia","difficult","このステージ難しすぎる。","This stage is way too hard.","難しくてもやめない。","I won't quit even if it's hard.","Slang shortening: ムズい."],
+["game","N4","怖い","こわい","ia","scary; afraid","怖い怖い怖い！","Scary scary scary!","このゲーム、思ったより怖くない。","This game isn't as scary as I thought."],
+["game","N5","危ない","あぶない","ia","dangerous; look out!","危ない！","Look out!","危なかった〜。","That was close!","Slang: あぶねー！"],
+["game","N3","ホラー","ほらー","n","horror","ホラーゲーム苦手なんだよね。","I'm not great with horror games.","今日はホラー回です。","Today's a horror episode.","ホラゲー = horror game."],
+["game","N4","鍵","かぎ","n","key; lock","鍵がかかってる。","It's locked.","鍵はどこ？","Where's the key?"],
+["game","N3","謎","なぞ","n","mystery; puzzle","この謎が解けない。","I can't solve this puzzle.","謎すぎる。","That makes zero sense."],
+["game","N3","解く","とく","g","to solve","パズルを解いた！","I solved the puzzle!","この謎、どうやって解くの？","How do you solve this?"],
+["game","N3","進む","すすむ","g","to advance; to move forward","先に進もう。","Let's keep going.","全然進まない。","I'm not making any progress."],
+["game","N4","戻る","もどる","g","to go back; to return","セーブポイントに戻ろう。","Let's go back to the save point.","ちょっと戻って！","Go back a bit!"],
+["game","N3","罠","わな","n","trap","これ絶対罠だろ。","This is 100% a trap.","罠にかかった！","I fell for the trap!"],
+["game","Net","ナイス","ないす","x","nice!","ナイス！","Nice!","ナイスショット！","Nice shot!"],
+["game","Net","ドンマイ","どんまい","x","don't worry about it (from 'don't mind')","ドンマイ、次がある。","No worries, there's always next time.","ドンマイドンマイ！","It's fine, it's fine!"],
+["game","N2","惜しい","おしい","ia","so close!; a shame","惜しい！あと少しだった。","So close! Almost had it.","惜しかったね。","That was close, too bad."],
+["game","N4","気をつけて","きをつけて","x","be careful","気をつけて、そこ罠あるよ。","Careful, there's a trap there.","帰り道、気をつけてね。","Get home safe."],
+["game","N5","後ろ","うしろ","n","behind; back","後ろ！後ろ！","Behind you! Behind you!","後ろに何かいる。","There's something behind me."],
+["game","N5","","こっち","x","this way; over here","こっち来て！","Come over here!","こっちの方が安全だ。","This way is safer.","そっち = there (near you), あっち = over there."],
+["game","N3","招待","しょうたい","s","invite","フレンド招待送ったよ。","I sent you a friend invite.","部屋に招待して。","Invite me to the room."],
+["game","Net","ボイチャ","ぼいちゃ","n","voice chat","ボイチャ入れる？","Can you hop in voice chat?","ボイチャでやろう。","Let's play with voice chat."],
+["game","N2","回線","かいせん","n","internet connection; line","回線が悪い。","My connection is bad.","回線落ちしてごめん。","Sorry, I disconnected."],
+["game","Net","ランク","らんく","n","ranked; rank","ランク上げたい。","I want to rank up.","ランク戦行こう。","Let's go play ranked."],
+["game","Net","キャラ","きゃら","n","character","どのキャラ使う？","Which character are you using?","このキャラ好き。","I like this character.","Also means someone's persona: キャラが濃い = strong personality."],
+["game","Net","ステージ","すてーじ","n","stage; level","次のステージに行こう。","Let's go to the next stage.","このステージ長い。","This stage is long."],
+["game","N3","選択肢","せんたくし","n","choice; option","選択肢を間違えた。","I picked the wrong option.","どの選択肢がいい？","Which option is best?"],
+["game","N2","罰ゲーム","ばつげーむ","n","punishment game (loser's penalty)","負けたら罰ゲーム！","Loser gets a penalty!","罰ゲームは激辛ラーメン。","The penalty is super-spicy ramen.","Huge in Japanese YouTube collabs."]
+);
+
+RAW.push(
+["stream","N1","実況","じっきょう","s","live commentary; let's-play","ゲーム実況を始めたい。","I want to start doing game let's-plays.","今日もホラゲーを実況していきます！","Today I'm doing commentary on another horror game!","ゲーム実況 is the name of the whole genre Kiyo is in."],
+["stream","Net","実況者","じっきょうしゃ","n","let's-player; game commentator","好きな実況者は誰？","Who's your favorite let's-player?","キヨみたいな実況者になりたい。","I want to be a commentator like Kiyo."],
+["stream","N2","配信","はいしん","s","stream; broadcast; distribution","今夜八時から配信します！","I'm streaming tonight from 8!","配信見に来てくれてありがとう！","Thanks for coming to the stream!","配信者 = streamer."],
+["stream","Net","生配信","なまはいしん","n","livestream","生配信だから編集できない。","It's live, so I can't edit it.","今日は生配信でやります。","Today we're doing it live."],
+["stream","N3","動画","どうが","n","video","新しい動画上げました！","I uploaded a new video!","この動画、百万回再生いった。","This video hit a million views."],
+["stream","N2","投稿","とうこう","s","post; upload","毎日投稿を頑張ってます。","I'm going hard on daily uploads.","動画を投稿した。","I posted a video."],
+["stream","N4","上げる","あげる","i","to raise; to upload; to hype up","明日動画上げます。","I'm uploading a video tomorrow.","テンション上げていこう！","Let's get hyped!"],
+["stream","N2","編集","へんしゅう","s","editing","編集に五時間かかった。","Editing took five hours.","この編集、天才すぎる。","This edit is genius."],
+["stream","Net","サムネ","さむね","n","thumbnail","サムネ大事だよ。","Thumbnails matter.","サムネで釣られた。","I got baited by the thumbnail."],
+["stream","Net","切り抜き","きりぬき","n","clip (fan-made highlight)","切り抜きでバズった。","It went viral through a clip.","切り抜き動画で知りました。","I found you through a clip video."],
+["stream","Net","チャンネル登録","ちゃんねるとうろく","s","subscribe (to a channel)","チャンネル登録よろしくお願いします！","Please subscribe!","登録してくれた人、ありがとう！","Thanks to everyone who subscribed!"],
+["stream","Net","登録者","とうろくしゃ","n","subscribers","登録者十万人いった！","We hit 100K subscribers!","登録者が増えてきた。","The subs are going up."],
+["stream","Net","高評価","こうひょうか","n","like (thumbs up)","高評価お願いします！","Please hit like!","高評価ありがとう。","Thanks for the likes."],
+["stream","N2","視聴者","しちょうしゃ","n","viewer","視聴者のみんな、こんばんは！","Good evening, everyone watching!","視聴者参加型です。","Viewers can join in."],
+["stream","Net","リスナー","りすなー","n","viewers / audience (streams)","リスナーさんからのコメント。","Here's a comment from a viewer.","リスナーに助けられた。","Chat helped me out."],
+["stream","N3","コメント","こめんと","s","comment","コメントで教えてください。","Let me know in the comments.","コメント全部読んでるよ。","I read every comment."],
+["stream","Net","コメ欄","こめらん","n","comment section","コメ欄が荒れてる。","The comments are a mess.","コメ欄で教えて。","Tell me in the comments."],
+["stream","Net","概要欄","がいようらん","n","video description box","リンクは概要欄に貼っておきます。","I'll put the link in the description.","概要欄見てね。","Check the description."],
+["stream","Net","スパチャ","すぱちゃ","n","Super Chat (paid message)","スパチャありがとうございます！","Thank you for the Super Chat!","今からスパチャ読みします。","Reading Super Chats now."],
+["stream","Net","枠","わく","n","a stream session/slot","今日の枠は長めです。","Today's stream is a long one.","次の枠で続きやります。","I'll continue next stream."],
+["stream","N2","企画","きかく","n","project; video concept","新しい企画を考えた。","I came up with a new video idea.","コラボ企画やりませんか？","Want to do a collab project?"],
+["stream","Net","コラボ","こらぼ","s","collab","今度コラボしようよ！","Let's collab sometime!","コラボ動画出ました。","The collab video is out."],
+["stream","Net","再生数","さいせいすう","n","view count","再生数が伸びない。","The views aren't growing.","再生数より楽しさが大事。","Having fun matters more than views."],
+["stream","N3","伸びる","のびる","i","to grow; (views) to take off","この動画、めっちゃ伸びてる！","This video is blowing up!","なかなか伸びない。","It's just not taking off."],
+["stream","Net","","バズる","g","to go viral","この動画バズった！","This video went viral!","いつかバズりたい。","I want to go viral someday."],
+["stream","N1","炎上","えんじょう","s","getting flamed; controversy","炎上しないように気をつけて。","Be careful not to start a controversy.","あの配信者、炎上してる。","That streamer is getting dragged.","Literally 'catching fire'."],
+["stream","Net","収益化","しゅうえきか","s","monetization","やっと収益化できた！","I finally got monetized!","収益化の条件は何？","What are the monetization requirements?"],
+["stream","N1","案件","あんけん","n","sponsorship deal; (business) matter","これは案件動画です。","This is a sponsored video.","初めて案件が来た！","I got my first sponsorship!"],
+["stream","Net","神回","かみかい","n","legendary episode","今日の配信、神回だった！","Today's stream was legendary!","神回確定。","Certified classic."],
+["stream","Net","草","くさ","x","lol (internet)","それは草。","That's hilarious.","草生える。","LMAO.","From 'www' looking like grass. 大草原 = ROFL."],
+["stream","Net","ワロタ","わろた","x","lol (from 笑った)","これはワロタ。","This got me, lol.","ワロタwww","LOL.","2ch-era net slang, still used in chat."],
+["stream","N5","声","こえ","n","voice","声がいいね。","You have a great voice.","声出していこう！","Let's get loud!"],
+["stream","Net","マイク","まいく","n","mic","マイク入ってる？","Is my mic on?","マイクミュートになってた。","My mic was muted."],
+["stream","N2","音量","おんりょう","n","volume","音量大丈夫？","Is the volume okay?","ゲームの音量下げるね。","I'll lower the game volume."],
+["stream","N3","画面","がめん","n","screen","画面見えてる？","Can you see my screen?","画面が真っ暗。","The screen's pitch black."],
+["stream","N3","今回は","こんかいは","x","this time; in this video","今回はこのゲームをやっていきます！","In this video, we're playing this game!","今回はここまで。","That's it for this time."],
+["stream","N4","","どうも","x","hey; thanks (casual)","はいどうも、〇〇です！","Hey, what's up, it's ___!","どうもありがとう。","Thanks a lot.","Standard 実況 intro: はいどうも、キヨです。"],
+["stream","N3","やっていきたいと思います","やっていきたいとおもいます","x","I'd like to (start) playing…","早速やっていきたいと思います！","Let's get right into it!","今日はマイクラをやっていきたいと思います。","Today I'll be playing Minecraft.","THE classic Japanese YouTuber phrase."],
+["stream","N3","早速","さっそく","adv","right away; without delay","早速始めましょう！","Let's start right away!","早速やられた。","Already got killed."],
+["stream","N2","ご視聴ありがとうございました","ごしちょうありがとうございました","x","thank you for watching","最後までご視聴ありがとうございました！","Thanks for watching to the end!","ご視聴ありがとうございました。また次回！","Thanks for watching. See you next time!","Standard outro."],
+["stream","N4","また次回","またじかい","x","see you next time","それではまた次回！","Well then, see you next time!","続きはまた次回。","To be continued next time."],
+["stream","N4","最後まで","さいごまで","x","until the end","最後まで見てね！","Watch till the end!","最後まで諦めない。","I won't give up until the end."],
+["stream","N5","皆さん","みなさん","n","everyone (polite)","皆さん、こんにちは！","Hello, everyone!","皆さんのおかげです。","It's all thanks to you guys."],
+["stream","N5","","みんな","n","everyone (casual)","みんな、ありがとう！","Thanks, everyone!","みんなはどう思う？","What do you all think?"],
+["stream","N4","撮る","とる","g","to record; to film; to take (photo)","今日は三本撮った。","I recorded three videos today.","一緒に動画撮ろう！","Let's film a video together!"],
+["stream","N2","録画","ろくが","s","recording","録画できてなかった…","It didn't record...","録画ボタン押した？","Did you hit record?"],
+["stream","N3","ファン","ふぁん","n","fan","ファンの人に会えた！","I got to meet a fan!","ずっとファンです！","I've been a fan forever!"],
+["stream","Net","アンチ","あんち","n","hater","アンチは気にしない。","I don't care about haters.","アンチコメントが来た。","I got a hate comment."],
+["stream","N2","話題","わだい","n","topic; trending","今話題のゲーム。","The game everyone's talking about.","話題を変えよう。","Let's change the subject."],
+["stream","N3","流行る","はやる","g","to be popular; to trend","今このゲームが流行ってる。","This game is trending right now.","流行りに乗ろう。","Let's ride the trend."],
+["stream","Net","テンション","てんしょん","n","energy; hype level (NOT 'tension')","テンション高いね！","You're so hyped!","今日テンション低い。","I'm low-energy today."],
+["stream","Net","ネタ","ねた","n","material; joke; bit; topic","動画のネタがない。","I've got no video ideas.","それ、ネタでしょ？","That's a joke, right?"]
+);
+
+RAW.push(
+["react","Slang","","マジで","x","seriously; for real","マジで？","Seriously?","マジでやばい。","This is seriously bad."],
+["react","Slang","","ヤバい","ia","crazy; awful; amazing (context)","ヤバい、ヤバい！","Oh no, oh no!","この景色ヤバくない？","Isn't this view insane?","Good OR bad depending on tone. Slang: ヤバっ / やべー."],
+["react","Slang","","えぐい","ia","brutal; insane (intense)","この威力えぐい。","This damage is insane.","えぐかった…","That was brutal..."],
+["react","N4","","すごい","ia","amazing; incredible","すごっ！","Whoa!","すごく上手いね。","You're really good.","Casual: すげー！"],
+["react","Slang","","めっちゃ","adv","super; really (Kansai-origin)","めっちゃ怖い。","Super scary.","めっちゃ楽しかった！","That was so fun!"],
+["react","N3","超","ちょう","adv","super; ultra","超ムズい。","Super hard.","超嬉しい！","So happy!"],
+["react","N4","全然","ぜんぜん","adv","not at all; (casual) totally","全然大丈夫。","Totally fine.","全然当たらない。","I can't hit anything."],
+["react","N4","絶対","ぜったい","adv","absolutely; definitely","絶対勝つ！","I'm definitely winning!","絶対行かない。","I'm absolutely not going."],
+["react","N3","無理","むり","na","impossible; no way","無理無理無理！","No no no no!","もう無理。","I can't anymore."],
+["react","N3","最高","さいこう","na","the best","最高だ！","This is the best!","今日の配信、最高でした。","Today's stream was amazing."],
+["react","N3","最悪","さいあく","na","the worst","最悪…","This is the worst...","最悪のタイミングだ。","Worst possible timing."],
+["react","N4","嘘","うそ","n","lie; no way!","嘘でしょ？","No way, you're kidding?","嘘つかないで。","Don't lie."],
+["react","N4","","なんで","x","why?!","なんで？！","Why?!","なんで今来るの？！","Why are you coming NOW?!"],
+["react","N4","","やめて","x","stop!; don't!","やめて！来ないで！","Stop! Don't come over here!","マジでやめて。","Seriously, stop.","From やめる (to stop). やめろ = blunt command."],
+["react","Slang","","ビビる","g","to get scared; to flinch","めっちゃビビった。","That scared the crap out of me.","ビビってないし！","I'm not scared!"],
+["react","N3","","びっくり","s","surprise; to be startled","びっくりした！","That startled me!","びっくりさせないで。","Don't scare me like that."],
+["react","N3","叫ぶ","さけぶ","g","to scream; to shout","叫びすぎて喉痛い。","I screamed so much my throat hurts.","叫ばないで！","Don't scream!"],
+["react","N4","","うるさい","ia","loud; annoying; shut up","うるさい！","Shut up!","声うるさくてごめん。","Sorry for being so loud."],
+["react","Slang","","ウケる","g","to be hilarious","それウケる。","That's hilarious.","めっちゃウケた。","That killed."],
+["react","N4","面白い","おもしろい","ia","funny; interesting","この実況者、面白いね。","This commentator is funny.","面白くなってきた！","Now it's getting interesting!"],
+["react","N4","","つまらない","ia","boring","つまらない話でごめん。","Sorry for the boring story.","このステージつまらない。","This stage is boring.","Casual: つまんない."],
+["react","N3","天才","てんさい","n","genius","天才か？","Am I a genius?","俺、天才かもしれない。","I might be a genius."],
+["react","N4","","バカ","na","idiot; stupid","バカじゃないの？","Are you stupid?","バカなことした。","I did something dumb.","Fine jokingly between close friends; rude otherwise."],
+["react","N4","","かっこいい","ia","cool","そのスキン、かっこいい！","That skin is cool!","かっこよく決めたかった。","I wanted to pull it off looking cool."],
+["react","N5","可愛い","かわいい","ia","cute","この犬、可愛い！","This dog is so cute!","可愛くない？","Isn't it cute?"],
+["react","Slang","","キモい","ia","gross; creepy","キモっ！","Ew!","この敵キモすぎる。","This enemy is so gross."],
+["react","Slang","","ダサい","ia","lame; uncool","ダサいミスした。","I made a lame mistake.","それダサくない？","Isn't that kind of lame?"],
+["react","Slang","","ムカつく","g","to be irritating; to piss off","このボス、ムカつく！","This boss is so annoying!","マジでムカついた。","That seriously pissed me off."],
+["react","Slang","","キレる","i","to snap; to lose it","キレそう。","I'm about to snap.","キレないで。","Don't lose it."],
+["react","N2","焦る","あせる","g","to panic; to be in a rush","焦らないで。","Don't panic.","時間がなくて焦った。","I panicked since there was no time.","Godan despite ending in える."],
+["react","Slang","","よっしゃ","x","yes!; let's go!","よっしゃー！勝った！","LET'S GO! We won!","よっしゃ、行くぞ！","Alright, here we go!"],
+["react","Net","","セーフ","x","safe!","セーフ！","Safe!","ギリギリセーフ！","Barely made it!","アウト = out / you're done."],
+["react","N3","","ギリギリ","adv","just barely","ギリギリ間に合った。","I barely made it in time.","体力ギリギリ。","I'm hanging on by a thread."],
+["react","N4","","おい","x","hey! (rough)","おい！何してんの！","Hey! What are you doing!","おいおいおい。","Whoa whoa whoa."],
+["react","N4","","うわ","x","whoa; ugh","うわっ！","Whoa!","うわ、最悪。","Ugh, the worst."],
+["react","N4","","あれ","x","huh?; that thing","あれ？ここどこ？","Huh? Where am I?","あれ、おかしいな。","Huh, that's weird."],
+["react","N4","","なるほど","x","I see; makes sense","なるほどね。","Ah, I see.","なるほど、そういうことか。","Oh, so that's how it is."],
+["react","N3","確かに","たしかに","adv","true; that's right","確かに。","Fair point.","確かにそれは難しい。","Yeah, that is hard."],
+["react","N3","","さすが","adv","as expected (of you); impressive","さすが！","Impressive, as always!","さすがプロだね。","That's a pro for you."],
+["react","Slang","普通に","ふつうに","adv","normally; (slang) honestly, legit","普通に上手い。","Honestly, that's legit good.","普通に怖い。","That's genuinely scary."],
+["react","N3","","とりあえず","adv","for now; first of all","とりあえずやってみよう。","Let's just try it for now.","とりあえず回復しよう。","Let's heal up first."],
+["react","N2","一旦","いったん","adv","for a moment; once","一旦落ち着こう。","Let's calm down for a sec.","一旦セーブしよう。","Let's save for now."],
+["react","N3","正直","しょうじき","na","honest; honestly","正直、怖かった。","Honestly, it was scary.","正直に言って。","Be honest."],
+["react","N3","","やっぱり","adv","as I thought; after all","やっぱりな！","I knew it!","やっぱりこのゲーム好き。","I really do love this game.","Casual: やっぱ."],
+["react","Slang","意味わからん","いみわからん","x","makes no sense; what the heck","意味わからん！","What the heck!","この展開、意味わからん。","This plot twist makes no sense.","Casual form of 意味が分からない."],
+["react","Slang","","エモい","ia","emotional; nostalgic; hits different","このBGMエモい。","This music hits different.","エモすぎる。","So emotional."],
+["react","N3","","しょうがない","x","it can't be helped","しょうがないね。","Oh well.","負けてもしょうがない。","If we lose, so be it."],
+["react","N2","勘弁して","かんべんして","x","give me a break; spare me","勘弁してくれよ…","Oh come on, give me a break...","もう勘弁して。","Please, no more."],
+["react","Net","","フラグ","n","jinx; foreshadowing ('flag')","それフラグだよ。","You just jinxed it.","フラグ回収。","Called it — the jinx came true."],
+["react","Net","","ツッコミ","n","comeback; straight-man retort","ツッコミが上手い。","You're great at comebacks.","誰かツッコんで！","Somebody call that out!","Japanese comedy duo roles: ボケ (funny one) and ツッコミ (the one who calls it out)."],
+["react","Net","","ボケ","n","joke; the silly one (comedy)","今のボケ？","Was that a joke?","ボケすぎ。","You're goofing too much."],
+["react","Net","","リアクション","n","reaction","リアクションがでかい。","Your reactions are huge.","いいリアクション！","Great reaction!","Big reactions are the core of CoryxKenshin-style content."]
+);
+
+RAW.push(
+["social","N5","友達","ともだち","n","friend","友達と一緒にゲームする。","I play games with my friends.","友達になろう！","Let's be friends!"],
+["social","N3","仲良く","なかよく","adv","on good terms","仲良くしようね。","Let's get along.","すぐ仲良くなった。","We got close right away.","仲がいい = close (as friends)."],
+["social","N3","誘う","さそう","g","to invite (out)","飲み会に誘われた。","I got invited to a drinking party.","今度誘ってね。","Invite me next time."],
+["social","N3","連絡先","れんらくさき","n","contact info","連絡先交換しない？","Wanna exchange contacts?","連絡先知らない。","I don't have their contact."],
+["social","N3","交換","こうかん","s","exchange; trade","LINE交換しよう。","Let's swap LINE.","アイテム交換しない？","Wanna trade items?","LINE is THE messaging app in Japan."],
+["social","N3","連絡","れんらく","s","contact; to get in touch","後で連絡する。","I'll message you later.","連絡ありがとう。","Thanks for reaching out."],
+["social","N4","暇","ひま","na","free (time); bored","今暇？","You free right now?","暇だったらゲームしよう。","If you're free, let's play."],
+["social","N4","今度","こんど","n","next time; sometime","今度遊ぼう。","Let's hang out sometime.","今度こそ勝つ。","This time I'll win for sure."],
+["social","N5","一緒に","いっしょに","adv","together","一緒にやろう。","Let's do it together.","一緒に帰らない？","Want to walk home together?"],
+["social","N4","趣味","しゅみ","n","hobby","趣味は何？","What are your hobbies?","趣味はゲームと動画作りです。","My hobbies are gaming and making videos."],
+["social","N5","好き","すき","na","to like","どんなゲームが好き？","What kind of games do you like?","好きなアニメは？","What's your favorite anime?","Use が: ゲームが好き. 大好き = love."],
+["social","N5","嫌い","きらい","na","to dislike; to hate","辛い食べ物は嫌い。","I don't like spicy food.","嫌いじゃないよ。","I don't dislike it."],
+["social","N4","得意","とくい","na","good at; strong point","FPSが得意です。","I'm good at FPS games.","得意なことは何？","What are you good at?"],
+["social","N4","苦手","にがて","na","bad at; not a fan of","ホラーが苦手。","I'm not good with horror.","初対面は苦手です。","I'm awkward meeting new people.","Softer than 嫌い."],
+["social","N2","人見知り","ひとみしり","s","shy around strangers","実は人見知りなんだ。","I'm actually shy around new people.","全然人見知りしないね。","You're not shy at all."],
+["social","N3","出身","しゅっしん","n","hometown; where you're from","どこ出身？","Where are you from?","アメリカ出身です。","I'm from America."],
+["social","N3","紹介","しょうかい","s","introduction","友達を紹介するね。","Let me introduce my friend.","いいゲーム紹介して。","Recommend me a good game."],
+["social","N3","自己紹介","じこしょうかい","s","self-introduction","簡単に自己紹介します。","Let me briefly introduce myself.","自己紹介お願いします。","Please introduce yourself."],
+["social","N3","約束","やくそく","s","promise; plans","約束だよ。","It's a promise.","今日は友達と約束がある。","I have plans with a friend today."],
+["social","Slang","飲み会","のみかい","n","drinking party; social night out","今夜飲み会ある。","I've got a drinking party tonight.","飲み会来る？","You coming to the party?"],
+["social","N2","奢る","おごる","g","to treat (pay for someone)","今日は奢るよ。","It's on me today.","奢ってくれてありがとう。","Thanks for treating me."],
+["social","Slang","割り勘","わりかん","n","split the bill","割り勘にしよう。","Let's split it.","割り勘でいい？","Okay to split the bill?"],
+["social","N5","楽しい","たのしい","ia","fun","今日楽しかった！","Today was fun!","楽しくなってきた。","It's getting fun."],
+["social","N4","久しぶり","ひさしぶり","na","long time no see","久しぶり！元気？","Long time no see! How are you?","久しぶりにこのゲームやる。","First time playing this game in a while."],
+["social","N5","元気","げんき","na","well; energetic","元気？","How's it going?","元気出して。","Cheer up."],
+["social","N5","","よろしく","x","nice to meet you; I'm counting on you","これからよろしく！","Looking forward to hanging out!","よろしくね。","Nice to meet you / Thanks in advance."],
+["social","N5","","ありがとう","x","thank you","マジでありがとう。","Seriously, thank you.","手伝ってくれてありがとう。","Thanks for helping me.","Casual: あざす / あざっす (very casual)."],
+["social","N5","","ごめん","x","sorry (casual)","ごめん、遅れた！","Sorry, I'm late!","ごめんね、今忙しい。","Sorry, I'm busy right now.","Polite: すみません / ごめんなさい."],
+["social","N5","大丈夫","だいじょうぶ","na","okay; all right; no thanks","大丈夫？","You okay?","大丈夫、気にしないで。","It's fine, don't worry about it.","Also used to politely decline: 大丈夫です = I'm good, no thanks."],
+["social","N4","気にしないで","きにしないで","x","don't worry about it","気にしないで。","Don't worry about it.","全然気にしてないよ。","I'm not bothered at all."],
+["social","N3","冗談","じょうだん","n","joke; kidding","冗談だよ。","Just kidding.","冗談でしょ？","You're joking, right?"],
+["social","N2","","からかう","g","to tease","からかわないで。","Stop teasing me.","ちょっとからかっただけ。","I was just messing with you."],
+["social","N4","恥ずかしい","はずかしい","ia","embarrassing; embarrassed","恥ずかしい！","So embarrassing!","日本語を間違えて恥ずかしかった。","I messed up my Japanese and was embarrassed."],
+["social","N4","寂しい","さびしい","ia","lonely; sad (missing someone)","寂しくなるね。","I'm gonna miss you.","一人だと寂しい。","It's lonely by myself."],
+["social","N4","嬉しい","うれしい","ia","happy; glad","めっちゃ嬉しい！","I'm so happy!","来てくれて嬉しい。","I'm glad you came."],
+["social","N3","気が合う","きがあう","g","to get along; to click","俺たち気が合うね。","We really click.","すぐ気が合った。","We hit it off instantly."],
+["social","N3","先輩","せんぱい","n","senior (older student/coworker)","先輩、お疲れ様です！","Good work today, senpai!","サークルの先輩に誘われた。","A senior from my club invited me."],
+["social","N3","後輩","こうはい","n","junior (younger student/coworker)","後輩に教えた。","I taught my junior.","可愛い後輩だ。","They're a sweet junior."],
+["social","N2","同い年","おないどし","n","same age","同い年なの？","We're the same age?","同い年だからタメ口でいいよ。","We're the same age, so talk casually."],
+["social","Slang","タメ口","ためぐち","n","casual speech (to equals)","タメ口でいいよ。","You can talk casually with me.","先輩にタメ口はダメ。","Don't use casual speech with a senior."],
+["social","N3","敬語","けいご","n","polite/honorific speech","敬語じゃなくていいよ。","You don't have to be formal.","敬語が難しい。","Keigo is hard."],
+["social","N4","呼ぶ","よぶ","g","to call; to invite","何て呼べばいい？","What should I call you?","ネイトって呼んで。","Call me Nate."],
+["social","N3","あだ名","あだな","n","nickname","あだ名ある？","Do you have a nickname?","あだ名つけて。","Give me a nickname."],
+["social","N4","お疲れ様","おつかれさま","x","good work; thanks for your effort","お疲れ様！","Good work!","今日もお疲れ。","Nice work today.","Used constantly: after class, games, streams. Short: おつ / おつかれ."],
+["social","N5","","いい","ia","good; nice","いいね！","Nice!","それいいじゃん！","That's great!","Irregular: conjugates from よい → よくない, よかった."],
+["social","N3","話しかける","はなしかける","i","to start talking to someone","勇気を出して話しかけた。","I worked up the courage to talk to them.","気軽に話しかけてね。","Feel free to come talk to me."],
+["social","N3","相談","そうだん","s","consultation; to talk something over","ちょっと相談がある。","I need to talk something over with you.","何でも相談して。","You can come to me about anything."]
+);
+
+RAW.push(
+["uni","N5","大学","だいがく","n","university","どこの大学行ってるの？","Which university do you go to?","日本の大学に行きたい。","I want to go to a Japanese university.","大学生 = university student."],
+["uni","N4","授業","じゅぎょう","n","class; lesson","今日授業何コマある？","How many classes do you have today?","授業中に寝ちゃった。","I fell asleep in class.","コマ = class period."],
+["uni","N3","講義","こうぎ","n","lecture","この講義、面白い。","This lecture is interesting.","講義のスライドもらえる？","Can I get the lecture slides?"],
+["uni","N3","教授","きょうじゅ","n","professor","教授に質問しに行く。","I'm going to ask the professor a question.","あの教授、厳しいよ。","That professor is strict.","Address as 〜先生, not 〜教授."],
+["uni","N3","留学生","りゅうがくせい","n","international student","留学生です。","I'm an international student.","留学生の友達が多い。","I have a lot of international student friends."],
+["uni","N3","留学","りゅうがく","s","studying abroad","日本に留学したい。","I want to study abroad in Japan.","留学してどれくらい？","How long have you been studying abroad?"],
+["uni","N2","専攻","せんこう","s","major","専攻は何？","What's your major?","コンピューターサイエンスを専攻してる。","I'm majoring in computer science."],
+["uni","N3","学部","がくぶ","n","faculty; department","何学部？","What faculty are you in?","工学部です。","I'm in engineering."],
+["uni","N2","単位","たんい","n","credit (course)","単位落とした…","I failed the credit...","この授業、楽に単位取れる。","This class is easy credits."],
+["uni","N4","試験","しけん","n","exam","来週試験がある。","I have an exam next week.","試験に受かった！","I passed the exam!","Also テスト."],
+["uni","N3","レポート","れぽーと","n","paper; written report","レポートがまだ終わらない。","My paper still isn't done.","レポートを出した。","I turned in my report."],
+["uni","N2","課題","かだい","n","assignment","課題多すぎ。","Way too many assignments.","課題やった？","Did you do the assignment?"],
+["uni","N2","締め切り","しめきり","n","deadline","締め切りは明日まで。","The deadline is tomorrow.","締め切りに間に合わない！","I'm not going to make the deadline!"],
+["uni","N2","出席","しゅっせき","s","attendance","出席取るよ。","Taking attendance.","この授業は出席が大事。","Attendance matters in this class."],
+["uni","Slang","","サボる","g","to skip (class/work); to slack off","今日の授業サボった。","I skipped class today.","サボらないで！","Don't slack off!","From French 'sabotage'."],
+["uni","N5","図書館","としょかん","n","library","図書館で勉強しよう。","Let's study at the library.","図書館は何時まで？","Until when is the library open?"],
+["uni","Slang","学食","がくしょく","n","campus cafeteria","学食行かない？","Wanna go to the cafeteria?","学食のカレーが安い。","The cafeteria curry is cheap."],
+["uni","N3","サークル","さーくる","n","university club (casual)","どのサークル入ってる？","What club are you in?","ゲームサークルに入った。","I joined the gaming club.","サークル = casual club; 部活 = serious club."],
+["uni","N3","部活","ぶかつ","n","club activities (serious)","部活は何してた？","What club were you in?","部活が忙しい。","Club activities keep me busy."],
+["uni","Slang","ゼミ","ぜみ","n","seminar (small research group)","ゼミの発表がある。","I have a seminar presentation.","ゼミの先生に相談した。","I talked to my seminar professor."],
+["uni","N3","卒業","そつぎょう","s","graduation","来年卒業する。","I graduate next year.","卒業したら何したい？","What do you want to do after graduating?"],
+["uni","N3","入学","にゅうがく","s","enrollment; entering school","四月に入学した。","I enrolled in April.","入学試験が難しい。","The entrance exam is hard.","Japanese school year starts in April."],
+["uni","N2","奨学金","しょうがくきん","n","scholarship","奨学金をもらった。","I got a scholarship.","奨学金に申し込む。","I'm applying for a scholarship."],
+["uni","N2","寮","りょう","n","dorm","寮に住んでる。","I live in the dorm.","寮の友達とゲームした。","I gamed with my dorm friends."],
+["uni","Slang","バイト","ばいと","s","part-time job","バイトしてる？","Do you have a part-time job?","今日はバイトがある。","I have work today.","From German 'Arbeit'."],
+["uni","N5","勉強","べんきょう","s","study","日本語を勉強してる。","I'm studying Japanese.","一緒に勉強しよう。","Let's study together."],
+["uni","N3","復習","ふくしゅう","s","review (after class)","今日の授業を復習する。","I'll review today's class.","復習しないと忘れる。","If you don't review, you forget."],
+["uni","N3","予習","よしゅう","s","preparation (before class)","予習しておいて。","Prep beforehand.","予習してなかった。","I didn't prep."],
+["uni","N4","質問","しつもん","s","question","質問してもいいですか？","May I ask a question?","質問ある人？","Anyone have questions?"],
+["uni","N4","答える","こたえる","i","to answer","この問題に答えて。","Answer this question.","答えられなかった。","I couldn't answer."],
+["uni","N4","習う","ならう","g","to learn (from someone)","ギターを習ってる。","I'm taking guitar lessons.","この文法は前に習った。","I learned this grammar before."],
+["uni","N3","理解","りかい","s","understanding","内容が理解できない。","I can't understand the content.","理解してくれてありがとう。","Thanks for understanding."],
+["uni","N4","説明","せつめい","s","explanation","もう一回説明してくれる？","Could you explain it once more?","説明が分かりやすい。","The explanation is easy to follow."],
+["uni","N3","発表","はっぴょう","s","presentation; announcement","明日、発表がある。","I have a presentation tomorrow.","結果が発表された。","The results were announced."],
+["uni","N1","履修","りしゅう","s","course registration; taking a course","何の授業を履修してる？","What classes are you taking?","履修登録の締め切りはいつ？","When is the course registration deadline?"],
+["uni","N2","休講","きゅうこう","n","class cancelled","今日の授業、休講だって！","Today's class is cancelled!","休講で暇になった。","Class got cancelled, so I'm free."],
+["uni","N3","時間割","じかんわり","n","class timetable","時間割見せて。","Show me your timetable.","時間割が決まった。","My schedule is set."],
+["uni","N1","留年","りゅうねん","s","repeating a year","留年したくない。","I don't want to repeat a year.","単位が足りなくて留年した。","I didn't have enough credits and had to repeat."],
+["uni","Slang","就活","しゅうかつ","s","job hunting","就活が始まった。","Job hunting season started.","就活中だから忙しい。","I'm busy job hunting."],
+["uni","N2","提出","ていしゅつ","s","submission","レポートを提出した。","I submitted my paper.","提出期限は金曜日。","The submission deadline is Friday."],
+["uni","N3","申し込む","もうしこむ","g","to apply; to sign up","イベントに申し込んだ。","I signed up for the event.","オンラインで申し込める。","You can apply online."],
+["uni","N3","合格","ごうかく","s","passing (an exam)","N3に合格した！","I passed N3!","合格おめでとう！","Congrats on passing!"],
+["uni","N3","遅刻","ちこく","s","being late","また遅刻した。","I was late again.","遅刻しないでね。","Don't be late."]
+);
+
+RAW.push(
+["keigo","N2","お世話になっております","おせわになっております","x","thank you for your continued support (email opener)","お世話になっております。〇〇です。","Hello, this is ___ (formal email opener).","いつもお世話になっております。","Thank you as always for your support.","How almost every business email or sponsor DM starts."],
+["keigo","N3","よろしくお願いいたします","よろしくおねがいいたします","x","thank you in advance (very polite)","今後ともよろしくお願いいたします。","I look forward to working with you.","ご確認よろしくお願いいたします。","Thank you for checking."],
+["keigo","N2","恐れ入りますが","おそれいりますが","x","I'm sorry to trouble you, but…","恐れ入りますが、もう一度教えていただけますか？","Sorry to trouble you, could you tell me once more?","恐れ入りますが、少々お待ちください。","Sorry, please wait a moment."],
+["keigo","N3","申し訳ございません","もうしわけございません","x","I sincerely apologize","返信が遅くなり、申し訳ございません。","My apologies for the late reply.","大変申し訳ございません。","I'm terribly sorry."],
+["keigo","N2","拝見","はいけん","s","to see/look at (humble)","動画を拝見しました。","I watched your video (humble).","資料を拝見します。","I'll take a look at the materials."],
+["keigo","N3","伺う","うかがう","g","to ask; to visit (humble)","少し伺ってもよろしいですか？","May I ask you something?","明日、事務所に伺います。","I'll visit your office tomorrow."],
+["keigo","N3","","いただく","g","to receive (humble); to eat (humble)","コメントをいただきました。","I received a comment.","教えていただけますか？","Could you please teach me?","いただきます before eating comes from this."],
+["keigo","N3","確認","かくにん","s","confirmation; to check","スケジュールを確認します。","I'll check the schedule.","ご確認ください。","Please check."],
+["keigo","N3","都合","つごう","n","convenience; availability","ご都合はいかがですか？","How is your availability?","都合が悪くなった。","Something came up."],
+["keigo","N4","予定","よてい","n","plans; schedule","週末の予定は？","Any plans for the weekend?","収録の予定を決めましょう。","Let's set the recording schedule."],
+["keigo","N3","参加","さんか","s","participation","企画に参加したいです。","I'd like to join the project.","参加してくれてありがとう。","Thanks for joining."],
+["keigo","N4","失礼します","しつれいします","x","excuse me (entering/leaving/hanging up)","失礼します。","Excuse me (entering a room).","お先に失礼します。","I'll be heading out first."],
+["keigo","N2","承知しました","しょうちしました","x","understood; certainly (business)","承知しました。","Understood.","日程の件、承知いたしました。","Noted on the schedule."],
+["keigo","N3","問題ありません","もんだいありません","x","no problem (polite)","その日程で問題ありません。","That date works fine.","問題ありませんか？","Is that okay?"],
+["keigo","N3","","ぜひ","adv","by all means; definitely","ぜひコラボさせてください！","I'd love to collab!","ぜひ来てください。","Please do come."],
+["keigo","N4","初めまして","はじめまして","x","nice to meet you (first time)","初めまして、ネイトです。","Nice to meet you, I'm Nate.","初めまして、よろしくお願いします。","Nice to meet you, I look forward to it."],
+["grammar","N4","〜てもいい","てもいい","gr","may I…? / it's okay to…","これ使ってもいい？","Can I use this?","先に行ってもいいよ。","You can go ahead first."],
+["grammar","N4","〜ちゃダメ","ちゃだめ","gr","you must not… (casual)","そこ行っちゃダメ！","Don't go there!","見ちゃダメ！","Don't look!","Polite/written: 〜てはいけない."],
+["grammar","N4","〜なきゃ","なきゃ","gr","gotta…; have to… (casual)","もう行かなきゃ。","I gotta go.","早く逃げなきゃ！","We need to get out of here!","Negative stem + なきゃ. Full: 〜なければならない."],
+["grammar","N4","〜たことがある","たことがある","gr","have done … before","このゲームやったことある？","Have you played this game before?","日本に行ったことがない。","I've never been to Japan."],
+["grammar","N4","〜ながら","ながら","gr","while doing…","ゲームしながら話そう。","Let's chat while we play.","笑いながら死んだ。","I died laughing."],
+["grammar","N4","〜すぎる","すぎる","gr","too much…","難しすぎる！","This is way too hard!","食べすぎた。","I ate too much."],
+["grammar","N4","〜そう","そう","gr","looks like…; about to…","落ちそう！","I'm about to fall!","美味しそう！","That looks delicious!"],
+["grammar","N4","〜みたい","みたい","gr","seems like…; like…","罠みたい。","Looks like a trap.","夢みたい！","It's like a dream!"],
+["grammar","Slang","〜っぽい","っぽい","gr","-ish; kinda seems like","あれボスっぽい。","That looks like a boss.","雨っぽい。","Looks like rain."],
+["grammar","N4","〜かも","かも","gr","maybe; might","罠かも。","Might be a trap.","今日は配信できないかも。","I might not be able to stream today.","Full: かもしれない."],
+["grammar","N3","〜はず","はず","gr","should be (expected)","ここに鍵があるはず。","The key should be here.","もう着いてるはずだよ。","They should've arrived by now."],
+["grammar","N4","〜てみる","てみる","gr","try doing…","やってみる！","I'll give it a shot!","日本語で話してみた。","I tried talking in Japanese."],
+["grammar","N4","〜ておく","ておく","gr","do in advance; leave as is","セーブしておこう。","Let's save just in case.","回復を取っておく。","I'll save the healing for later.","Casual: 〜とく (セーブしとこう)."],
+["grammar","N3","〜ちゃう / 〜てしまう","ちゃう","gr","end up doing (oops); completely","死んじゃった。","I ended up dying.","全部食べちゃった。","I ate it all.","See the ちゃった row in every verb's table."],
+["grammar","N4","〜てくれない？","てくれない","gr","could you … for me? (casual request)","ちょっと手伝ってくれない？","Could you help me out?","それ取ってくれない？","Could you grab that for me?"],
+["grammar","Slang","〜って","って","gr","quoting; topic marker (casual)","キヨって知ってる？","You know Kiyo?","明日休みだって。","They said tomorrow's off."],
+["grammar","Slang","〜じゃん","じゃん","gr","isn't it?; you know! (casual)","いいじゃん！","That's great!","言ったじゃん！","I told you!"],
+["grammar","N5","〜よね","よね","gr","right? (seeking agreement)","このゲーム、面白いよね。","This game is fun, right?","明日だよね？","It's tomorrow, right?"],
+["grammar","N4","〜んだ","んだ","gr","explaining; giving context","実はホラー苦手なんだ。","The thing is, I'm bad with horror.","どうしたの？何があったんだ？","What's wrong? What happened?","Also んです (polite). Sounds natural and conversational."],
+["grammar","N4","〜けど","けど","gr","but; although (also softening)","行きたいけど、時間ない。","I want to go, but I don't have time.","ちょっといいですか、質問なんですけど…","Excuse me, I have a question...","Ending with けど softens a request."],
+["grammar","N5","〜から","から","gr","because; so","怖いから行かない。","It's scary, so I'm not going.","今行くから待って！","I'm coming now, so wait!"],
+["grammar","N4","〜たら","たら","gr","if / when …","勝ったら奢って。","If I win, treat me.","家に着いたら連絡する。","I'll message you when I get home."],
+["grammar","N3","〜のに","のに","gr","even though… (frustration)","回復したのに死んだ。","I healed and still died.","練習したのに負けた。","I lost even though I practiced."],
+["grammar","N4","〜ことにする","ことにする","gr","decide to…","毎日投稿することにした。","I decided to upload every day.","今日は休むことにした。","I decided to take today off."],
+["grammar","N4","〜ように","ように","gr","so that…; in order to","上手くなるように練習する。","I practice so I get better.","忘れないようにメモする。","I'll write it down so I don't forget."],
+["grammar","N4","〜ばいい","ばいい","gr","should I… / you just need to…","どうすればいい？","What should I do?","このボタンを押せばいい。","You just press this button."],
+["grammar","N4","〜ほうがいい","ほうがいい","gr","you'd better…; it's better to…","逃げたほうがいい。","We'd better run.","早く寝たほうがいいよ。","You should get to bed early."],
+["grammar","N3","〜し","し","gr","and also… (listing reasons)","怖いし、暗いし、無理。","It's scary, it's dark — no way.","安いし美味しいし、最高。","Cheap and delicious, it's the best."],
+["grammar","N3","〜ていく / 〜てくる","ていく","gr","going/coming (change over time); go and do","強くなっていく。","I'm getting stronger.","ちょっと飲み物買ってくる。","I'll go grab a drink and come back."]
+);
+
+const ROWS={"う":"わいえお","く":"かきけこ","ぐ":"がぎげご","す":"さしせそ","つ":"たちてと","ぬ":"なにねの","ぶ":"ばびべぼ","む":"まみめも","る":"らりれろ"};
+const TE={"う":"って","つ":"って","る":"って","む":"んで","ぶ":"んで","ぬ":"んで","く":"いて","ぐ":"いで","す":"して"};
+const OVR={"ある":{"Negative":"ない","Past negative":"なかった","Polite volitional (let's)":"—","Potential (can)":"—","Passive":"—","Causative":"—","Command":"—","Want to (たい)":"—","Volitional (let's, casual)":"—","てる (doing / state)":"—"},
+"分かる":{"Potential (can)":"—","Passive":"—","Command":"—","Volitional (let's, casual)":"—","Polite volitional (let's)":"—","Want to (たい)":"—","Causative":"—"},
+"できる":{"Potential (can)":"—","Passive":"—","Command":"—","Volitional (let's, casual)":"—","Polite volitional (let's)":"—","Want to (たい)":"—","Causative":"—"},
+"くれる":{"Command":"くれ","Potential (can)":"—","Passive":"—","Volitional (let's, casual)":"—","Polite volitional (let's)":"—","Causative":"—","Want to (たい)":"—"},
+"知る":{"てる (doing / state)":"知ってる (= know)"}};
+const FORMS=["Dictionary","Polite (ます)","Polite negative","Polite past","Negative","Past","Past negative","て-form","てる (doing / state)","Want to (たい)","Potential (can)","Volitional (let's, casual)","Polite volitional (let's)","Conditional (ば)","Conditional (たら)","Passive","Causative","Command","ちゃった (oops / done)"];
+function chatta(te){return te.endsWith("で")?te.slice(0,-1)+"じゃった":te.slice(0,-1)+"ちゃった"}
+function verbForms(w,type){ // w = string ending in dictionary-form kana
+  const f={};
+  if(type==="su"||type==="s"){const b=type==="s"?w:w.slice(0,-2);
+    Object.assign(f,{"Dictionary":b+"する","Polite (ます)":b+"します","Polite negative":b+"しません","Polite past":b+"しました","Negative":b+"しない","Past":b+"した","Past negative":b+"しなかった","て-form":b+"して","てる (doing / state)":b+"してる","Want to (たい)":b+"したい","Potential (can)":b+"できる","Volitional (let's, casual)":b+"しよう","Polite volitional (let's)":b+"しましょう","Conditional (ば)":b+"すれば","Conditional (たら)":b+"したら","Passive":b+"される","Causative":b+"させる","Command":b+"しろ","ちゃった (oops / done)":b+"しちゃった"});return f}
+  if(type==="k"){const b=w.slice(0,-2);const K=!w.startsWith("来");const c=K?"こ":"来",ki=K?"き":"来",ku=K?"く":"来";
+    Object.assign(f,{"Dictionary":ku+"る","Polite (ます)":ki+"ます","Polite negative":ki+"ません","Polite past":ki+"ました","Negative":c+"ない","Past":ki+"た","Past negative":c+"なかった","て-form":ki+"て","てる (doing / state)":ki+"てる","Want to (たい)":ki+"たい","Potential (can)":c+"られる","Volitional (let's, casual)":c+"よう","Polite volitional (let's)":ki+"ましょう","Conditional (ば)":ku+"れば","Conditional (たら)":ki+"たら","Passive":c+"られる","Causative":c+"させる","Command":c+"い","ちゃった (oops / done)":ki+"ちゃった"});return f}
+  if(type==="i"){const s=w.slice(0,-1);
+    Object.assign(f,{"Dictionary":w,"Polite (ます)":s+"ます","Polite negative":s+"ません","Polite past":s+"ました","Negative":s+"ない","Past":s+"た","Past negative":s+"なかった","て-form":s+"て","てる (doing / state)":s+"てる","Want to (たい)":s+"たい","Potential (can)":s+"られる","Volitional (let's, casual)":s+"よう","Polite volitional (let's)":s+"ましょう","Conditional (ば)":s+"れば","Conditional (たら)":s+"たら","Passive":s+"られる","Causative":s+"させる","Command":s+"ろ","ちゃった (oops / done)":s+"ちゃった"});return f}
+  // godan
+  const e=w.slice(-1),s=w.slice(0,-1),r=ROWS[e];const te=type==="iku"?s+"って":s+TE[e];const ta=te.slice(0,-1)+(te.endsWith("で")?"だ":"た");
+  Object.assign(f,{"Dictionary":w,"Polite (ます)":s+r[1]+"ます","Polite negative":s+r[1]+"ません","Polite past":s+r[1]+"ました","Negative":s+r[0]+"ない","Past":ta,"Past negative":s+r[0]+"なかった","て-form":te,"てる (doing / state)":te+"る","Want to (たい)":s+r[1]+"たい","Potential (can)":s+r[2]+"る","Volitional (let's, casual)":s+r[3]+"う","Polite volitional (let's)":s+r[1]+"ましょう","Conditional (ば)":s+r[2]+"ば","Conditional (たら)":ta+"ら","Passive":s+r[0]+"れる","Causative":s+r[0]+"せる","Command":s+r[2],"ちゃった (oops / done)":chatta(te)});return f}
+const AFORMS=["Plain","Polite","Negative","Past","Past negative","て-form (and…)","Adverb","Conditional (if)","Too much (すぎる)","Looks like (そう)","Before a noun"];
+function adjForms(w,type){
+  if(type==="ia"){let s=w.slice(0,-1);let so=s+"そう";if(w.endsWith("いい")){s=w.slice(0,-2)+"よ";so=s+"さそう"}
+    return {"Plain":w,"Polite":w+"です","Negative":s+"くない","Past":s+"かった","Past negative":s+"くなかった","て-form (and…)":s+"くて","Adverb":s+"く","Conditional (if)":s+"ければ","Too much (すぎる)":(w.endsWith("いい")?s+"すぎる":w.slice(0,-1)+"すぎる"),"Looks like (そう)":so,"Before a noun":w+"〜"}}
+  return {"Plain":w+"だ","Polite":w+"です","Negative":w+"じゃない","Past":w+"だった","Past negative":w+"じゃなかった","て-form (and…)":w+"で","Adverb":w+"に","Conditional (if)":w+"なら","Too much (すぎる)":w+"すぎる","Looks like (そう)":w+"そう","Before a noun":w+"な〜"}}
+function conjTable(d){const t=d.t;const verb=["g","i","iku","s","su","k"].includes(t),adj=t==="ia"||t==="na";if(!verb&&!adj)return"";
+  const w=d.w||d.r;let a,b,keys;
+  if(verb){a=verbForms(w,t);b=verbForms(d.r,t);keys=FORMS;const o=OVR[d.w]||OVR[d.r];if(o)for(const k in o){a[k]=o[k];b[k]=o[k]}}
+  else{a=adjForms(w,t);b=adjForms(d.r,t);keys=AFORMS}
+  if(d.w===""||d.w===d.r)b=null;
+  const rows=keys.map(k=>`<tr><td>${k}</td><td><b>${a[k]}</b>${b&&b[k]!==a[k]?`<small>${b[k]}</small>`:""}</td></tr>`).join("");
+  return `<details><summary>Conjugations (${keys.length})</summary><table>${rows}</table></details>`}
+RAW.forEach(e=>{if(/^[\u30A0-\u30FF]+$/.test(e[2])){e[3]=e[2];e[2]=""}});
+const DATA=RAW.map((e,i)=>({id:i,c:e[0],l:e[1],w:e[2],r:e[3],t:e[4],m:e[5],ex:[[e[6],e[7]],[e[8],e[9]]].filter(x=>x[0]),n:e[10]||""}));
+function head(d){const w=d.w||d.r;if(d.t==="s")return [w+"する",d.r+"する"];return [w,d.w&&d.w!==d.r?d.r:""]}
+let cat="all",lvl="all";
+const lvls=["all","N5","N4","N3","N2","N1","Slang","Net"];
+document.getElementById("cats").innerHTML=`<button class="chip on" data-c="all">All</button>`+Object.entries(CATS).map(([k,v])=>`<button class="chip" data-c="${k}">${v}</button>`).join("");
+document.getElementById("lvls").insertAdjacentHTML("afterbegin",lvls.map(l=>`<button class="chip lv${l==="all"?" on":""}" data-l="${l}">${l==="all"?"All levels":l}</button>`).join(""));
+document.getElementById("cats").onclick=e=>{const b=e.target.closest("[data-c]");if(!b)return;cat=b.dataset.c;document.querySelectorAll("[data-c]").forEach(x=>x.classList.toggle("on",x===b));render()};
+document.getElementById("lvls").onclick=e=>{const b=e.target.closest("[data-l]");if(!b)return;lvl=b.dataset.l;document.querySelectorAll("[data-l]").forEach(x=>x.classList.toggle("on",x===b));render()};
+const q=document.getElementById("q");q.oninput=render;
+document.getElementById("verbs").onchange=render;
+document.getElementById("hide").onchange=e=>document.body.classList.toggle("hide",e.target.checked);
+document.getElementById("list").onclick=e=>{const t=e.target.closest(".mean,.en");if(t&&document.body.classList.contains("hide"))t.classList.toggle("show")};
+const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+function render(){const s=q.value.trim().toLowerCase();const vo=document.getElementById("verbs").checked;
+  const out=DATA.filter(d=>(cat==="all"||d.c===cat)&&(lvl==="all"||d.l===lvl)&&(!vo||["g","i","iku","s","su","k"].includes(d.t))&&(!s||(d.w+d.r+d.m+d.n+d.ex.map(x=>x.join(" ")).join(" ")).toLowerCase().includes(s)));
+  document.getElementById("count").textContent=out.length+" of "+DATA.length+" entries";
+  document.getElementById("list").innerHTML=out.length?out.map(d=>{const [w,r]=head(d);return `<article class="card"><div class="top"><div><div class="kana">${r||"&nbsp;"}</div><div class="word">${esc(w)}</div></div><div class="tags"><span class="tag l">${d.l}</span><span class="tag t">${TYPES[d.t]}</span><span class="tag">${CATS[d.c].split(" ").slice(1).join(" ")}</span></div></div><div class="mean">${esc(d.m)}</div>${d.n?`<div class="note">${esc(d.n)}</div>`:""}<div class="ex">${d.ex.map(x=>`<div><div class="jp">${esc(x[0])}</div><div class="en">${esc(x[1])}</div></div>`).join("")}</div>${conjTable(d)}</article>`}).join(""):`<div class="empty">No matches. Try another search or filter.</div>`}
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+members = ["crates/jm-core", "src-tauri"]
+
+[workspace.package]
+version = "0.2.0"
+edition = "2021"
+license = "UNLICENSED"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "unwind"
+strip = true

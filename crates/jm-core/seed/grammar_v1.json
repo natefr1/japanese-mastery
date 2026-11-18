@@ -1,0 +1,1898 @@
+{
+ "format": "japanese-mastery.grammar",
+ "version": 1,
+ "source": "Original content written for Japanese Mastery",
+ "items": [
+  {
+   "slug": "te-kudasai",
+   "level": "N5",
+   "title": "〜てください",
+   "meaning": "please do …",
+   "formation": "Verb て-form + ください",
+   "explanation": "A polite request. Casually, friends drop ください and just use the て-form (待って！). Add ちょっと to soften.",
+   "examples": [
+    {
+     "jp": "もう一回言ってください。",
+     "en": "Please say that again."
+    },
+    {
+     "jp": "ちょっと待ってください。",
+     "en": "Please wait a moment."
+    },
+    {
+     "jp": "ここに名前を書いてください。",
+     "en": "Please write your name here."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "もう少しゆっくり話し＿＿。",
+     "answers": [
+      "てください"
+     ],
+     "en": "Please speak a little more slowly.",
+     "hint": "て-form + polite request"
+    },
+    {
+     "prompt": "ちょっと待っ＿＿！",
+     "answers": [
+      "て",
+      "てください"
+     ],
+     "en": "Wait a sec! (casual)",
+     "hint": "casual request = bare て-form"
+    }
+   ],
+   "mistakes": [
+    "Using the dictionary form: ×待つください → ○待ってください."
+   ],
+   "compare": [
+    {
+     "slug": "te-kureru",
+     "note": "〜てくれない？ is a softer, friend-to-friend request."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "te-iru",
+   "level": "N5",
+   "title": "〜ている / 〜てる",
+   "meaning": "is doing (ongoing) / is in a state",
+   "formation": "Verb て-form + いる (casual: てる)",
+   "explanation": "Shows an action in progress (ゲームしてる = playing) or a resulting state (結婚してる = is married, 知ってる = knows). In speech いる is almost always shortened to てる.",
+   "examples": [
+    {
+     "jp": "今、配信してる。",
+     "en": "I'm streaming right now."
+    },
+    {
+     "jp": "このゲーム知ってる？",
+     "en": "Do you know this game?"
+    },
+    {
+     "jp": "もう着いてるよ。",
+     "en": "I've already arrived (I'm here)."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "今なにし＿＿？",
+     "answers": [
+      "てる",
+      "ている",
+      "てるの"
+     ],
+     "en": "What are you doing right now?",
+     "hint": "ongoing action, casual"
+    },
+    {
+     "prompt": "あの実況者、知っ＿＿？",
+     "answers": [
+      "てる",
+      "ている",
+      "てる？"
+     ],
+     "en": "Do you know that streamer?",
+     "hint": "知る uses the state form for 'know'"
+    }
+   ],
+   "mistakes": [
+    "'I know' is 知ってる, not 知る. 'I don't know' is 知らない, not 知ってない."
+   ],
+   "compare": [],
+   "prereqs": []
+  },
+  {
+   "slug": "tai",
+   "level": "N5",
+   "title": "〜たい",
+   "meaning": "want to …",
+   "formation": "Verb ます-stem + たい (conjugates like an い-adjective)",
+   "explanation": "Your own desire to do something. For what someone else wants, Japanese usually adds そう / みたい or uses 〜たがっている. Asking a superior 〜たいですか can sound blunt.",
+   "examples": [
+    {
+     "jp": "日本で配信したい。",
+     "en": "I want to stream in Japan."
+    },
+    {
+     "jp": "今日は何もしたくない。",
+     "en": "I don't want to do anything today."
+    },
+    {
+     "jp": "何が食べたい？",
+     "en": "What do you want to eat?"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "一緒にゲームし＿＿な。",
+     "answers": [
+      "たい"
+     ],
+     "en": "I'd like to play games together.",
+     "hint": "want to"
+    },
+    {
+     "prompt": "もう寝＿＿ない…",
+     "answers": [
+      "たく"
+     ],
+     "en": "I don't want to sleep yet...",
+     "hint": "たい negative = たくない"
+    }
+   ],
+   "mistakes": [
+    "×ゲームがしたいです is fine, but ×友達がゲームしたい (about others) sounds odd; say 友達はゲームしたいみたい."
+   ],
+   "compare": [],
+   "prereqs": []
+  },
+  {
+   "slug": "mashou",
+   "level": "N5",
+   "title": "〜ましょう / 〜よう",
+   "meaning": "let's …",
+   "formation": "ます-stem + ましょう (polite) / volitional form (casual): 行こう, 食べよう, しよう",
+   "explanation": "Suggests doing something together. Add か to make it an offer or a softer suggestion: 行きましょうか. Gamers use the casual form constantly: 行こう！",
+   "examples": [
+    {
+     "jp": "一緒に頑張ろう！",
+     "en": "Let's do our best together!"
+    },
+    {
+     "jp": "そろそろ始めましょう。",
+     "en": "Let's get started."
+    },
+    {
+     "jp": "手伝いましょうか？",
+     "en": "Shall I help?"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "もう一回やろ＿＿！",
+     "answers": [
+      "う"
+     ],
+     "en": "Let's go one more time!",
+     "hint": "godan volitional ends in -ou"
+    },
+    {
+     "prompt": "じゃあ、駅で会い＿＿。",
+     "answers": [
+      "ましょう"
+     ],
+     "en": "Then let's meet at the station. (polite)",
+     "hint": "polite 'let's'"
+    }
+   ],
+   "mistakes": [
+    "Ichidan volitional is 〜よう: ×食べろう → ○食べよう."
+   ],
+   "compare": [
+    {
+     "slug": "masenka",
+     "note": "〜ませんか invites; 〜ましょう assumes you're already doing it together."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "masenka",
+   "level": "N5",
+   "title": "〜ませんか / 〜ない？",
+   "meaning": "won't you …? / want to …? (invitation)",
+   "formation": "ます-stem + ませんか (polite) / plain negative + ？ (casual)",
+   "explanation": "The most natural way to invite someone: you ask in the negative so it's easy for them to say no. Casually: 遊ばない？ 行かない？ with rising intonation.",
+   "examples": [
+    {
+     "jp": "今度一緒に遊ばない？",
+     "en": "Want to hang out sometime?"
+    },
+    {
+     "jp": "コラボしませんか？",
+     "en": "Would you like to do a collab?"
+    },
+    {
+     "jp": "何か食べに行かない？",
+     "en": "Want to go grab something to eat?"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "週末、カラオケ行か＿＿？",
+     "answers": [
+      "ない"
+     ],
+     "en": "Want to go to karaoke this weekend?",
+     "hint": "casual invitation = plain negative"
+    },
+    {
+     "prompt": "一緒に動画を撮り＿＿か？",
+     "answers": [
+      "ません"
+     ],
+     "en": "Would you like to film a video together?",
+     "hint": "polite invitation"
+    }
+   ],
+   "mistakes": [
+    "Asking 行きたいですか? to invite sounds like a survey question. Use 行きませんか? / 行かない?"
+   ],
+   "compare": [
+    {
+     "slug": "mashou",
+     "note": "Use 〜ませんか first; switch to 〜ましょう once they agree."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "kara-reason",
+   "level": "N5",
+   "title": "〜から",
+   "meaning": "because / so",
+   "formation": "Plain or polite form + から",
+   "explanation": "Gives a reason. The reason comes BEFORE から. Ending a sentence with から leaves the conclusion implied, which is very natural in speech: 今行くから! (I'm coming, so hold on!)",
+   "examples": [
+    {
+     "jp": "怖いから、一人でやりたくない。",
+     "en": "It's scary, so I don't want to play alone."
+    },
+    {
+     "jp": "今行くから待って！",
+     "en": "I'm coming, so wait!"
+    },
+    {
+     "jp": "明日テストだから、今日は配信しない。",
+     "en": "I have a test tomorrow, so no stream today."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "眠い＿＿、もう寝るね。",
+     "answers": [
+      "から"
+     ],
+     "en": "I'm sleepy, so I'm going to bed.",
+     "hint": "reason marker"
+    }
+   ],
+   "mistakes": [
+    "Word order: the reason goes first. ×寝るね、眠いから is fine as an afterthought, but ×から眠い is wrong."
+   ],
+   "compare": [
+    {
+     "slug": "noni",
+     "note": "から = because; のに = even though (frustration)."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "ta-koto-ga-aru",
+   "level": "N4",
+   "title": "〜たことがある",
+   "meaning": "have done … before (experience)",
+   "formation": "Verb past (た) + ことがある",
+   "explanation": "Talks about life experience, not something you did once recently. Negative: 〜たことがない (have never …).",
+   "examples": [
+    {
+     "jp": "このゲーム、やったことある？",
+     "en": "Have you ever played this game?"
+    },
+    {
+     "jp": "日本に行ったことがない。",
+     "en": "I've never been to Japan."
+    },
+    {
+     "jp": "生配信したことがありますか？",
+     "en": "Have you ever done a livestream?"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "ホラゲー、やっ＿＿ことある？",
+     "answers": [
+      "た"
+     ],
+     "en": "Ever played a horror game?",
+     "hint": "past form + ことがある"
+    },
+    {
+     "prompt": "納豆を食べたことが＿＿。",
+     "answers": [
+      "ない",
+      "ありません"
+     ],
+     "en": "I've never eaten natto.",
+     "hint": "'never' = negative of ある"
+    }
+   ],
+   "mistakes": [
+    "×行くことがある means 'sometimes go', not 'have been'. Experience needs the た-form."
+   ],
+   "compare": [],
+   "prereqs": [
+    "te-iru"
+   ]
+  },
+  {
+   "slug": "te-mo-ii",
+   "level": "N4",
+   "title": "〜てもいい",
+   "meaning": "may I …? / it's okay to …",
+   "formation": "Verb て-form + もいい (polite: もいいですか)",
+   "explanation": "Asks for or gives permission. Answer yes with いいよ / どうぞ, no with ちょっと… (soft refusal).",
+   "examples": [
+    {
+     "jp": "このアイテム使ってもいい？",
+     "en": "Can I use this item?"
+    },
+    {
+     "jp": "写真を撮ってもいいですか？",
+     "en": "May I take a photo?"
+    },
+    {
+     "jp": "先に行ってもいいよ。",
+     "en": "You can go ahead."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "ボイチャ入っ＿＿いい？",
+     "answers": [
+      "ても"
+     ],
+     "en": "Is it okay if I join voice chat?",
+     "hint": "て-form + も"
+    }
+   ],
+   "mistakes": [
+    "Don't drop も: ×入っていい？ is common casually but 入ってもいい？ is the full form to learn first."
+   ],
+   "compare": [
+    {
+     "slug": "te-wa-ikenai",
+     "note": "The opposite: must not."
+    }
+   ],
+   "prereqs": [
+    "te-kudasai"
+   ]
+  },
+  {
+   "slug": "te-wa-ikenai",
+   "level": "N4",
+   "title": "〜てはいけない / 〜ちゃダメ",
+   "meaning": "must not …",
+   "formation": "て-form + はいけない; casual: 〜ちゃダメ / 〜じゃダメ",
+   "explanation": "Prohibition. In speech ては contracts to ちゃ (では → じゃ). 入っちゃダメ! = Don't go in!",
+   "examples": [
+    {
+     "jp": "そのドアに入っちゃダメ！",
+     "en": "Don't go in that door!"
+    },
+    {
+     "jp": "ここで写真を撮ってはいけません。",
+     "en": "You may not take photos here."
+    },
+    {
+     "jp": "押しちゃダメだよ。",
+     "en": "Don't press it."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "後ろを見＿＿ダメ！",
+     "answers": [
+      "ちゃ",
+      "ては"
+     ],
+     "en": "Don't look behind you!",
+     "hint": "casual contraction of ては"
+    },
+    {
+     "prompt": "そこで死ん＿＿ダメだよ。",
+     "answers": [
+      "じゃ",
+      "では"
+     ],
+     "en": "You can't die there.",
+     "hint": "で-type verbs contract to じゃ"
+    }
+   ],
+   "mistakes": [
+    "んで verbs use じゃ, not ちゃ: ×死んちゃダメ → ○死んじゃダメ."
+   ],
+   "compare": [
+    {
+     "slug": "te-mo-ii",
+     "note": "Permission vs prohibition."
+    }
+   ],
+   "prereqs": [
+    "te-mo-ii"
+   ]
+  },
+  {
+   "slug": "nakya",
+   "level": "N4",
+   "title": "〜なきゃ / 〜なければならない",
+   "meaning": "have to … / gotta …",
+   "formation": "Plain negative stem (行か-) + なきゃ (casual) / なければならない (formal)",
+   "explanation": "Obligation. In conversation you'll hear なきゃ, なくちゃ, or the full なきゃいけない. The ending is often dropped: もう行かなきゃ。",
+   "examples": [
+    {
+     "jp": "もう行かなきゃ。",
+     "en": "I gotta go."
+    },
+    {
+     "jp": "明日までにレポートを出さなきゃ。",
+     "en": "I have to hand in my paper by tomorrow."
+    },
+    {
+     "jp": "早く逃げなきゃ！",
+     "en": "We need to run!"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "そろそろ寝＿＿。",
+     "answers": [
+      "なきゃ",
+      "なくちゃ",
+      "なければ"
+     ],
+     "en": "I've gotta go to sleep soon.",
+     "hint": "ichidan: drop る + なきゃ"
+    },
+    {
+     "prompt": "宿題をやら＿＿。",
+     "answers": [
+      "なきゃ",
+      "なくちゃ",
+      "なければ"
+     ],
+     "en": "I have to do my homework.",
+     "hint": "godan negative stem + なきゃ"
+    }
+   ],
+   "mistakes": [
+    "Build it from the negative: 行かない → 行かなきゃ, not ×行くなきゃ."
+   ],
+   "compare": [],
+   "prereqs": []
+  },
+  {
+   "slug": "tsumori",
+   "level": "N4",
+   "title": "〜つもり",
+   "meaning": "intend to / plan to",
+   "formation": "Dictionary form (or ない-form) + つもり",
+   "explanation": "Your intention or plan. Softer and more personal than 予定 (a scheduled plan).",
+   "examples": [
+    {
+     "jp": "来年、日本に留学するつもり。",
+     "en": "I plan to study abroad in Japan next year."
+    },
+    {
+     "jp": "今日は配信しないつもり。",
+     "en": "I'm not planning to stream today."
+    },
+    {
+     "jp": "どうするつもり？",
+     "en": "What are you planning to do?"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "毎日投稿する＿＿です。",
+     "answers": [
+      "つもり"
+     ],
+     "en": "I intend to upload every day.",
+     "hint": "intention"
+    }
+   ],
+   "mistakes": [
+    "Use the dictionary form, not ます: ×行きますつもり → ○行くつもりです."
+   ],
+   "compare": [
+    {
+     "slug": "volitional-to-omou",
+     "note": "〜ようと思う is a decision you're making now; つもり is a settled intention."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "tara",
+   "level": "N4",
+   "title": "〜たら",
+   "meaning": "if / when … (then)",
+   "formation": "Past (た) form + ら",
+   "explanation": "The most versatile conditional: 'if X happens' or 'once X happens'. Great for plans: 着いたら連絡して (message me when you arrive).",
+   "examples": [
+    {
+     "jp": "家に着いたら連絡するね。",
+     "en": "I'll message you when I get home."
+    },
+    {
+     "jp": "勝ったらジュース奢って。",
+     "en": "If I win, buy me a drink."
+    },
+    {
+     "jp": "暇だったら一緒にやろう。",
+     "en": "If you're free, let's play together."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "終わっ＿＿教えて。",
+     "answers": [
+      "たら"
+     ],
+     "en": "Tell me when you're done.",
+     "hint": "past + ら"
+    },
+    {
+     "prompt": "雨だっ＿＿、家でゲームしよう。",
+     "answers": [
+      "たら"
+     ],
+     "en": "If it rains, let's game at home.",
+     "hint": "だ → だったら"
+    }
+   ],
+   "mistakes": [
+    "Ichidan: 食べた → 食べたら. Don't add extra た: ×食べたたら."
+   ],
+   "compare": [
+    {
+     "slug": "ba-ii",
+     "note": "〜ば is more 'general rule' / advice; たら is about a specific case."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "to-omou",
+   "level": "N4",
+   "title": "〜と思う",
+   "meaning": "I think that …",
+   "formation": "Plain form + と思う (casual speech: 〜と思う / 〜って思う)",
+   "explanation": "Softens opinions and guesses. Japanese speakers use it a lot so they don't sound too assertive. With a noun or な-adjective, keep だ: 罠だと思う.",
+   "examples": [
+    {
+     "jp": "これは罠だと思う。",
+     "en": "I think this is a trap."
+    },
+    {
+     "jp": "明日は雨が降ると思う。",
+     "en": "I think it'll rain tomorrow."
+    },
+    {
+     "jp": "あのボス、強くないと思う。",
+     "en": "I don't think that boss is strong."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "このゲーム、面白い＿＿思う。",
+     "answers": [
+      "と"
+     ],
+     "en": "I think this game is fun.",
+     "hint": "quotation particle"
+    },
+    {
+     "prompt": "たぶん罠＿＿と思う。",
+     "answers": [
+      "だ"
+     ],
+     "en": "I think it's probably a trap.",
+     "hint": "nouns need だ before と思う"
+    }
+   ],
+   "mistakes": [
+    "×罠と思う → ○罠だと思う (nouns and な-adjectives need だ)."
+   ],
+   "compare": [
+    {
+     "slug": "kamoshirenai",
+     "note": "と思う = I think; かもしれない = it might be (less sure)."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "kamoshirenai",
+   "level": "N4",
+   "title": "〜かもしれない / 〜かも",
+   "meaning": "might / maybe",
+   "formation": "Plain form (nouns & な-adj without だ) + かもしれない; casual: かも",
+   "explanation": "About a 50% guess. In casual speech it's almost always shortened to かも.",
+   "examples": [
+    {
+     "jp": "罠かも。",
+     "en": "Might be a trap."
+    },
+    {
+     "jp": "今日は配信できないかもしれない。",
+     "en": "I might not be able to stream today."
+    },
+    {
+     "jp": "それ、いいかも！",
+     "en": "That might be good!"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "明日、遅れる＿＿。",
+     "answers": [
+      "かも",
+      "かもしれない",
+      "かもしれません"
+     ],
+     "en": "I might be late tomorrow.",
+     "hint": "maybe"
+    }
+   ],
+   "mistakes": [
+    "No だ before かも: ×罠だかも → ○罠かも."
+   ],
+   "compare": [
+    {
+     "slug": "hazu",
+     "note": "はず = should be (strong expectation); かも = might."
+    }
+   ],
+   "prereqs": [
+    "to-omou"
+   ]
+  },
+  {
+   "slug": "sou-looks",
+   "level": "N4",
+   "title": "〜そう (looks like)",
+   "meaning": "looks like / seems about to",
+   "formation": "ます-stem or adjective stem + そう: 落ちそう, 美味しそう, 暇そう; いい → よさそう",
+   "explanation": "A judgment based on what you can SEE right now. With verbs it means 'about to': 落ちそう! (I'm about to fall!)",
+   "examples": [
+    {
+     "jp": "美味しそう！",
+     "en": "That looks delicious!"
+    },
+    {
+     "jp": "このボス、強そうだな。",
+     "en": "This boss looks strong."
+    },
+    {
+     "jp": "雨が降りそう。",
+     "en": "Looks like it's about to rain."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "このラーメン、美味し＿＿！",
+     "answers": [
+      "そう"
+     ],
+     "en": "This ramen looks tasty!",
+     "hint": "drop い + そう"
+    },
+    {
+     "prompt": "その企画、よさ＿＿だね。",
+     "answers": [
+      "そう"
+     ],
+     "en": "That project idea looks good.",
+     "hint": "いい is irregular here"
+    }
+   ],
+   "mistakes": [
+    "Don't attach to the full い-adjective: ×美味しいそう means 'I heard it's tasty' (hearsay)."
+   ],
+   "compare": [
+    {
+     "slug": "sou-hearsay",
+     "note": "美味しそう = looks tasty; 美味しいそう = I hear it's tasty."
+    },
+    {
+     "slug": "mitai",
+     "note": "みたい is based on overall impression or info, not just looks."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "sou-hearsay",
+   "level": "N4",
+   "title": "〜そうだ (I hear)",
+   "meaning": "I heard that … / apparently",
+   "formation": "Full plain form + そうだ: 面白いそうだ, 来るそうだ, 雨だそうだ",
+   "explanation": "Passing on information you heard or read. Casual speech prefers 〜って or 〜らしい.",
+   "examples": [
+    {
+     "jp": "来週新しいアプデが来るそうです。",
+     "en": "I hear a new update is coming next week."
+    },
+    {
+     "jp": "あの店は美味しいそうだ。",
+     "en": "Apparently that place is good."
+    },
+    {
+     "jp": "明日は休講だそうです。",
+     "en": "Apparently tomorrow's class is cancelled."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "あの映画、怖い＿＿です。",
+     "answers": [
+      "そう"
+     ],
+     "en": "I hear that movie is scary.",
+     "hint": "full い-adjective + そう"
+    }
+   ],
+   "mistakes": [
+    "Keep the whole word before そう for hearsay: 怖いそう (hearsay) vs 怖そう (looks scary)."
+   ],
+   "compare": [
+    {
+     "slug": "sou-looks",
+     "note": "Looks vs hears."
+    },
+    {
+     "slug": "tte",
+     "note": "Casual hearsay: 明日休みだって."
+    }
+   ],
+   "prereqs": [
+    "sou-looks"
+   ]
+  },
+  {
+   "slug": "mitai",
+   "level": "N4",
+   "title": "〜みたい",
+   "meaning": "seems like / like …",
+   "formation": "Plain form (nouns & な-adj without だ) + みたい",
+   "explanation": "Casual 'seems like', based on what you see, hear or feel. With a noun it also means 'like': 夢みたい (like a dream).",
+   "examples": [
+    {
+     "jp": "罠みたい。",
+     "en": "Looks like a trap."
+    },
+    {
+     "jp": "誰もいないみたいだね。",
+     "en": "Seems like nobody's here."
+    },
+    {
+     "jp": "夢みたい！",
+     "en": "It's like a dream!"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "ボスはもう倒した＿＿。",
+     "answers": [
+      "みたい",
+      "みたいだ",
+      "みたいだね"
+     ],
+     "en": "Looks like the boss is already beaten.",
+     "hint": "seems like"
+    }
+   ],
+   "mistakes": [
+    "No だ before みたい: ×罠だみたい → ○罠みたい."
+   ],
+   "compare": [
+    {
+     "slug": "rashii",
+     "note": "らしい sounds more secondhand; みたい is your own impression."
+    },
+    {
+     "slug": "sou-looks",
+     "note": "そう is about appearance only."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "n-desu",
+   "level": "N4",
+   "title": "〜んです / 〜んだ",
+   "meaning": "(explaining / giving context)",
+   "formation": "Plain form + んです / んだ (な-adj & nouns: 〜なんだ)",
+   "explanation": "Adds an explanatory tone: 'the thing is…'. Questions with んですか / の？ show interest in the story. Overusing it in statements can sound pushy, but in conversation it's everywhere.",
+   "examples": [
+    {
+     "jp": "実はホラー苦手なんだ。",
+     "en": "The thing is, I'm bad with horror."
+    },
+    {
+     "jp": "どうしたの？",
+     "en": "What happened? (concerned)"
+    },
+    {
+     "jp": "明日テストなんです。",
+     "en": "I have a test tomorrow, you see."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "実は、今日誕生日な＿＿。",
+     "answers": [
+      "んだ",
+      "んです",
+      "の"
+     ],
+     "en": "Actually, today's my birthday.",
+     "hint": "noun + な + explanatory"
+    },
+    {
+     "prompt": "なんで遅れた＿＿？",
+     "answers": [
+      "の",
+      "んですか",
+      "んだ"
+     ],
+     "en": "Why were you late?",
+     "hint": "asking for the story"
+    }
+   ],
+   "mistakes": [
+    "Nouns and な-adjectives need な: ×誕生日んだ → ○誕生日なんだ."
+   ],
+   "compare": [],
+   "prereqs": []
+  },
+  {
+   "slug": "te-miru",
+   "level": "N4",
+   "title": "〜てみる",
+   "meaning": "try doing … (and see)",
+   "formation": "Verb て-form + みる",
+   "explanation": "Do something to see what happens. Not 'attempt something hard' (that's 〜ようとする).",
+   "examples": [
+    {
+     "jp": "やってみる！",
+     "en": "I'll give it a shot!"
+    },
+    {
+     "jp": "日本語で話してみた。",
+     "en": "I tried talking in Japanese."
+    },
+    {
+     "jp": "このボタン、押してみて。",
+     "en": "Try pressing this button."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "一回食べ＿＿みて。",
+     "answers": [
+      "て"
+     ],
+     "en": "Try eating it once.",
+     "hint": "て-form + みる"
+    }
+   ],
+   "mistakes": [
+    "みる here is written in kana, not 見る."
+   ],
+   "compare": [],
+   "prereqs": [
+    "te-iru"
+   ]
+  },
+  {
+   "slug": "te-shimau",
+   "level": "N4",
+   "title": "〜てしまう / 〜ちゃう",
+   "meaning": "end up doing (oops) / do completely",
+   "formation": "て-form + しまう; casual: て→ちゃう, で→じゃう (past: ちゃった / じゃった)",
+   "explanation": "Shows regret or that something is completely done. Streamers say 死んじゃった and やっちゃった constantly.",
+   "examples": [
+    {
+     "jp": "また死んじゃった！",
+     "en": "I died again!"
+    },
+    {
+     "jp": "宿題を忘れてしまった。",
+     "en": "I forgot my homework."
+    },
+    {
+     "jp": "全部食べちゃった。",
+     "en": "I ate it all."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "ボタン押し＿＿った！",
+     "answers": [
+      "ちゃ"
+     ],
+     "en": "Oops, I pressed the button!",
+     "hint": "して → しちゃう"
+    },
+    {
+     "prompt": "また死ん＿＿った…",
+     "answers": [
+      "じゃ"
+     ],
+     "en": "I died again...",
+     "hint": "んで verbs → じゃう"
+    }
+   ],
+   "mistakes": [
+    "で-ending て-forms use じゃう: ×死んちゃった → ○死んじゃった."
+   ],
+   "compare": [],
+   "prereqs": [
+    "te-iru"
+   ]
+  },
+  {
+   "slug": "te-oku",
+   "level": "N4",
+   "title": "〜ておく / 〜とく",
+   "meaning": "do in advance / leave as is",
+   "formation": "て-form + おく; casual: ておく → とく, でおく → どく",
+   "explanation": "Doing something now to prepare for later. Very common in games: セーブしとこう (let's save just in case).",
+   "examples": [
+    {
+     "jp": "念のためセーブしとこう。",
+     "en": "Let's save just in case."
+    },
+    {
+     "jp": "チケットを買っておいた。",
+     "en": "I bought the tickets in advance."
+    },
+    {
+     "jp": "回復は取っておく。",
+     "en": "I'll save the healing for later."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "先に予約し＿＿ね。",
+     "answers": [
+      "とく",
+      "ておく"
+     ],
+     "en": "I'll book it ahead of time.",
+     "hint": "casual ておく"
+    }
+   ],
+   "mistakes": [
+    "読んでおく contracts to 読んどく, not ×読んとく."
+   ],
+   "compare": [],
+   "prereqs": [
+    "te-iru"
+   ]
+  },
+  {
+   "slug": "nagara",
+   "level": "N4",
+   "title": "〜ながら",
+   "meaning": "while doing …",
+   "formation": "ます-stem + ながら",
+   "explanation": "Two actions at the same time by the same person. The main action comes last.",
+   "examples": [
+    {
+     "jp": "ゲームしながら話そう。",
+     "en": "Let's chat while we play."
+    },
+    {
+     "jp": "音楽を聞きながら勉強する。",
+     "en": "I study while listening to music."
+    },
+    {
+     "jp": "笑いながら死んだ。",
+     "en": "I died laughing."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "ご飯を食べ＿＿配信する。",
+     "answers": [
+      "ながら"
+     ],
+     "en": "I'll stream while eating.",
+     "hint": "stem + while"
+    }
+   ],
+   "mistakes": [
+    "Both actions must be by the same person. For different people use 〜間 (あいだ)."
+   ],
+   "compare": [],
+   "prereqs": []
+  },
+  {
+   "slug": "sugiru",
+   "level": "N4",
+   "title": "〜すぎる",
+   "meaning": "too much / overly",
+   "formation": "ます-stem or adjective stem + すぎる: 食べすぎる, 難しすぎる, 暇すぎる",
+   "explanation": "Excess. Hugely common in reactions: 強すぎ! ヤバすぎ! (often shortened to すぎ).",
+   "examples": [
+    {
+     "jp": "このボス、強すぎ！",
+     "en": "This boss is way too strong!"
+    },
+    {
+     "jp": "昨日は食べすぎた。",
+     "en": "I ate too much yesterday."
+    },
+    {
+     "jp": "課題が多すぎる。",
+     "en": "There are way too many assignments."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "このステージ、難し＿＿。",
+     "answers": [
+      "すぎる",
+      "すぎ",
+      "すぎます"
+     ],
+     "en": "This stage is too hard.",
+     "hint": "drop い + すぎる"
+    }
+   ],
+   "mistakes": [
+    "Drop the い: ×難しいすぎる → ○難しすぎる. いい → よすぎる."
+   ],
+   "compare": [],
+   "prereqs": []
+  },
+  {
+   "slug": "hou-ga-ii",
+   "level": "N4",
+   "title": "〜たほうがいい",
+   "meaning": "you'd better / it's best to",
+   "formation": "Past (た) form + ほうがいい; negative advice: ない form + ほうがいい",
+   "explanation": "Advice. The past form makes it a recommendation. With ない: 行かないほうがいい (better not go).",
+   "examples": [
+    {
+     "jp": "早く寝たほうがいいよ。",
+     "en": "You should get to bed early."
+    },
+    {
+     "jp": "そのドア、開けないほうがいい。",
+     "en": "Better not open that door."
+    },
+    {
+     "jp": "先に回復したほうがいい。",
+     "en": "You'd better heal first."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "逃げ＿＿ほうがいい！",
+     "answers": [
+      "た"
+     ],
+     "en": "We'd better run!",
+     "hint": "past form for advice"
+    }
+   ],
+   "mistakes": [
+    "Negative advice uses ない, not なかった: ○行かないほうがいい."
+   ],
+   "compare": [
+    {
+     "slug": "ba-ii",
+     "note": "〜ばいい = all you have to do is …"
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "ba-ii",
+   "level": "N4",
+   "title": "〜ばいい",
+   "meaning": "should I …? / all you need to do is …",
+   "formation": "ば-conditional + いい: すればいい, 押せばいい",
+   "explanation": "Asking for or giving the way forward. どうすればいい？ is one of the most useful questions in any game.",
+   "examples": [
+    {
+     "jp": "どうすればいい？",
+     "en": "What should I do?"
+    },
+    {
+     "jp": "このボタンを押せばいいよ。",
+     "en": "You just press this button."
+    },
+    {
+     "jp": "何時に行けばいい？",
+     "en": "What time should I go?"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "どうす＿＿いい？",
+     "answers": [
+      "れば"
+     ],
+     "en": "What should I do?",
+     "hint": "する → すれば"
+    },
+    {
+     "prompt": "右に行け＿＿いいよ。",
+     "answers": [
+      "ば"
+     ],
+     "en": "You just go right.",
+     "hint": "godan え-row + ば"
+    }
+   ],
+   "mistakes": [
+    "する → すれば (not ×しれば)."
+   ],
+   "compare": [
+    {
+     "slug": "hou-ga-ii",
+     "note": "ほうがいい recommends; ばいい tells the method."
+    }
+   ],
+   "prereqs": [
+    "tara"
+   ]
+  },
+  {
+   "slug": "te-kureru",
+   "level": "N4",
+   "title": "〜てくれる / 〜てもらう",
+   "meaning": "someone does … for me / I get someone to do …",
+   "formation": "て-form + くれる (they do it for me) / て-form + もらう (I receive the action)",
+   "explanation": "Shows favors and gratitude, which is central to sounding natural. Requests: 〜てくれない？ (casual), 〜てもらえますか？ (polite).",
+   "examples": [
+    {
+     "jp": "友達が手伝ってくれた。",
+     "en": "My friend helped me."
+    },
+    {
+     "jp": "先輩に教えてもらった。",
+     "en": "I got my senpai to teach me."
+    },
+    {
+     "jp": "ちょっと待ってくれない？",
+     "en": "Could you wait a sec?"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "それ取っ＿＿くれない？",
+     "answers": [
+      "て"
+     ],
+     "en": "Could you grab that for me?",
+     "hint": "て-form + くれる"
+    },
+    {
+     "prompt": "友達に奢って＿＿った。",
+     "answers": [
+      "もら"
+     ],
+     "en": "I got my friend to treat me.",
+     "hint": "I received the favor"
+    }
+   ],
+   "mistakes": [
+    "くれる is always toward you (or your group). ×私が友達に手伝ってくれた is wrong; use あげた."
+   ],
+   "compare": [
+    {
+     "slug": "te-kudasai",
+     "note": "〜てください is more direct than 〜てもらえますか."
+    }
+   ],
+   "prereqs": [
+    "te-kudasai"
+   ]
+  },
+  {
+   "slug": "potential",
+   "level": "N4",
+   "title": "Potential form (can do)",
+   "meaning": "can / be able to",
+   "formation": "Godan: え-row + る (行ける); Ichidan: 〜られる (colloquially 〜れる: 見れる); する → できる; 来る → 来られる",
+   "explanation": "Ability or possibility. The object often takes が instead of を: 日本語が話せる.",
+   "examples": [
+    {
+     "jp": "ここから逃げられない！",
+     "en": "I can't escape from here!"
+    },
+    {
+     "jp": "日本語が少し話せます。",
+     "en": "I can speak a little Japanese."
+    },
+    {
+     "jp": "今夜、配信できる？",
+     "en": "Can you stream tonight?"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "明日、来＿＿？",
+     "answers": [
+      "られる",
+      "れる"
+     ],
+     "en": "Can you come tomorrow?",
+     "hint": "来る potential"
+    },
+    {
+     "prompt": "この謎、解＿＿ない。",
+     "answers": [
+      "け"
+     ],
+     "en": "I can't solve this puzzle.",
+     "hint": "godan く → け"
+    }
+   ],
+   "mistakes": [
+    "Don't double up: ×できられる. する's potential is simply できる."
+   ],
+   "compare": [],
+   "prereqs": []
+  },
+  {
+   "slug": "volitional-to-omou",
+   "level": "N4",
+   "title": "〜ようと思う",
+   "meaning": "I'm thinking of (doing)",
+   "formation": "Volitional form + と思う / と思っている",
+   "explanation": "A decision you're forming right now. The classic YouTuber line 〜をやっていこうと思います comes from this.",
+   "examples": [
+    {
+     "jp": "今日はこのゲームをやろうと思います。",
+     "en": "Today I'm going to play this game."
+    },
+    {
+     "jp": "日本語を毎日勉強しようと思ってる。",
+     "en": "I'm planning to study Japanese every day."
+    },
+    {
+     "jp": "そろそろ寝ようと思う。",
+     "en": "I think I'll go to bed soon."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "今日は早く寝よう＿＿思う。",
+     "answers": [
+      "と"
+     ],
+     "en": "I think I'll sleep early today.",
+     "hint": "quotation と"
+    },
+    {
+     "prompt": "新しいチャンネルを作ろ＿＿と思います。",
+     "answers": [
+      "う"
+     ],
+     "en": "I'm thinking of making a new channel.",
+     "hint": "godan volitional"
+    }
+   ],
+   "mistakes": [
+    "×やるうと思う → ○やろうと思う."
+   ],
+   "compare": [
+    {
+     "slug": "tsumori",
+     "note": "つもり = settled plan; ようと思う = deciding now."
+    }
+   ],
+   "prereqs": [
+    "mashou",
+    "to-omou"
+   ]
+  },
+  {
+   "slug": "toki",
+   "level": "N4",
+   "title": "〜とき",
+   "meaning": "when …",
+   "formation": "Plain form + とき (な-adj + な, noun + の)",
+   "explanation": "The tense before とき matters: 行くとき = on the way there; 行ったとき = once there.",
+   "examples": [
+    {
+     "jp": "暇なとき、連絡して。",
+     "en": "Message me when you're free."
+    },
+    {
+     "jp": "子供のとき、このゲームをよくやった。",
+     "en": "I played this game a lot when I was a kid."
+    },
+    {
+     "jp": "日本に行ったとき、友達に会った。",
+     "en": "When I went to Japan, I met my friend."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "暇＿＿とき、遊ぼう。",
+     "answers": [
+      "な"
+     ],
+     "en": "Let's hang out when you're free.",
+     "hint": "な-adjective before a noun"
+    },
+    {
+     "prompt": "子供＿＿とき、よく泣いた。",
+     "answers": [
+      "の"
+     ],
+     "en": "I cried a lot as a kid.",
+     "hint": "noun + の"
+    }
+   ],
+   "mistakes": [
+    "×子供とき → ○子供のとき."
+   ],
+   "compare": [
+    {
+     "slug": "tara",
+     "note": "たら often implies 'once that happens'; とき marks the time."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "kedo-softener",
+   "level": "N4",
+   "title": "〜けど (softener)",
+   "meaning": "but… / (softening an opening)",
+   "formation": "Plain or polite form + けど",
+   "explanation": "Besides 'but', けど opens a topic gently or leaves a request unfinished: 質問なんですけど… (I have a question…). Hugely natural.",
+   "examples": [
+    {
+     "jp": "行きたいけど、時間ない。",
+     "en": "I want to go, but I don't have time."
+    },
+    {
+     "jp": "ちょっと聞きたいんだけど…",
+     "en": "There's something I want to ask..."
+    },
+    {
+     "jp": "すみません、道に迷ったんですけど…",
+     "en": "Excuse me, I'm lost..."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "今週末なんだ＿＿、空いてる？",
+     "answers": [
+      "けど",
+      "けれど"
+     ],
+     "en": "About this weekend, are you free?",
+     "hint": "soft topic opener"
+    }
+   ],
+   "mistakes": [
+    "Sounding blunt is a bigger problem than grammar here: a request without けど/が can feel abrupt."
+   ],
+   "compare": [],
+   "prereqs": [
+    "n-desu"
+   ]
+  },
+  {
+   "slug": "noni",
+   "level": "N3",
+   "title": "〜のに",
+   "meaning": "even though … (frustration, surprise)",
+   "formation": "Plain form + のに (な-adj & nouns: 〜なのに)",
+   "explanation": "The result goes against expectation, usually with frustration or regret.",
+   "examples": [
+    {
+     "jp": "回復したのに死んだ。",
+     "en": "I healed and still died."
+    },
+    {
+     "jp": "練習したのに負けた。",
+     "en": "I lost even though I practiced."
+    },
+    {
+     "jp": "日曜日なのに授業がある。",
+     "en": "I have class even though it's Sunday."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "約束した＿＿、来なかった。",
+     "answers": [
+      "のに"
+     ],
+     "en": "We had plans, but they didn't come.",
+     "hint": "even though (annoyed)"
+    }
+   ],
+   "mistakes": [
+    "Nouns need な: ×日曜日のに → ○日曜日なのに."
+   ],
+   "compare": [
+    {
+     "slug": "kara-reason",
+     "note": "Opposite logic: から = because."
+    }
+   ],
+   "prereqs": [
+    "n-desu"
+   ]
+  },
+  {
+   "slug": "hazu",
+   "level": "N3",
+   "title": "〜はず",
+   "meaning": "should be / expected to",
+   "formation": "Plain form + はず (な-adj + な, noun + の)",
+   "explanation": "Logical expectation based on facts. はずがない = there's no way.",
+   "examples": [
+    {
+     "jp": "ここに鍵があるはず。",
+     "en": "The key should be here."
+    },
+    {
+     "jp": "もう着いてるはずだよ。",
+     "en": "They should have arrived by now."
+    },
+    {
+     "jp": "そんなはずない！",
+     "en": "No way, that can't be!"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "出口はこっちの＿＿。",
+     "answers": [
+      "はず",
+      "はずだ",
+      "はずです"
+     ],
+     "en": "The exit should be this way.",
+     "hint": "expectation"
+    }
+   ],
+   "mistakes": [
+    "はず is about logic, not desire. For 'should (advice)' use ほうがいい."
+   ],
+   "compare": [
+    {
+     "slug": "kamoshirenai",
+     "note": "はず is much more certain."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "rashii",
+   "level": "N3",
+   "title": "〜らしい",
+   "meaning": "apparently / I hear",
+   "formation": "Plain form (nouns & な-adj without だ) + らしい",
+   "explanation": "Information you got from somewhere else, said with some distance. Very common for game rumors and news.",
+   "examples": [
+    {
+     "jp": "隠しエンドがあるらしい。",
+     "en": "Apparently there's a hidden ending."
+    },
+    {
+     "jp": "明日、休講らしいよ。",
+     "en": "I heard tomorrow's class is cancelled."
+    },
+    {
+     "jp": "あの二人、付き合ってるらしい。",
+     "en": "Apparently those two are dating."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "このゲーム、続編が出る＿＿。",
+     "answers": [
+      "らしい",
+      "らしいよ"
+     ],
+     "en": "Apparently this game is getting a sequel.",
+     "hint": "secondhand info"
+    }
+   ],
+   "mistakes": [
+    "No だ before らしい: ×休講だらしい."
+   ],
+   "compare": [
+    {
+     "slug": "mitai",
+     "note": "みたい = your impression; らしい = what you heard."
+    },
+    {
+     "slug": "sou-hearsay",
+     "note": "そうだ is more neutral reporting."
+    }
+   ],
+   "prereqs": [
+    "mitai"
+   ]
+  },
+  {
+   "slug": "you-ni",
+   "level": "N3",
+   "title": "〜ように",
+   "meaning": "so that / in order to (non-volitional goal)",
+   "formation": "Dictionary or ない form (often potential) + ように",
+   "explanation": "A goal that isn't directly controlled: 上手くなるように (so that I get better), 忘れないように (so I don't forget).",
+   "examples": [
+    {
+     "jp": "忘れないようにメモする。",
+     "en": "I'll write it down so I don't forget."
+    },
+    {
+     "jp": "日本語が話せるように毎日練習してる。",
+     "en": "I practice every day so I can speak Japanese."
+    },
+    {
+     "jp": "風邪をひかないように気をつけて。",
+     "en": "Take care not to catch a cold."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "遅れない＿＿早く出よう。",
+     "answers": [
+      "ように"
+     ],
+     "en": "Let's leave early so we're not late.",
+     "hint": "so that"
+    }
+   ],
+   "mistakes": [
+    "For a direct, controllable purpose use ために: 日本に行くために貯金する."
+   ],
+   "compare": [],
+   "prereqs": [
+    "potential"
+   ]
+  },
+  {
+   "slug": "koto-ni-suru",
+   "level": "N3",
+   "title": "〜ことにする / 〜ことになる",
+   "meaning": "decide to … / it's been decided that …",
+   "formation": "Dictionary or ない form + ことにする (my decision) / ことになる (decided by circumstances or others)",
+   "explanation": "する is your own choice; なる sounds like it was settled for you, which is also a modest way to announce your own plans.",
+   "examples": [
+    {
+     "jp": "毎日投稿することにした。",
+     "en": "I decided to upload every day."
+    },
+    {
+     "jp": "来月、東京に引っ越すことになった。",
+     "en": "It's been decided that I'm moving to Tokyo next month."
+    },
+    {
+     "jp": "今日は休むことにする。",
+     "en": "I'll take today off."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "コラボする＿＿になりました！",
+     "answers": [
+      "こと"
+     ],
+     "en": "We're going to do a collab!",
+     "hint": "it's been decided"
+    }
+   ],
+   "mistakes": [
+    "Mixing them up changes who decided."
+   ],
+   "compare": [
+    {
+     "slug": "tsumori",
+     "note": "つもり is an intention; ことにした reports a decision."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "tte",
+   "level": "N3",
+   "title": "〜って (casual quote / topic)",
+   "meaning": "(they said) … / speaking of …",
+   "formation": "Plain form + って; also noun + って as a casual topic marker",
+   "explanation": "Casual replacement for と言っていた (hearsay) and for は (topic). キヨって知ってる? = You know Kiyo?",
+   "examples": [
+    {
+     "jp": "明日休みだって。",
+     "en": "They said tomorrow's off."
+    },
+    {
+     "jp": "キヨって知ってる？",
+     "en": "You know Kiyo?"
+    },
+    {
+     "jp": "ハルトが遅れるって。",
+     "en": "Haruto says he'll be late."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "ミカ、今日来れない＿＿。",
+     "answers": [
+      "って"
+     ],
+     "en": "Mika says she can't come today.",
+     "hint": "casual hearsay"
+    }
+   ],
+   "mistakes": [
+    "Too casual for emails or keigo situations."
+   ],
+   "compare": [
+    {
+     "slug": "sou-hearsay",
+     "note": "そうです is the polite equivalent."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "shi",
+   "level": "N3",
+   "title": "〜し",
+   "meaning": "and also (listing reasons)",
+   "formation": "Plain form + し",
+   "explanation": "Lists reasons, often implying more. Great for natural-sounding explanations: 怖いし、暗いし、無理！",
+   "examples": [
+    {
+     "jp": "怖いし、暗いし、無理！",
+     "en": "It's scary, it's dark, no way!"
+    },
+    {
+     "jp": "安いし美味しいし、最高。",
+     "en": "It's cheap and tasty, the best."
+    },
+    {
+     "jp": "時間もないし、また今度にしよう。",
+     "en": "We don't have time anyway, so let's do it next time."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "眠い＿＿、疲れたし、もう寝る。",
+     "answers": [
+      "し"
+     ],
+     "en": "I'm sleepy and tired, so I'm going to bed.",
+     "hint": "listing reasons"
+    }
+   ],
+   "mistakes": [
+    "Nouns and な-adjectives need だ: 暇だし, not ×暇し."
+   ],
+   "compare": [
+    {
+     "slug": "kara-reason",
+     "note": "から gives one reason; し lists several."
+    }
+   ],
+   "prereqs": [
+    "kara-reason"
+   ]
+  },
+  {
+   "slug": "nee-contraction",
+   "level": "N3",
+   "title": "〜ねえ / rough sound shifts",
+   "meaning": "rough spoken forms: ない→ねえ, -ai→-ee",
+   "formation": "ない → ねえ; い-adjectives ending -ai/-oi → -ee: すごい→すげえ, うるさい→うるせえ, 痛い→いてえ",
+   "explanation": "Manga spells out rough, mostly male speech phonetically. Undo the shift in your head (ねえ→ない) and the sentence becomes textbook Japanese. Reading it is essential; saying it yourself is optional.",
+   "examples": [
+    {
+     "jp": "知らねえよ。",
+     "en": "How should I know?"
+    },
+    {
+     "jp": "すげえ技だな。",
+     "en": "That's an amazing move."
+    },
+    {
+     "jp": "関係ねえだろ！",
+     "en": "It's got nothing to do with you!"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "まだ終わって＿＿！",
+     "answers": [
+      "ねえ",
+      "ない"
+     ],
+     "en": "It's not over yet! (rough)",
+     "hint": "rough form of ない"
+    },
+    {
+     "prompt": "うる＿＿な！",
+     "answers": [
+      "せえ",
+      "さい"
+     ],
+     "en": "Shut up! (rough)",
+     "hint": "さい → せえ"
+    }
+   ],
+   "mistakes": [
+    "Don't use these with teachers, strangers or at work: they sound aggressive."
+   ],
+   "compare": [
+    {
+     "slug": "te-shimau",
+     "note": "〜ちまう is the rough cousin of 〜ちゃう."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "na-prohibitive",
+   "level": "N4",
+   "title": "〜な (don't!)",
+   "meaning": "don't …! (blunt prohibition)",
+   "formation": "Dictionary form + な: 行くな, 死ぬな, 諦めるな",
+   "explanation": "A blunt order not to do something, everywhere in battle manga. Same spelling as the soft ending な, but this one follows the plain dictionary form and is said sharply.",
+   "examples": [
+    {
+     "jp": "死ぬな！",
+     "en": "Don't die!"
+    },
+    {
+     "jp": "諦めるな！",
+     "en": "Don't give up!"
+    },
+    {
+     "jp": "こっちに来るな！",
+     "en": "Don't come over here!"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "油断する＿＿！",
+     "answers": [
+      "な"
+     ],
+     "en": "Don't let your guard down!",
+     "hint": "blunt prohibition"
+    },
+    {
+     "prompt": "諦める＿＿、まだいける！",
+     "answers": [
+      "な"
+     ],
+     "en": "Don't give up, we can still do this!",
+     "hint": "dictionary form + ?"
+    }
+   ],
+   "mistakes": [
+    "行くな (don't go) vs 行きな (go on, casual command from 行きなさい)."
+   ],
+   "compare": [
+    {
+     "slug": "te-wa-ikenai",
+     "note": "〜ちゃダメ is softer; 〜な is a command."
+    }
+   ],
+   "prereqs": []
+  },
+  {
+   "slug": "yagaru",
+   "level": "N2",
+   "title": "〜やがる",
+   "meaning": "(contemptuous: someone does something, damn them)",
+   "formation": "ます-stem + やがる: 笑いやがる, ふざけやがって",
+   "explanation": "Insults the person doing the action. Mostly villains and angry characters. ふざけやがって is a classic.",
+   "examples": [
+    {
+     "jp": "ふざけやがって！",
+     "en": "Screwing around with me, are you!"
+    },
+    {
+     "jp": "逃げやがった。",
+     "en": "The coward ran."
+    },
+    {
+     "jp": "何しやがる！",
+     "en": "What the hell are you doing!"
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "笑い＿＿って！",
+     "answers": [
+      "やが"
+     ],
+     "en": "Laughing at me, huh!",
+     "hint": "stem + ?がる"
+    }
+   ],
+   "mistakes": [
+    "Never in polite speech; even in casual speech it's an insult."
+   ],
+   "compare": [],
+   "prereqs": []
+  },
+  {
+   "slug": "wake-niwa-ikanai",
+   "level": "N3",
+   "title": "〜わけにはいかない",
+   "meaning": "can't afford to … / must not (for a reason)",
+   "formation": "Dictionary form + わけにはいかない; ない-form + わけにはいかない = must (no choice)",
+   "explanation": "It's possible, but circumstances, duty or pride rule it out. A hero's favorite line before getting back up.",
+   "examples": [
+    {
+     "jp": "ここで負けるわけにはいかない！",
+     "en": "I can't afford to lose here!"
+    },
+    {
+     "jp": "約束したから、行かないわけにはいかない。",
+     "en": "I promised, so I have to go."
+    },
+    {
+     "jp": "仲間を置いていくわけにはいかない。",
+     "en": "I can't leave my friends behind."
+    }
+   ],
+   "cloze": [
+    {
+     "prompt": "ここで倒れる＿＿にはいかない。",
+     "answers": [
+      "わけ"
+     ],
+     "en": "I can't fall here.",
+     "hint": "reason/circumstance noun"
+    }
+   ],
+   "mistakes": [
+    "Different from できない (ability). わけにはいかない is about circumstances."
+   ],
+   "compare": [
+    {
+     "slug": "nakya",
+     "note": "〜ないわけにはいかない ≈ have to (no choice)."
+    }
+   ],
+   "prereqs": []
+  }
+ ]
+}

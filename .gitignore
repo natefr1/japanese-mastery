@@ -1,0 +1,12 @@
+node_modules/
+dist/
+target/
+src-tauri/gen/
+*.log
+.DS_Store
+public/kuromoji/
+
+# update-signing keys never belong in the repo
+*.key
+*.key.pub
+*password*.txt

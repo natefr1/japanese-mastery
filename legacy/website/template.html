@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japanese for Gamers, Uni &amp; Creators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0f14;--panel:#151922;--panel2:#1c2230;--line:#2a3142;--text:#e8ebf2;--dim:#9aa3b5;--acc:#ff3d5a;--acc2:#ffc23d;--ok:#3dd68c;--blue:#4da3ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans JP","Space Grotesk",system-ui,sans-serif;line-height:1.5}
+header{padding:28px 20px 12px;max-width:1200px;margin:0 auto}
+h1{font-family:"Space Grotesk","Noto Sans JP";font-size:clamp(26px,4vw,40px);margin:0 0 4px;letter-spacing:-.5px}
+h1 span{color:var(--acc)}
+.sub{color:var(--dim);margin:0 0 16px;font-size:14px}
+.bar{position:sticky;top:0;z-index:5;background:rgba(13,15,20,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;flex-direction:column;gap:10px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+input[type=search]{flex:1;min-width:220px;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:10px 14px;border-radius:10px;font-size:15px;font-family:inherit}
+input[type=search]:focus{outline:2px solid var(--acc);border-color:transparent}
+.chip{background:var(--panel);border:1px solid var(--line);color:var(--dim);padding:6px 12px;border-radius:999px;font-size:13px;cursor:pointer;font-family:inherit;white-space:nowrap}
+.chip:hover{color:var(--text)}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.chip.lv.on{background:var(--acc2);border-color:var(--acc2);color:#111}
+.tog{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--dim);cursor:pointer;user-select:none}
+.count{font-size:13px;color:var(--dim);margin-left:auto}
+main{max-width:1200px;margin:0 auto;padding:18px 20px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.word{font-size:30px;font-weight:900;line-height:1.15}
+.kana{color:var(--acc2);font-size:15px;font-weight:700}
+.tags{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.tag{font-size:11px;padding:2px 8px;border-radius:6px;background:var(--panel2);color:var(--dim);border:1px solid var(--line);white-space:nowrap}
+.tag.t{color:var(--blue)}
+.tag.l{color:var(--acc2)}
+.mean{font-size:16px;font-weight:700;font-family:"Space Grotesk","Noto Sans JP"}
+.hide .mean,.hide .en{filter:blur(6px);cursor:pointer;transition:filter .15s}
+.hide .mean.show,.hide .en.show{filter:none}
+.note{font-size:12.5px;color:var(--dim);background:var(--panel2);border-left:3px solid var(--acc);padding:6px 10px;border-radius:0 8px 8px 0}
+.ex{display:flex;flex-direction:column;gap:7px}
+.ex div{font-size:14.5px}
+.ex .jp{font-weight:700}
+.ex .en{color:var(--dim);font-size:13px;font-family:"Space Grotesk","Noto Sans JP"}
+details{border-top:1px solid var(--line);padding-top:8px}
+summary{cursor:pointer;color:var(--acc);font-size:13px;font-weight:700;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ "}
+details[open] summary::before{content:"▾ "}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px}
+td{padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{color:var(--dim);width:42%}
+td b{font-size:14.5px}
+td small{display:block;color:var(--acc2);font-size:11.5px}
+.empty{grid-column:1/-1;text-align:center;color:var(--dim);padding:60px}
+.legend{max-width:1200px;margin:0 auto;padding:0 20px;color:var(--dim);font-size:13px}
+.legend b{color:var(--text)}
+@media(max-width:420px){main{grid-template-columns:1fr}.word{font-size:26px}}
+</style>
+</head>
+<body>
+<header>
+<h1>日本語 <span>for Gamers, Uni &amp; Creators</span></h1>
+<p class="sub">The words you'll hear and use while gaming with friends, at a Japanese university, making new friends, and running a 実況 (let's-play) channel. Verbs and adjectives have their main conjugations built in. Tap "Hide English" to quiz yourself, then tap a blurred line to see it.</p>
+</header>
+<div class="bar"><div class="bar-in">
+<div class="row">
+<input type="search" id="q" placeholder="Search kanji, kana or English… (e.g. 倒す, にげる, revive)">
+<label class="tog"><input type="checkbox" id="hide"> Hide English</label>
+<label class="tog"><input type="checkbox" id="verbs"> Verbs only</label>
+</div>
+<div class="row" id="cats"></div>
+<div class="row" id="lvls"><span class="count" id="count"></span></div>
+</div></div>
+<p class="legend" style="margin-top:14px"><b>Levels:</b> N5→N1 are JLPT levels (N5 easiest). <b>Slang/Net</b> = casual speech and internet talk you'll hear constantly from streamers but won't find in textbooks. <b>Types:</b> godan / ichidan / irregular verbs, い-adj, な-adj, noun, phrase, grammar.</p>
+<main id="list"></main>
+<script>
+const CATS={game:"🎮 Gaming",stream:"🎙️ Creator / Streaming",react:"😱 Reactions & Slang",social:"🤝 Friends & Social",uni:"🎓 University",core:"⭐ Core Verbs & Words",keigo:"👔 Polite / Collabs",grammar:"🧩 Grammar Patterns"};
+const TYPES={g:"godan verb",i:"ichidan verb",iku:"godan verb (irregular て)",s:"する verb",su:"irregular verb",k:"irregular verb",ia:"い-adjective",na:"な-adjective",n:"noun",x:"phrase",adv:"adverb / connector",gr:"grammar"};
+/*DATA*/
+const ROWS={"う":"わいえお","く":"かきけこ","ぐ":"がぎげご","す":"さしせそ","つ":"たちてと","ぬ":"なにねの","ぶ":"ばびべぼ","む":"まみめも","る":"らりれろ"};
+const TE={"う":"って","つ":"って","る":"って","む":"んで","ぶ":"んで","ぬ":"んで","く":"いて","ぐ":"いで","す":"して"};
+const OVR={"ある":{"Negative":"ない","Past negative":"なかった","Polite volitional (let's)":"—","Potential (can)":"—","Passive":"—","Causative":"—","Command":"—","Want to (たい)":"—","Volitional (let's, casual)":"—","てる (doing / state)":"—"},
+"分かる":{"Potential (can)":"—","Passive":"—","Command":"—","Volitional (let's, casual)":"—","Polite volitional (let's)":"—","Want to (たい)":"—","Causative":"—"},
+"できる":{"Potential (can)":"—","Passive":"—","Command":"—","Volitional (let's, casual)":"—","Polite volitional (let's)":"—","Want to (たい)":"—","Causative":"—"},
+"くれる":{"Command":"くれ","Potential (can)":"—","Passive":"—","Volitional (let's, casual)":"—","Polite volitional (let's)":"—","Causative":"—","Want to (たい)":"—"},
+"知る":{"てる (doing / state)":"知ってる (= know)"}};
+const FORMS=["Dictionary","Polite (ます)","Polite negative","Polite past","Negative","Past","Past negative","て-form","てる (doing / state)","Want to (たい)","Potential (can)","Volitional (let's, casual)","Polite volitional (let's)","Conditional (ば)","Conditional (たら)","Passive","Causative","Command","ちゃった (oops / done)"];
+function chatta(te){return te.endsWith("で")?te.slice(0,-1)+"じゃった":te.slice(0,-1)+"ちゃった"}
+function verbForms(w,type){ // w = string ending in dictionary-form kana
+  const f={};
+  if(type==="su"||type==="s"){const b=type==="s"?w:w.slice(0,-2);
+    Object.assign(f,{"Dictionary":b+"する","Polite (ます)":b+"します","Polite negative":b+"しません","Polite past":b+"しました","Negative":b+"しない","Past":b+"した","Past negative":b+"しなかった","て-form":b+"して","てる (doing / state)":b+"してる","Want to (たい)":b+"したい","Potential (can)":b+"できる","Volitional (let's, casual)":b+"しよう","Polite volitional (let's)":b+"しましょう","Conditional (ば)":b+"すれば","Conditional (たら)":b+"したら","Passive":b+"される","Causative":b+"させる","Command":b+"しろ","ちゃった (oops / done)":b+"しちゃった"});return f}
+  if(type==="k"){const b=w.slice(0,-2);const K=!w.startsWith("来");const c=K?"こ":"来",ki=K?"き":"来",ku=K?"く":"来";
+    Object.assign(f,{"Dictionary":ku+"る","Polite (ます)":ki+"ます","Polite negative":ki+"ません","Polite past":ki+"ました","Negative":c+"ない","Past":ki+"た","Past negative":c+"なかった","て-form":ki+"て","てる (doing / state)":ki+"てる","Want to (たい)":ki+"たい","Potential (can)":c+"られる","Volitional (let's, casual)":c+"よう","Polite volitional (let's)":ki+"ましょう","Conditional (ば)":ku+"れば","Conditional (たら)":ki+"たら","Passive":c+"られる","Causative":c+"させる","Command":c+"い","ちゃった (oops / done)":ki+"ちゃった"});return f}
+  if(type==="i"){const s=w.slice(0,-1);
+    Object.assign(f,{"Dictionary":w,"Polite (ます)":s+"ます","Polite negative":s+"ません","Polite past":s+"ました","Negative":s+"ない","Past":s+"た","Past negative":s+"なかった","て-form":s+"て","てる (doing / state)":s+"てる","Want to (たい)":s+"たい","Potential (can)":s+"られる","Volitional (let's, casual)":s+"よう","Polite volitional (let's)":s+"ましょう","Conditional (ば)":s+"れば","Conditional (たら)":s+"たら","Passive":s+"られる","Causative":s+"させる","Command":s+"ろ","ちゃった (oops / done)":s+"ちゃった"});return f}
+  // godan
+  const e=w.slice(-1),s=w.slice(0,-1),r=ROWS[e];const te=type==="iku"?s+"って":s+TE[e];const ta=te.slice(0,-1)+(te.endsWith("で")?"だ":"た");
+  Object.assign(f,{"Dictionary":w,"Polite (ます)":s+r[1]+"ます","Polite negative":s+r[1]+"ません","Polite past":s+r[1]+"ました","Negative":s+r[0]+"ない","Past":ta,"Past negative":s+r[0]+"なかった","て-form":te,"てる (doing / state)":te+"る","Want to (たい)":s+r[1]+"たい","Potential (can)":s+r[2]+"る","Volitional (let's, casual)":s+r[3]+"う","Polite volitional (let's)":s+r[1]+"ましょう","Conditional (ば)":s+r[2]+"ば","Conditional (たら)":ta+"ら","Passive":s+r[0]+"れる","Causative":s+r[0]+"せる","Command":s+r[2],"ちゃった (oops / done)":chatta(te)});return f}
+const AFORMS=["Plain","Polite","Negative","Past","Past negative","て-form (and…)","Adverb","Conditional (if)","Too much (すぎる)","Looks like (そう)","Before a noun"];
+function adjForms(w,type){
+  if(type==="ia"){let s=w.slice(0,-1);let so=s+"そう";if(w.endsWith("いい")){s=w.slice(0,-2)+"よ";so=s+"さそう"}
+    return {"Plain":w,"Polite":w+"です","Negative":s+"くない","Past":s+"かった","Past negative":s+"くなかった","て-form (and…)":s+"くて","Adverb":s+"く","Conditional (if)":s+"ければ","Too much (すぎる)":(w.endsWith("いい")?s+"すぎる":w.slice(0,-1)+"すぎる"),"Looks like (そう)":so,"Before a noun":w+"〜"}}
+  return {"Plain":w+"だ","Polite":w+"です","Negative":w+"じゃない","Past":w+"だった","Past negative":w+"じゃなかった","て-form (and…)":w+"で","Adverb":w+"に","Conditional (if)":w+"なら","Too much (すぎる)":w+"すぎる","Looks like (そう)":w+"そう","Before a noun":w+"な〜"}}
+function conjTable(d){const t=d.t;const verb=["g","i","iku","s","su","k"].includes(t),adj=t==="ia"||t==="na";if(!verb&&!adj)return"";
+  const w=d.w||d.r;let a,b,keys;
+  if(verb){a=verbForms(w,t);b=verbForms(d.r,t);keys=FORMS;const o=OVR[d.w]||OVR[d.r];if(o)for(const k in o){a[k]=o[k];b[k]=o[k]}}
+  else{a=adjForms(w,t);b=adjForms(d.r,t);keys=AFORMS}
+  if(d.w===""||d.w===d.r)b=null;
+  const rows=keys.map(k=>`<tr><td>${k}</td><td><b>${a[k]}</b>${b&&b[k]!==a[k]?`<small>${b[k]}</small>`:""}</td></tr>`).join("");
+  return `<details><summary>Conjugations (${keys.length})</summary><table>${rows}</table></details>`}
+const DATA=RAW.map((e,i)=>({id:i,c:e[0],l:e[1],w:e[2],r:e[3],t:e[4],m:e[5],ex:[[e[6],e[7]],[e[8],e[9]]].filter(x=>x[0]),n:e[10]||""}));
+function head(d){const w=d.w||d.r;if(d.t==="s")return [w+"する",d.r+"する"];return [w,d.w&&d.w!==d.r?d.r:""]}
+let cat="all",lvl="all";
+const lvls=["all","N5","N4","N3","N2","N1","Slang","Net"];
+document.getElementById("cats").innerHTML=`<button class="chip on" data-c="all">All</button>`+Object.entries(CATS).map(([k,v])=>`<button class="chip" data-c="${k}">${v}</button>`).join("");
+document.getElementById("lvls").insertAdjacentHTML("afterbegin",lvls.map(l=>`<button class="chip lv${l==="all"?" on":""}" data-l="${l}">${l==="all"?"All levels":l}</button>`).join(""));
+document.getElementById("cats").onclick=e=>{const b=e.target.closest("[data-c]");if(!b)return;cat=b.dataset.c;document.querySelectorAll("[data-c]").forEach(x=>x.classList.toggle("on",x===b));render()};
+document.getElementById("lvls").onclick=e=>{const b=e.target.closest("[data-l]");if(!b)return;lvl=b.dataset.l;document.querySelectorAll("[data-l]").forEach(x=>x.classList.toggle("on",x===b));render()};
+const q=document.getElementById("q");q.oninput=render;
+document.getElementById("verbs").onchange=render;
+document.getElementById("hide").onchange=e=>document.body.classList.toggle("hide",e.target.checked);
+document.getElementById("list").onclick=e=>{const t=e.target.closest(".mean,.en");if(t&&document.body.classList.contains("hide"))t.classList.toggle("show")};
+const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+function render(){const s=q.value.trim().toLowerCase();const vo=document.getElementById("verbs").checked;
+  const out=DATA.filter(d=>(cat==="all"||d.c===cat)&&(lvl==="all"||d.l===lvl)&&(!vo||["g","i","iku","s","su","k"].includes(d.t))&&(!s||(d.w+d.r+d.m+d.n+d.ex.map(x=>x.join(" ")).join(" ")).toLowerCase().includes(s)));
+  document.getElementById("count").textContent=out.length+" of "+DATA.length+" entries";
+  document.getElementById("list").innerHTML=out.length?out.map(d=>{const [w,r]=head(d);return `<article class="card"><div class="top"><div><div class="kana">${r||"&nbsp;"}</div><div class="word">${esc(w)}</div></div><div class="tags"><span class="tag l">${d.l}</span><span class="tag t">${TYPES[d.t]}</span><span class="tag">${CATS[d.c].split(" ").slice(1).join(" ")}</span></div></div><div class="mean">${esc(d.m)}</div>${d.n?`<div class="note">${esc(d.n)}</div>`:""}<div class="ex">${d.ex.map(x=>`<div><div class="jp">${esc(x[0])}</div><div class="en">${esc(x[1])}</div></div>`).join("")}</div>${conjTable(d)}</article>`}).join(""):`<div class="empty">No matches. Try another search or filter.</div>`}
+render();
+</script>
+</body>
+</html>

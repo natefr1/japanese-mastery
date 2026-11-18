@@ -1,0 +1,61 @@
+# Builds the signed Windows installer + updater manifest when a version tag is pushed
+# (e.g. by `npm run release 0.3.0`) and publishes them as a GitHub Release.
+# Installed apps read releases/latest/download/latest.json to find updates.
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: ". -> target"
+
+      - name: Install JS dependencies
+        run: npm ci
+
+      - name: Tests (core + frontend)
+        run: |
+          cargo test -p jm-core
+          npm test
+
+      - name: Read release notes
+        id: notes
+        shell: bash
+        run: |
+          {
+            echo "body<<__NOTES__"
+            if [ -f RELEASE_NOTES.md ]; then cat RELEASE_NOTES.md; else echo "See the commit history for changes."; fi
+            echo "__NOTES__"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Build, sign and publish
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        with:
+          tagName: ${{ github.ref_name }}
+          releaseName: "Japanese Mastery ${{ github.ref_name }}"
+          releaseBody: ${{ steps.notes.outputs.body }}
+          releaseDraft: false
+          prerelease: false
+          includeUpdaterJson: true
+          args: --config src-tauri/tauri.release.conf.json
