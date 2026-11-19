@@ -88,14 +88,14 @@ Authored graph of nodes. Each node has lines and either choices or typed input (
 - `social.rs` — `prepare_reply` / `prepare_event` (DB → Job with prompt), `apply` (completion → scheduled rows, receipts, reaction, plan, memories, relationship), review/hint/summary helpers, and `Config` (one settings value, sanitised).
 
 **src-tauri:**
-- `ai.rs` — Anthropic Messages API (`POST /v1/messages`, `anthropic-version: 2023-06-01`) or OpenAI-compatible `/chat/completions`. Keys via `keyring` (Windows Credential Manager), never in settings/backups/logs. Errors are classified: not-ready (nothing sent), offline (retry with back-off), provider (shown to you).
+- `ai.rs` — Anthropic Messages API (`POST /v1/messages`, `anthropic-version: 2023-06-01`), OpenAI (`api.openai.com/v1/chat/completions`, default `gpt-5-mini`), Google Gemini via its OpenAI-compatible endpoint (`generativelanguage.googleapis.com/v1beta/openai`, default `gemini-flash-latest`, free tier OK), or any OpenAI-compatible server. Keys via `keyring` (Windows Credential Manager), never in settings/backups/logs. Errors are classified: not-ready (nothing sent), offline (retry with back-off), provider (shown to you).
 - `engine.rs` — the runtime loop while the process lives: deliver due rows every second and emit `chat-changed`; every 2 s start replies for chats with pending player messages (debounced 1.8 s, one in flight per chat, DB lock never held across HTTP); every 30 s run due scheduler events; every 5 min a scheduler tick. Windows notifications when unfocused and outside quiet hours.
 - Tray, close-to-tray, single instance, opt-in autostart (`--minimized`).
 
 **Frontend:** `lib/game/worldNav.ts` (state machine + store), `pages/life/Seikatsu.tsx` (world layer, menus, panels), `Explore.tsx` (canvas exploration), `pages/life/phone/*` (ハナシ).
 
 ### AI cost and config
-Each friend reply is one request (~2–4k input tokens, ≤800 output). Summaries run every 24 messages; reviews use the review model. With the defaults (Haiku-class chat model, 200 requests/day cap, 20 for unprompted messages) a heavy day of chatting is on the order of cents; check current pricing on Anthropic's site. A local Ollama/LM Studio model costs nothing and keeps everything on your PC, at lower quality. Set it all in Phone → 設定 → AI.
+Each friend reply is one request (~2–4k input tokens, ≤800 output). Summaries run every 24 messages; reviews use the review model. With the defaults (Haiku-class chat model, 200 requests/day cap, 20 for unprompted messages) a heavy day of chatting is on the order of cents; check current pricing on Anthropic's site. Gemini Flash on the free tier costs nothing within Google's rate limits, but on the free tier Google may use the content to improve its products. A local Ollama/LM Studio model costs nothing and keeps everything on your PC, at lower quality. Set it all in Phone → 設定 → AI.
 
 ## Reading coverage (lib/reading)
 

@@ -355,6 +355,9 @@ pub fn ai_configure(app: AppHandle, config: ProviderConfig) -> R<AiStatus> {
     c.chat_model = c.chat_model.trim().chars().take(100).collect();
     c.review_model = c.review_model.trim().chars().take(100).collect();
     c.base_url = c.base_url.trim().chars().take(200).collect();
+    if c.chat_model.is_empty() || (c.kind != ProviderKind::None && c.review_model.is_empty()) {
+        return Err("Model names can't be empty.".into());
+    }
     if c.kind == ProviderKind::OpenaiCompat && !(c.base_url.starts_with("http://") || c.base_url.starts_with("https://")) {
         return Err("The server address must start with http:// or https://".into());
     }

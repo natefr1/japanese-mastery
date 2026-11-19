@@ -20,6 +20,24 @@ pub enum ProviderKind {
     Anthropic,
     /// Any OpenAI-compatible endpoint, e.g. a local Ollama or LM Studio server.
     OpenaiCompat,
+    /// OpenAI API (platform.openai.com key).
+    Openai,
+    /// Google Gemini API (AI Studio key), via its OpenAI-compatible endpoint.
+    Gemini,
+}
+
+impl ProviderKind {
+    fn needs_key(&self) -> bool {
+        matches!(self, ProviderKind::Anthropic | ProviderKind::Openai | ProviderKind::Gemini)
+    }
+    fn label(&self) -> &'static str {
+        match self {
+            ProviderKind::Anthropic => "Anthropic",
+            ProviderKind::Openai => "OpenAI",
+            ProviderKind::Gemini => "Gemini",
+            _ => "AI",
+        }
+    }
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
@@ -52,6 +70,8 @@ fn key_account(kind: &ProviderKind) -> &'static str {
     match kind {
         ProviderKind::Anthropic => "anthropic",
         ProviderKind::OpenaiCompat => "openai_compat",
+        ProviderKind::Openai => "openai",
+        ProviderKind::Gemini => "gemini",
         ProviderKind::None => "none",
     }
 }
@@ -121,8 +141,8 @@ pub fn ready(cfg: &ProviderConfig, consent: &Consent) -> Result<Ready, AiError> 
         return Err(AiError::NotReady("You haven't agreed to send chat messages to this AI provider yet.".into()));
     }
     let key = get_key(&cfg.kind);
-    if cfg.kind == ProviderKind::Anthropic && key.is_none() {
-        return Err(AiError::NotReady("No Anthropic API key saved.".into()));
+    if cfg.kind.needs_key() && key.is_none() {
+        return Err(AiError::NotReady(format!("No {} API key saved.", cfg.kind.label())));
     }
     Ok(Ready { cfg: cfg.clone(), key })
 }
@@ -198,18 +218,43 @@ pub async fn complete(r: &Ready, purpose: Purpose, prompt: &Prompt, max_tokens: 
                 .unwrap_or_default();
             Ok(Completion { text: out, input_tokens: v["usage"]["input_tokens"].as_i64().unwrap_or(0), output_tokens: v["usage"]["output_tokens"].as_i64().unwrap_or(0) })
         }
-        ProviderKind::OpenaiCompat => {
-            let url = format!("{}/chat/completions", r.cfg.base_url.trim_end_matches('/'));
-            let body = serde_json::json!({
+        ProviderKind::OpenaiCompat | ProviderKind::Openai | ProviderKind::Gemini => {
+            let base = match r.cfg.kind {
+                ProviderKind::Openai => "https://api.openai.com/v1".to_string(),
+                ProviderKind::Gemini => "https://generativelanguage.googleapis.com/v1beta/openai".to_string(),
+                _ => r.cfg.base_url.trim_end_matches('/').to_string(),
+            };
+            let mut body = serde_json::json!({
                 "model": model,
-                "max_tokens": max_tokens,
-                "temperature": 0.8,
                 "messages": [
                     {"role": "system", "content": prompt.system},
                     {"role": "user", "content": prompt.user}
                 ],
             });
-            let mut req = client().post(url).json(&body);
+            match r.cfg.kind {
+                ProviderKind::Openai => {
+                    // Reasoning models (gpt-5*, o*) take max_completion_tokens, reject custom
+                    // temperature, and spend part of the budget thinking.
+                    let reasoning = model.starts_with("gpt-5") || model.starts_with('o');
+                    body["max_completion_tokens"] = (if reasoning { max_tokens.max(2000) * 3 } else { max_tokens }).into();
+                    if reasoning {
+                        body["reasoning_effort"] = "low".into();
+                    } else {
+                        body["temperature"] = 0.8.into();
+                    }
+                }
+                ProviderKind::Gemini => {
+                    // Flash models think by default; keep it light and leave room for the answer.
+                    body["max_tokens"] = (max_tokens.max(2000) * 3).into();
+                    body["reasoning_effort"] = "low".into();
+                    body["temperature"] = 0.8.into();
+                }
+                _ => {
+                    body["max_tokens"] = max_tokens.into();
+                    body["temperature"] = 0.8.into();
+                }
+            }
+            let mut req = client().post(format!("{base}/chat/completions")).json(&body);
             if let Some(k) = &r.key {
                 req = req.bearer_auth(k);
             }
@@ -220,8 +265,17 @@ pub async fn complete(r: &Ready, purpose: Purpose, prompt: &Prompt, max_tokens: 
                 return Err(provider_error(status, &text));
             }
             let v: serde_json::Value = serde_json::from_str(&text).map_err(|_| AiError::Provider("unreadable response from the AI server".into()))?;
+            // Gemini sometimes wraps the error in a 200 array response.
+            let v = if v.is_array() { v[0].clone() } else { v };
+            if let Some(msg) = v.pointer("/error/message").and_then(|m| m.as_str()) {
+                return Err(AiError::Provider(msg.chars().take(200).collect()));
+            }
+            let out = v["choices"][0]["message"]["content"].as_str().unwrap_or("").to_string();
+            if out.trim().is_empty() {
+                return Err(AiError::Provider("The model returned an empty reply (it may have used its whole budget thinking). Try again, or pick a non-reasoning model.".into()));
+            }
             Ok(Completion {
-                text: v["choices"][0]["message"]["content"].as_str().unwrap_or("").to_string(),
+                text: out,
                 input_tokens: v["usage"]["prompt_tokens"].as_i64().unwrap_or(0),
                 output_tokens: v["usage"]["completion_tokens"].as_i64().unwrap_or(0),
             })

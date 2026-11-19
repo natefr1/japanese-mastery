@@ -145,7 +145,7 @@ export interface SocialConfig {
   paused: boolean;
 }
 
-export type ProviderKind = "none" | "anthropic" | "openai_compat";
+export type ProviderKind = "none" | "anthropic" | "openai" | "gemini" | "openai_compat";
 export interface ProviderConfig { kind: ProviderKind; chat_model: string; review_model: string; base_url: string }
 export interface Consent { granted: boolean; at: number; provider: ProviderKind | null }
 export interface Usage { requests: number; background_requests: number; input_tokens: number; output_tokens: number }
