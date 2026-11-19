@@ -1,1 +1,1 @@
-Adds OpenAI and Google Gemini (Flash) as AI providers
+Adds Groq (free) and clear AI error messages
