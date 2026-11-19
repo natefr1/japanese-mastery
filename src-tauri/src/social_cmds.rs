@@ -323,9 +323,19 @@ pub struct AiStatus {
     pub usage_today: Usage,
     pub daily_budget: i64,
     pub background_budget: i64,
+    pub last_error: Option<(i64, String)>,
+}
+
+/// After any AI setup change, messages that failed for lack of setup get another try.
+fn requeue_failed(app: &AppHandle) {
+    let _ = with_db(app, |db| {
+        Ok(db.conn.execute("UPDATE messages SET reply_state='pending', reply_error=NULL WHERE sender_id='player' AND reply_state='failed' AND deleted_at IS NULL", [])?)
+    });
+    app.state::<Engine>().last_error.lock().unwrap().take();
 }
 
 fn status(app: &AppHandle) -> R<AiStatus> {
+    let last_error = app.state::<Engine>().last_error.lock().unwrap().clone();
     with_db(app, |db| {
         let config: ProviderConfig = read_setting(db, ai::CONFIG_KEY);
         let consent: Consent = read_setting(db, ai::CONSENT_KEY);
@@ -338,6 +348,7 @@ fn status(app: &AppHandle) -> R<AiStatus> {
             usage_today: chat::usage(&db.conn, &cfg.env(now_ms()).day)?,
             daily_budget: cfg.social.daily_ai_budget,
             background_budget: cfg.social.background_ai_budget,
+            last_error,
             config,
             consent,
         })
@@ -362,6 +373,7 @@ pub fn ai_configure(app: AppHandle, config: ProviderConfig) -> R<AiStatus> {
         return Err("The server address must start with http:// or https://".into());
     }
     with_db(&app, |db| settings::set(&db.conn, &db.device_id, ai::CONFIG_KEY, &serde_json::to_value(&c).unwrap()))?;
+    requeue_failed(&app);
     status(&app)
 }
 
@@ -372,6 +384,7 @@ pub fn ai_save_key(app: AppHandle, kind: ProviderKind, key: String) -> R<AiStatu
         return Err("The key is empty.".into());
     }
     ai::set_key(&kind, &key)?;
+    requeue_failed(&app);
     status(&app)
 }
 
@@ -388,15 +401,24 @@ pub fn ai_consent(app: AppHandle, granted: bool) -> R<AiStatus> {
         let c = Consent { granted, at: now_ms(), provider: granted.then_some(config.kind) };
         settings::set(&db.conn, &db.device_id, ai::CONSENT_KEY, &serde_json::to_value(&c).unwrap())
     })?;
+    if granted {
+        requeue_failed(&app);
+    }
     status(&app)
 }
 
 /// Sends a tiny fixed prompt (no personal data) to check the connection.
 #[tauri::command(async)]
 pub async fn ai_test(app: AppHandle) -> R<String> {
-    let p = prompt::Prompt { system: "You are a connection test.".into(), user: "Reply with exactly: OK".into() };
-    let out = engine::one_shot(&app, Purpose::Chat, "test", &p, 10).await?;
-    Ok(out.trim().chars().take(40).collect())
+    let p = prompt::Prompt {
+        system: "You are a connection test. Answer only with JSON.".into(),
+        user: r#"Reply with exactly this JSON and nothing else: {"messages":[{"type":"text","text":"OK"}]}"#.into(),
+    };
+    let out = engine::one_shot(&app, Purpose::Chat, "test", &p, 200).await?;
+    match prompt::extract_json(&out) {
+        Some(_) => Ok("the model answered in the right format".into()),
+        None => Err(format!("Connected, but the model didn't answer in JSON (it said: {}). Try another model.", out.trim().chars().take(80).collect::<String>())),
+    }
 }
 
 // ---------------- privacy ----------------

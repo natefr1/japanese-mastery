@@ -25,6 +25,12 @@ pub struct Engine {
     /// Conversation the player currently has open on the phone, if any.
     pub open_conversation: Mutex<Option<String>>,
     pub tray_hint_shown: AtomicBool,
+    /// Most recent AI failure (message only, never content) for Settings → AI.
+    pub last_error: Mutex<Option<(i64, String)>>,
+}
+
+pub fn note_error(app: &AppHandle, e: &str) {
+    *app.state::<Engine>().last_error.lock().unwrap() = Some((now_ms(), e.chars().take(300).collect()));
 }
 
 #[derive(Serialize, Clone)]
@@ -212,14 +218,21 @@ async fn run_job(app: &AppHandle, job: Job, env: social::Env) {
             let _ = with_db(app, |db| {
                 chat::add_usage(&db.conn, &env.day, job.purpose, c.input_tokens, c.output_tokens)?;
                 // A parse failure is recorded on the messages (retryable) by apply().
-                let _ = social::apply(&db.conn, &db.device_id, &job, &c.text, &env, now, &mut rng());
-                Ok(())
+                Ok(social::apply(&db.conn, &db.device_id, &job, &c.text, &env, now, &mut rng()).err().map(|e| e.to_string()))
+            })
+            .map(|bad| {
+                if let Some(e) = bad {
+                    note_error(app, &format!("The model's reply wasn't in the expected format: {e}"));
+                } else {
+                    app.state::<Engine>().last_error.lock().unwrap().take();
+                }
             });
             if let Some(r) = &ready {
                 summarize(app, r, &conv, &env).await;
             }
         }
         Err(AiError::Offline(msg)) => {
+            note_error(app, &format!("offline: {msg}"));
             note_offline(&engine, &conv, now);
             let _ = with_db(app, |db| {
                 if !job.player_msg_ids.is_empty() {
@@ -233,6 +246,7 @@ async fn run_job(app: &AppHandle, job: Job, env: social::Env) {
             });
         }
         Err(e) => {
+            note_error(app, &e.to_string());
             let _ = with_db(app, |db| social::fail(&db.conn, &job, &e.to_string(), false));
         }
     }
@@ -335,7 +349,10 @@ pub async fn one_shot(app: &AppHandle, purpose: Purpose, label: &str, p: &jm_cor
     if !budget_ok {
         return Err("Today's AI budget is used up. You can raise it in Phone → Settings → AI.".into());
     }
-    let c = ai::complete(&ready, purpose, p, max_tokens).await.map_err(|e| e.to_string())?;
+    let c = ai::complete(&ready, purpose, p, max_tokens).await.map_err(|e| {
+        note_error(app, &e.to_string());
+        e.to_string()
+    })?;
     with_db(app, |db| chat::add_usage(&db.conn, &day, label, c.input_tokens, c.output_tokens))?;
     Ok(c.text)
 }

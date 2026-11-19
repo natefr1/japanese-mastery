@@ -130,6 +130,7 @@ function AiSection() {
   const consentOk = ai.consent.granted && ai.consent.provider === kind;
   const defaults: Record<ProviderKind, Partial<ProviderConfig>> = {
     none: {},
+    groq: { chat_model: "openai/gpt-oss-120b", review_model: "openai/gpt-oss-120b" },
     anthropic: { chat_model: "claude-haiku-5-5", review_model: "claude-sonnet-5-5" },
     openai: { chat_model: "gpt-5-mini", review_model: "gpt-5-mini" },
     gemini: { chat_model: "gemini-flash-latest", review_model: "gemini-flash-latest" },
@@ -144,6 +145,7 @@ function AiSection() {
         <span className="set-text"><b>Provider</b></span>
         <select value={kind} disabled={busy} onChange={(e) => { const k = e.target.value as ProviderKind; saveCfg({ ...cfg, kind: k, ...defaults[k] }); }}>
           <option value="none">None</option>
+          <option value="groq">Groq — free tier (recommended)</option>
           <option value="anthropic">Anthropic (Claude) — needs an API key</option>
           <option value="openai">OpenAI (GPT / Codex account) — needs an API key</option>
           <option value="gemini">Google Gemini (Flash, free tier) — needs an API key</option>
@@ -158,14 +160,14 @@ function AiSection() {
           <div className="set-row col">
             <span className="set-text"><b>API key {kind === "openai_compat" && "(optional)"}</b><small>{ai.has_key ? "A key is saved in Windows Credential Manager." : "Stored in Windows Credential Manager — never in settings, backups or logs."}</small></span>
             <span className="row-gap">
-              <input className="set-input" type="password" autoComplete="off" spellCheck={false} value={key} placeholder={ai.has_key ? "••••••••  (saved)" : kind === "anthropic" ? "sk-ant-…" : kind === "openai" ? "sk-…" : kind === "gemini" ? "Gemini API key from AI Studio" : "optional"} onChange={(e) => setKey(e.target.value)} />
+              <input className="set-input" type="password" autoComplete="off" spellCheck={false} value={key} placeholder={ai.has_key ? "••••••••  (saved)" : kind === "anthropic" ? "sk-ant-…" : kind === "openai" ? "sk-…" : kind === "gemini" ? "Gemini API key from AI Studio" : kind === "groq" ? "gsk_…" : "optional"} onChange={(e) => setKey(e.target.value)} />
               <button className="pill-btn" disabled={!key.trim() || busy} onClick={() => { wrap(social.aiSaveKey(kind, key), "Key saved."); setKey(""); }}>Save</button>
               {ai.has_key && <button className="ph-link danger" onClick={() => wrap(social.aiClearKey(kind), "Key removed.")}>Remove</button>}
             </span>
           </div>
 
           <div className={`consent${consentOk ? " given" : ""}`}>
-            <b>What gets sent to {({ anthropic: "Anthropic", openai: "OpenAI", gemini: "Google", openai_compat: "this server", none: "" } as Record<ProviderKind, string>)[kind]}</b>
+            <b>What gets sent to {({ anthropic: "Anthropic", openai: "OpenAI", gemini: "Google", groq: "Groq", openai_compat: "this server", none: "" } as Record<ProviderKind, string>)[kind]}</b>
             <ul>
               <li>The recent messages of the one chat being answered (about the last 16), plus a short summary of older ones.</li>
               <li>A few memories that character keeps about you, your display name, status message and the level note above.</li>
@@ -176,6 +178,7 @@ function AiSection() {
               <li>Your vocabulary, review history, backups, other chats, or anything else in your learning database.</li>
               <li>Your API key goes only to the provider, in the request header.</li>
             </ul>
+            {kind === "groq" && <p className="ph-hint">Free: make a key at console.groq.com → API Keys (starts with gsk_). The free plan has per-minute and per-day limits; if you hit one, replies wait and retry.</p>}
             {kind === "gemini" && <p className="ph-hint warn">Gemini's <b>free tier</b>: Google may use what you send to improve its products, and people may review it. Don't share anything private in these chats, or use a paid key / local model if that matters to you.</p>}
             {kind === "openai" && <p className="ph-hint">Needs an API key from platform.openai.com (billed separately). A ChatGPT / Codex subscription login doesn't work here. "Codex" models are tuned for coding, so the default is gpt-5-mini.</p>}
             <p className="ph-hint">Requests happen only when a friend replies or messages first, or when you ask for a hint, explanation or review. Conversation text isn't written to logs.</p>
@@ -186,9 +189,10 @@ function AiSection() {
             )}
           </div>
           <div className="row-gap">
-            <button className="pill-btn" disabled={!ai.ready || busy} onClick={() => wrap(social.aiTest().then((t) => setMsg({ ok: true, text: `Connection OK (${t})` })))}>Test connection</button>
+            <button className="pill-btn" disabled={busy} onClick={() => wrap(social.aiTest().then((t) => setMsg({ ok: true, text: `Connection OK (${t})` })))}>Test connection</button>
           </div>
-          {ai.problem && !msg && <div className="inline-note">{ai.problem}</div>}
+          {ai.problem && !msg && <div className="inline-note">Not ready: {ai.problem}</div>}
+          {ai.last_error && !msg && <div className="inline-note bad">Last error ({new Date(ai.last_error[0]).toLocaleTimeString()}): {ai.last_error[1]}</div>}
           {msg && <div className={`inline-note${msg.ok ? " good" : " bad"}`}>{msg.text}</div>}
 
           <div className="usage">

@@ -24,17 +24,20 @@ pub enum ProviderKind {
     Openai,
     /// Google Gemini API (AI Studio key), via its OpenAI-compatible endpoint.
     Gemini,
+    /// Groq cloud (free tier), OpenAI-compatible.
+    Groq,
 }
 
 impl ProviderKind {
     fn needs_key(&self) -> bool {
-        matches!(self, ProviderKind::Anthropic | ProviderKind::Openai | ProviderKind::Gemini)
+        matches!(self, ProviderKind::Anthropic | ProviderKind::Openai | ProviderKind::Gemini | ProviderKind::Groq)
     }
     fn label(&self) -> &'static str {
         match self {
             ProviderKind::Anthropic => "Anthropic",
             ProviderKind::Openai => "OpenAI",
             ProviderKind::Gemini => "Gemini",
+            ProviderKind::Groq => "Groq",
             _ => "AI",
         }
     }
@@ -72,13 +75,21 @@ fn key_account(kind: &ProviderKind) -> &'static str {
         ProviderKind::OpenaiCompat => "openai_compat",
         ProviderKind::Openai => "openai",
         ProviderKind::Gemini => "gemini",
+        ProviderKind::Groq => "groq",
         ProviderKind::None => "none",
     }
 }
 
 pub fn set_key(kind: &ProviderKind, key: &str) -> Result<(), String> {
+    let key = key.trim().trim_matches('"');
     let e = keyring::Entry::new(KEYRING_SERVICE, key_account(kind)).map_err(|e| e.to_string())?;
-    e.set_password(key.trim()).map_err(|e| format!("could not save the key to the credential store: {e}"))
+    e.set_password(key).map_err(|e| format!("Couldn't save the key to Windows Credential Manager: {e}"))?;
+    // Read it back with a fresh handle: proves the key really persisted.
+    match get_key(kind) {
+        Some(k) if k == key => Ok(()),
+        Some(_) => Err("Windows Credential Manager returned a different key than the one saved.".into()),
+        None => Err("The key didn't persist in Windows Credential Manager (saved, but couldn't be read back).".into()),
+    }
 }
 
 pub fn clear_key(kind: &ProviderKind) -> Result<(), String> {
@@ -218,10 +229,11 @@ pub async fn complete(r: &Ready, purpose: Purpose, prompt: &Prompt, max_tokens: 
                 .unwrap_or_default();
             Ok(Completion { text: out, input_tokens: v["usage"]["input_tokens"].as_i64().unwrap_or(0), output_tokens: v["usage"]["output_tokens"].as_i64().unwrap_or(0) })
         }
-        ProviderKind::OpenaiCompat | ProviderKind::Openai | ProviderKind::Gemini => {
+        ProviderKind::OpenaiCompat | ProviderKind::Openai | ProviderKind::Gemini | ProviderKind::Groq => {
             let base = match r.cfg.kind {
                 ProviderKind::Openai => "https://api.openai.com/v1".to_string(),
                 ProviderKind::Gemini => "https://generativelanguage.googleapis.com/v1beta/openai".to_string(),
+                ProviderKind::Groq => "https://api.groq.com/openai/v1".to_string(),
                 _ => r.cfg.base_url.trim_end_matches('/').to_string(),
             };
             let mut body = serde_json::json!({
@@ -242,6 +254,18 @@ pub async fn complete(r: &Ready, purpose: Purpose, prompt: &Prompt, max_tokens: 
                     } else {
                         body["temperature"] = 0.8.into();
                     }
+                }
+                ProviderKind::Groq => {
+                    // gpt-oss models reason first; "low" keeps replies fast and leaves room for the answer.
+                    let reasoning = model.contains("gpt-oss") || model.contains("qwen3");
+                    body["max_tokens"] = (if reasoning { max_tokens.max(2000) * 2 } else { max_tokens }).into();
+                    if model.contains("gpt-oss") {
+                        body["reasoning_effort"] = "low".into();
+                    }
+                    if model.contains("qwen3") {
+                        body["reasoning_format"] = "hidden".into();
+                    }
+                    body["temperature"] = 0.8.into();
                 }
                 ProviderKind::Gemini => {
                     // Flash models think by default; keep it light and leave room for the answer.

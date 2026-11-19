@@ -145,7 +145,7 @@ export interface SocialConfig {
   paused: boolean;
 }
 
-export type ProviderKind = "none" | "anthropic" | "openai" | "gemini" | "openai_compat";
+export type ProviderKind = "none" | "groq" | "gemini" | "anthropic" | "openai" | "openai_compat";
 export interface ProviderConfig { kind: ProviderKind; chat_model: string; review_model: string; base_url: string }
 export interface Consent { granted: boolean; at: number; provider: ProviderKind | null }
 export interface Usage { requests: number; background_requests: number; input_tokens: number; output_tokens: number }
@@ -158,6 +158,7 @@ export interface AiStatus {
   usage_today: Usage;
   daily_budget: number;
   background_budget: number;
+  last_error: [number, string] | null;
 }
 
 export interface Outgoing { conversation_id: string; kind: "text" | "sticker"; body: string; sticker_id: string | null }

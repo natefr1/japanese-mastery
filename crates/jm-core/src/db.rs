@@ -452,3 +452,47 @@ mod tests {
         assert_eq!(db.vocab_list().unwrap().len(), before);
     }
 }
+
+#[cfg(test)]
+mod social_upgrade_tests {
+    use super::*;
+    use crate::{chat, migrations, social};
+
+    /// A v0.2.0 database (schema v2, with quest memories and old friendship values)
+    /// upgraded to v3 must be able to run the whole reply path.
+    #[test]
+    fn upgraded_v2_database_can_prepare_and_apply_replies() {
+        let t2 = tempfile::tempdir().unwrap();
+        let p2 = DbPaths::in_dir(t2.path());
+        std::fs::create_dir_all(&p2.backup_dir).unwrap();
+        {
+            let c = Connection::open(&p2.db_file).unwrap();
+            c.execute_batch(migrations::MIGRATIONS[0].sql).unwrap();
+            c.execute_batch(migrations::MIGRATIONS[1].sql).unwrap();
+            c.pragma_update(None, "user_version", 2).unwrap();
+            c.execute("INSERT INTO meta(key, value) VALUES ('device_id', 'v2-device')", []).unwrap();
+        }
+        // Let v0.2.0's seeding run, then add quest memories like a real player would have.
+        {
+            let (db, _) = Db::open(p2.clone()).unwrap();
+            db.conn.execute(
+                "INSERT INTO character_memories (id, character_id, fact, source, created_at, updated_at, rev, device_id)
+                 VALUES ('m-old', 'haruto', 'Player likes FPS games', 'quest:haruto-game-night', 1, 1, 1, 'v2-device')", []).unwrap();
+            let now = crate::now_ms();
+            chat::send_player(&db.conn, &db.device_id, &chat::Outgoing { conversation_id: "dm-haruto".into(), kind: "text".into(), body: "今日なにしてる？".into(), sticker_id: None }, true, now).unwrap();
+            let cfg = social::Config::load(&db.conn).unwrap();
+            let env = cfg.env(now + 5000);
+            assert_eq!(chat::conversations_with_pending(&db.conn).unwrap(), vec!["dm-haruto".to_string()]);
+            let job = social::prepare_reply(&db.conn, "dm-haruto", &env, now + 5000).unwrap().expect("job");
+            let usage = chat::usage(&db.conn, &env.day).unwrap();
+            assert_eq!(usage.requests, 0);
+            let raw = "```json\n{\"messages\":[{\"type\":\"text\",\"text\":\"家でゲームしてる\"}]}\n```";
+            social::apply(&db.conn, &db.device_id, &job, raw, &env, now + 5000, &mut crate::prompt::Rng::new(1)).unwrap();
+            chat::deliver_due(&db.conn, now + 3_600_000).unwrap();
+            let msgs = chat::messages(&db.conn, "dm-haruto", now + 3_600_000, None, 50).unwrap();
+            assert!(msgs.iter().any(|m| m.body == "家でゲームしてる"));
+            chat::mark_read(&db.conn, "dm-haruto", now + 3_600_000).unwrap();
+            assert_eq!(chat::get_conversation(&db.conn, "dm-haruto", now + 3_600_000).unwrap().unread, 0, "opening a chat clears unread");
+        }
+    }
+}
